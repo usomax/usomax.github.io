@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:
- Update:    2015-12-02 05:00:05 +0900
+ Update:    2015-12-02 05:11:56 +0900
  Info:
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1564,8 +1564,8 @@ textarea:focus {
 }
 .index #section-contents #works ul li {
   display: table;
-  height: 190px;
-  width: 80%;
+  height: 320px;
+  width: 95%;
   margin: 0 auto 25px;
   font-size: 60px;
   background: #FF9286;
