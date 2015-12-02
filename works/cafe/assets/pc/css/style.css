@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:
- Update:    2015-12-01 23:50:44 +0900
+ Update:    2015-12-02 22:09:42 +0900
  Info:
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1529,8 +1529,24 @@ textarea:focus {
  Update:
  Info:      layout of header
 ----------------------------------------------------------- */
+#section-header {
+  height: 125px;
+  position: relative;
+}
+#section-header h1 {
+  width: 300px;
+  float: left;
+  position: absolute;
+  bottom: 10px;
+}
+#section-header ul {
+  position: absolute;
+  bottom: 5px;
+  right: 0;
+}
 #section-header ul li {
-  background: url("../images/bg_gnavi.gif?v=20151201235045") left no-repeat;
+  float: left;
+  background: url("../images/bg_gnavi.gif?v=20151202220943") left no-repeat;
   text-indent: 15px;
 }
 #section-header ul li a {
@@ -1538,6 +1554,43 @@ textarea:focus {
 }
 #section-header ul li a:hover {
   text-decoration: underline;
+}
+#section-header ul li:nth-child(2) {
+  margin-left: 10px;
+}
+
+#section-mv {
+  width: 780px;
+  height: 250px;
+  background: url("../images/icatch.jpg?v=20151202220943") no-repeat;
+}
+
+#section-gnav {
+  background: #422D18;
+}
+#section-gnav ul {
+  text-align: center;
+}
+#section-gnav ul li {
+  float: left;
+}
+#section-gnav ul li a {
+  padding-top: 10px;
+  background: url("../images/bg_menu.gif?v=20151202220943");
+  background-position: 0px -25px;
+  color: white;
+  display: block;
+  width: 130px;
+  height: 45px;
+}
+#section-gnav ul li a:hover {
+  background-position: 130px -25px;
+}
+#section-gnav ul li p:first-child + * {
+  font-size: 11px;
+}
+#section-gnav ul li .yellow {
+  color: #FFE97B;
 }
 
 /* ------------------------------------------- SASS Information
@@ -1556,7 +1609,6 @@ textarea:focus {
 
 #section-footer {
   border-top: 1px dotted #ccc;
-  margin-top: 40px;
   padding-top: 25px;
   padding-bottom: 20px;
 }
@@ -1565,13 +1617,15 @@ textarea:focus {
   margin-bottom: 20px;
 }
 #section-footer ul li {
+  font-size: 11.5px;
   display: inline-block;
-  margin: 0 10px 0 10px;
+  margin: 0 5px;
 }
 #section-footer ul li a {
   color: #8A390A;
 }
 #section-footer p {
+  font-size: 9.5px;
   text-align: center;
 }
 
@@ -1589,56 +1643,6 @@ textarea:focus {
   font-size: 12px;
   width: 780px;
   margin: 0 auto;
-  /* #section-header*/
-}
-.index #section-header {
-  height: 125px;
-  position: relative;
-}
-.index #section-header h1 {
-  width: 300px;
-  float: left;
-  position: absolute;
-  bottom: 10px;
-}
-.index #section-header ul {
-  position: absolute;
-  bottom: 5px;
-  right: 0;
-}
-.index #section-header ul li {
-  float: left;
-}
-.index #section-header ul li:nth-child(2) {
-  margin-left: 10px;
-}
-.index #section-gnav {
-  background: #422D18;
-}
-.index #section-gnav ul {
-  text-align: center;
-}
-.index #section-gnav ul li {
-  float: left;
-}
-.index #section-gnav ul li a {
-  padding-top: 10px;
-  background: url("../images/bg_menu.gif?v=20151201235045");
-  background-position: 0px -10px;
-  color: white;
-  display: block;
-  width: 130px;
-  height: 50px;
-}
-.index #section-gnav ul li a:hover {
-  background-position: 130px -10px;
-}
-.index #section-gnav ul li p:first-child {
-  font-weight: bold;
-  letter-spacing: 2px;
-}
-.index #section-gnav ul li .yellow {
-  color: #FFE97B;
 }
 .index #section-content {
   padding-top: 30px;
@@ -1649,43 +1653,91 @@ textarea:focus {
 }
 .index #section-content #section-info h1 {
   color: white;
-  background: #A05757;
+  background: #A05D5A;
   font-size: 17px;
   font-weight: bold;
-  padding-left: 5px;
-  padding-top: 2px;
-  padding-bottom: 2px;
+  padding: 2px 0 0 5px;
   margin-bottom: 10px;
+  border-bottom: 4px solid #864A47;
 }
 .index #section-content .article {
-  height: 90px;
   border-bottom: dotted 1px #ccc;
-  padding-top: 10px;
-}
-.index #section-content .article span {
-  display: block;
+  padding: 10px 0;
 }
 .index #section-content .article .fL {
   float: left;
-  width: 90px;
   text-align: center;
   letter-spacing: 1px;
+  width: 100px;
 }
 .index #section-content .article .fR {
   float: right;
-  width: 285px;
+  width: 280px;
+}
+.index #section-content .article a {
+  color: #8A390A;
 }
 .index #section-content #section-aside {
   float: right;
   width: 390px;
 }
 .index #section-rTop {
-  width: 133px;
+  width: 153px;
   margin-left: auto;
-  margin-top: 15px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 .index #section-rTop a {
-  background: url("../images/bg_pagetop.gif?v=20151201235045") left no-repeat;
+  background: url("../images/bg_pagetop.gif?v=20151202220943") left no-repeat;
   color: #8A390A;
   padding-left: 13px;
+}
+
+/* ------------------------------------------- SASS Information
+ Name:      layout/page/_example.scss
+ Author:
+ Update:
+ Info:      example layout
+----------------------------------------------------------- */
+.example {
+  letter-spacing: 2px;
+  font-size: 12px;
+  width: 780px;
+  margin: 0 auto;
+}
+.example #section-mv {
+  background: url("../images/icatch4.png?v=20151202220943") no-repeat;
+}
+.example #section-gnav ul li:first-child + * a {
+  background-position: 130px -10px;
+}
+.example #section-contents {
+  margin-top: 30px;
+}
+.example #section-contents #lMenu {
+  width: 200px;
+  float: left;
+}
+.example #section-contents #lMenu h4 {
+  font-weight: bold;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.example #section-contents #lMenu ul li a {
+  color: #8A390A;
+  border-bottom: 1px dotted #8A390A;
+  background: url("../images/bg_list.gif?v=20151202220943") no-repeat left;
+  padding: 5px 0 5px 10px;
+  display: block;
+}
+.example #section-contents #main {
+  width: 550px;
+  float: right;
+}
+.example #section-contents #main h2 {
+  font-weight: bold;
+  font-size: 16px;
+  color: #A05D5A;
+  border-bottom: 4px solid #A05D5A;
+  line-height: 18px;
 }
