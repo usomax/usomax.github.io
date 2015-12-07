@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:
- Update:    2015-12-03 18:51:51 +0900
+ Update:    2015-12-08 04:02:26 +0900
  Info:
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1546,7 +1546,7 @@ textarea:focus {
 }
 #section-header ul li {
   float: left;
-  background: url("../images/bg_gnavi.gif?v=20151203185153") left no-repeat;
+  background: url("../images/bg_gnavi.gif?v=20151208040227") left no-repeat;
   text-indent: 15px;
 }
 #section-header ul li a {
@@ -1562,7 +1562,7 @@ textarea:focus {
 #section-mv {
   width: 780px;
   height: 250px;
-  background: url("../images/icatch.jpg?v=20151203185153") no-repeat;
+  background: url("../images/icatch.jpg?v=20151208040227") no-repeat;
 }
 
 #section-gnav {
@@ -1576,7 +1576,7 @@ textarea:focus {
 }
 #section-gnav ul li a {
   padding-top: 10px;
-  background: url("../images/bg_menu.gif?v=20151203185153");
+  background: url("../images/bg_menu.gif?v=20151208040227");
   background-position: 0px -25px;
   color: white;
   display: block;
@@ -1607,9 +1607,21 @@ textarea:focus {
   color: #FFE97B;
 }
 
+#section-rTop {
+  width: 153px;
+  margin-left: auto;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+#section-rTop a {
+  background: url("../images/bg_pagetop.gif?v=20151208040227") left no-repeat;
+  color: #8A390A;
+  padding-left: 13px;
+}
+
 #section-footer {
   border-top: 1px dotted #ccc;
-  padding-top: 25px;
+  padding-top: 20px;
   padding-bottom: 20px;
 }
 #section-footer ul {
@@ -1681,17 +1693,6 @@ textarea:focus {
   float: right;
   width: 390px;
 }
-.index #section-rTop {
-  width: 153px;
-  margin-left: auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
-}
-.index #section-rTop a {
-  background: url("../images/bg_pagetop.gif?v=20151203185153") left no-repeat;
-  color: #8A390A;
-  padding-left: 13px;
-}
 
 /* ------------------------------------------- SASS Information
  Name:      layout/page/_example.scss
@@ -1706,7 +1707,7 @@ textarea:focus {
   margin: 0 auto;
 }
 .example #section-mv {
-  background: url("../images/icatch4.png?v=20151203185153") no-repeat;
+  background: url("../images/icatch4.png?v=20151208040227") no-repeat;
 }
 .example #section-gnav ul li:first-child + * a {
   background-position: 130px -10px;
@@ -1726,7 +1727,7 @@ textarea:focus {
 .example #section-contents #lMenu ul li a {
   color: #8A390A;
   border-bottom: 1px dotted #8A390A;
-  background: url("../images/bg_list.gif?v=20151203185153") no-repeat left;
+  background: url("../images/bg_list.gif?v=20151208040227") no-repeat left;
   padding: 5px 0 5px 10px;
   display: block;
 }
@@ -1734,33 +1735,78 @@ textarea:focus {
   width: 550px;
   float: right;
 }
+.example #section-contents #main a {
+  color: #7B3B38;
+}
 .example #section-contents #main h2 {
+  margin-bottom: 1em;
   font-weight: bold;
   font-size: 16px;
-  color: #A05D5A;
-  border-bottom: 4px solid #A05D5A;
+  color: #7B3B38;
+  border-bottom: 4px solid #7B3B38;
   line-height: 18px;
 }
 .example #section-contents #main p {
   margin-bottom: 1em;
 }
+.example #section-contents #main .borderB {
+  border-bottom: 1px dotted #7B3B38;
+}
+.example #section-contents #main .mb0 {
+  margin-bottom: 0;
+}
+.example #section-contents #main .bgBeige {
+  background: #ffeee9;
+}
 .example #section-contents #main .mark {
-  background: url("../images/bg_list.gif?v=20151203185153") no-repeat left;
+  background: url("../images/bg_list.gif?v=20151208040227") no-repeat left;
   padding: 5px 0 5px 10px;
 }
 .example #section-contents #main h3 {
-  color: #A05D5A;
+  color: #7B3B38;
   font-size: 14px;
   font-weight: bold;
   line-height: 15px;
   padding-left: 5px;
-  border-left: 7px solid #A05D5A;
+  border-left: 7px solid #7B3B38;
+  margin-bottom: 1px;
 }
-.example #section-contents #main span {
+.example #section-contents #main ul {
+  margin: 10px 0 10px 20px;
+}
+.example #section-contents #main ul + p {
+  margin-left: 40px;
+}
+.example #section-contents #main .mb1em {
+  margin-bottom: 1em;
+}
+.example #section-contents #main .dBlock {
   display: block;
 }
 .example #section-contents #main .bgBr {
   color: white;
-  background: #A05D5A;
+  background: #7B3B38;
   width: 100%;
+}
+.example #section-contents #main .disc {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+.example #section-contents #main .decimal {
+  list-style-type: decimal;
+  list-style-position: inside;
+}
+.example #section-contents #main table thead tr td {
+  background: #FF7800;
+  width: 105px;
+  height: 30px;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  padding-left: 5px;
+}
+.example #section-contents #main table tbody tr td {
+  padding-left: 5px;
+  height: 30px;
+  border: 1px solid #ccc;
 }
