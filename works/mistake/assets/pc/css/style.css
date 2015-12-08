@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:
- Update:    2015-09-06 17:36:38 +0900
+ Update:      2015-08-23 18:53:57 +0900
  Info:
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1516,11 +1516,12 @@ textarea:focus {
  Update:
  Info:      layout of wrapper
 ----------------------------------------------------------- */
-#section-contents .wHover {
+#section-contents {
   position: relative;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 2em;
+  background: #fff;
 }
 
 /* ------------------------------------------- SASS Information
@@ -1529,12 +1530,64 @@ textarea:focus {
  Update:
  Info:      layout of header
 ----------------------------------------------------------- */
+#section-header {
+  overflow: hidden;
+  position: relative;
+  padding: 2em 0;
+  background: antiquewhite;
+}
+#section-header .inner {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+#section-header .inner span {
+  overflow: hidden;
+  display: block;
+  font-weight: bold;
+  font-size: 1.5em;
+  line-height: 1.5;
+  float: left;
+}
+#section-header .inner #nav {
+  overflow: hidden;
+  line-height: 2.25;
+  float: right;
+}
+#section-header .inner #nav li {
+  font-weight: bold;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  margin: 0 10px;
+}
+
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_footer.scss
  Author:
  Update:
  Info:      layout of footer
 ----------------------------------------------------------- */
+#section-footer {
+  overflow: hidden;
+  position: relative;
+  padding: 2em 0;
+  background: antiquewhite;
+}
+#section-footer .inner {
+  position: relative;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 2em;
+}
+#section-footer .inner p {
+  overflow: hidden;
+  display: block;
+  line-height: 1.5;
+  text-align: center;
+}
+
 /* -----------------------------------------------------------
  page layout
 ----------------------------------------------------------- */

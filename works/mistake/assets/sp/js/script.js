@@ -1,6 +1,6 @@
 
 /*!
- * index.js - サイト名（●●のスクリプト）
+ * script.js - サイト名（●●のスクリプト）
  * 動作環境： iPad / iPhone / Android
  * 対応ブラウザ： 標準ブラウザ / GoogleChrome
  * --------------------
@@ -9,18 +9,23 @@
  * --------------------
  */
 
+
+/*!
+ * isnt           は  !==
+ * not            は  !
+ * and            は  &&
+ * or             は  ||
+ * true, yes, on  は  true
+ * false, no, off は  false
+ * @, this        は  this
+ */
+
 (function() {
   (function($) {
-    $('#sample').on('click', function() {
+    return $('#sample').on('click', function() {
       console.log('hogehoge');
       return false;
     });
-    if (smartphoneType[3] === "iphone") {
-      return console.log('iphone');
-    } else {
-      return console.log('android');
-    }
   })(jQuery);
 
 }).call(this);
-

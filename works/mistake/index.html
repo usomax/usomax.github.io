@@ -4,11 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-    <title>PCサイト</title>
+    <title>間違い探しゲーム</title>
     <meta name="robots" content="index,follow">
-    <meta name="keywords" content="PC,Template">
-    <meta name="description" content="PCサイトのテンプレートです">
-    <meta name="author" content="K.saruta">
+    <meta name="keywords" content="間違い探し,ゲーム,間違い探しゲーム,LookkingMisstake">
+    <meta name="description" content="間違い探しゲーム">
+    <meta name="author" content="Y.takaoka">
     <link rel="index" href="http://google.com/">
     <link rel="canonical" href="http://google.com/">
 
@@ -18,23 +18,31 @@
     <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Facebook用OGP指定-->
-    <meta property="og:title" content="PCサイト">
+    <meta property="og:title" content="間違い探しゲーム">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="PCサイトのテンプレートです">
-    <meta property="og:site_name" content="PCサイト">
+    <meta property="og:description" content="間違い探しゲーム">
+    <meta property="og:site_name" content="間違い探しゲーム">
     <meta property="og:url" content="http://google.com/">
     <meta property="og:locale" content="ja_JP">
 
+    <!-- Twitter用CARD指定-->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="http://google.com/">
+    <meta name="twitter:title" content="間違い探しゲーム">
+    <meta name="twitter:description" content="間違い探しゲーム">
+    <meta name="twitter:site" content="@twitter">
+    <meta name="twitter:creator" content="@twitter">
+
     <!-- アイコン指定(iOS/Android込)-->
-    <link rel="apple-touch-icon-precomposed" href="./assets/common/images/favicon.ico">
-    <link rel="shortcut icon" href="./assets/common/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./assets/common/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="./assets/common/favicon.ico">
+    <link rel="shortcut icon" href="./assets/common/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/common/favicon.ico" type="image/x-icon">
 
     <!-- スタイルシート指定-->
     <link rel="stylesheet" href="./assets/pc/css/style.css">
 
-    <!-- JavaScript指定-->
-    <script src="./assets/common/js/common.js"></script>
+    <!-- JavaScript-->
+    <script src="./assets/common/js/lib/jquery-1.10.2.min.js"></script>
 
     <!--[if lt IE 9]>
     <script src="./assets/common/js/lib/html5shiv.min.js"></script>
@@ -45,7 +53,14 @@
   <body class="index">
 
     <div id="section-header">
-      <h1>Header</h1>
+      <div class="inner clearfix"><span>間違い探しゲーム</span>
+        <ul id="nav">
+          <li>メニュー1</li>
+          <li>メニュー2</li>
+          <li>メニュー3</li>
+          <li>メニュー4</li>
+        </ul>
+      </div>
     </div>
     <!-- #section-header-->
 
@@ -53,10 +68,9 @@
       <div id="about" class="section">
         <div class="inner">
           <div class="logo">
-            <h1>PCサイト</h1>
+            <h1>間違い探しゲーム</h1>
             <p></p>
             <button id="gameStart" type="button">開始</button>
-            <button id="gameReset" type="button">はじめから</button>
             <p id="score"></p>
           </div>
           <div id="cells"></div>
@@ -66,11 +80,13 @@
     <!-- #section-contents-->
 
     <div id="section-footer">
-      <p>Footer</p>
+      <div class="inner">
+        <p>No rights reserved.</p>
+      </div>
     </div>
     <!-- #section-footer-->
 
-    <script src="./assets/common/js/lib/lab.min.js"></script>
-    <script src="./assets/common/js/dispatcher.js"></script>
+    <script src="./assets/common/js/common.js"></script>
+    <script src="./assets/pc/js/script.js"></script>
   </body>
 </html>
