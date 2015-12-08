@@ -1,6 +1,16 @@
+
+/*!
+ * index.js - サイト名（●●のスクリプト）
+ * 動作環境： Windows / Macintosh
+ * 対応ブラウザ： GoogleChrome / Firefox / Safari / Opera / IE11 / IE10 / IE9 / IE8
+ * --------------------
+ * @version: 1.0
+ * @author :
+ * --------------------
+ */
 $(function() {
 
-  $("#section1 li").eq(1).css({margin: "0 160px"});
+  //$("#section1 li").eq(1).css({margin: "0 160px"});
 
   $('#fullpage').fullpage({
     anchors: ['top', 'skill', 'history','work'],
@@ -22,18 +32,6 @@ $(function() {
     e.preventDefault();
     $.fn.fullpage.moveTo('work', 3);
   });
-  $('#menu').toggle(
-    function() {
-        $(this).animate({
-            width: "120px"
-        },fast);
-    },
-    function() {
-        $(this).animate({
-            width: "80px"
-        },fast);
-    }
-    );
 
   gauge01 = new FlexGauge({
     appendTo: '#example1',
