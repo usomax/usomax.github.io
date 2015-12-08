@@ -1,13 +1,3 @@
-
-/*!
- * index.js - サイト名（●●のスクリプト）
- * 動作環境： Windows / Macintosh
- * 対応ブラウザ： GoogleChrome / Firefox / Safari / Opera / IE11 / IE10 / IE9 / IE8
- * --------------------
- * @version: 1.0
- * @author :
- * --------------------
- */
 $(function() {
 
   $("#section1 li").eq(1).css({margin: "0 160px"});
@@ -32,18 +22,16 @@ $(function() {
     e.preventDefault();
     $.fn.fullpage.moveTo('work', 3);
   });
-  $('#section-header').hover(
+  $('#menu').toggle(
     function() {
-        $(this).stop().animate({
-            width: "200px"
-        },'fast', "swing");
-        $('#menu li').css({opacity:"1"});
+        $(this).animate({
+            width: "120px"
+        },fast);
     },
     function() {
-        $(this).stop().animate({
-            width: "65px"
-        },'fast' ,"swing");
-        $('#menu li').css({opacity:"0"});
+        $(this).animate({
+            width: "80px"
+        },fast);
     }
     );
 
@@ -107,6 +95,5 @@ function rect() {
     }, 800);
     setTimeout('rect()', 1600); //アニメーションを繰り返す間隔
 }
-
 
 

@@ -1,0 +1,354 @@
+@charset "UTF-8";
+/* ------------------------------------------- SASS Information
+ Name:      base/_config.scss
+ Author:
+ Update:
+ Info:      setting for general style
+----------------------------------------------------------- */
+/* HTML Reset Styles
+--------------------------------------------------------------------------------*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+
+input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th {
+  text-align: left;
+}
+
+a:focus {
+  outline: none;
+}
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+
+.clearfix {
+  min-height: 1px;
+}
+
+* html .clearfix {
+  height: 1px;
+  /*¥*/
+     /*/
+height: auto;
+overflow: hidden;
+/**/
+}
+
+.both {
+  clear: both;
+}
+
+.inline_block {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  width: 100%;
+}
+
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  display: block;
+  color: #4d4d4d;
+  font-size: 14px;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-weight: 400;
+  line-height: 1.42857143;
+  margin: 0;
+}
+
+.wrap {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  position: relative;
+}
+
+.fl {
+  float: left;
+}
+
+.mb100 {
+  margin-bottom: 150px;
+}
+
+.since {
+  font-size: 2em;
+}
+
+.sinceCont {
+  width: 780px;
+  margin: 0 auto;
+}
+.sinceCont p {
+  text-align: left;
+}
+
+.popup {
+  background-color: #08a;
+  bottom: 20px;
+  right: 10px;
+  width: 145px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+}
+.popup:hover {
+  background-color: #29b;
+}
+
+.arrow-down:after {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+
+.arrow-down:hover:after {
+  border-top-color: #29b;
+}
+
+.arrow-down:after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #08a;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -8px;
+}
+
+h1 {
+  font-size: 20em;
+}
+
+p {
+  font-size: 15px;
+}
+
+.slide ul {
+  text-align: left;
+  width: 480px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+#menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  padding: 0;
+  margin: 0;
+  background: #3a3a3a;
+}
+#menu li {
+  display: block;
+  color: #fff;
+  background: #3a3a3a;
+  width: 120px;
+  position: relative;
+}
+#menu li a {
+  text-decoration: none;
+  color: #fff;
+}
+#menu li a:hover {
+  color: #fff;
+}
+#menu li.active a:hover {
+  color: #fff;
+}
+#menu li:hover {
+  background: rgba(88, 88, 88, 0.5);
+}
+#menu li a {
+  padding: 9px 28px;
+  display: block;
+}
+#menu li.active {
+  background: rgba(88, 88, 88, 0.5);
+}
+#menu li.active a {
+  padding: 9px 28px;
+  display: block;
+  color: #fff;
+}
+#menu li span {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  height: 4px;
+  width: 4px;
+  border: 0;
+  background: #fff;
+  left: 10%;
+  top: 50%;
+  margin-top: -1px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+#menu li.active span, #menu li:hover span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -4px;
+  border-radius: 100%;
+}
+
+h1 {
+  font-size: 4em;
+  color: #4d4d4d;
+  margin: 0;
+}
+
+h2 {
+  font-size: 35px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.intro p {
+  color: #4d4d4d;
+}
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section {
+  text-align: center;
+}
+
+#section3 h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Overwriting styles for control arrows for slides
+* --------------------------------------- */
+.controlArrow.prev {
+  left: 50px;
+}
+.controlArrow.next {
+  right: 50px;
+}
+
+/** these classes are pre-generated **/
+.col-md-4 {
+  position: relative;
+  min-height: 1px;
+  padding: 15px;
+}
+
+.fg-dial {
+  color: #3a3a3f;
+  font-size: 23.12682533px;
+  font-weight: bold;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 115px;
+  width: 100%;
+}
+
+.fg-dial-label {
+  color: #4d4d4d;
+  font-size: 16px;
+  font-weight: bold;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 190px;
+  width: 100%;
+}
+
+canvas {
+  display: block;
+  margin: 25px auto 0;
+}
+
+@media (min-width: 992px) {
+  .col-md-4 {
+    float: left;
+    width: 33.33333333%;
+  }
+}
