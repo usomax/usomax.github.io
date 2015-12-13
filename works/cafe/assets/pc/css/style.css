@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:
- Update:    2015-12-08 04:02:26 +0900
+ Update:    2015-12-14 02:20:39 +0900
  Info:
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1546,7 +1546,7 @@ textarea:focus {
 }
 #section-header ul li {
   float: left;
-  background: url("../images/bg_gnavi.gif?v=20151208040227") left no-repeat;
+  background: url("../images/bg_gnavi.gif?v=20151214022040") left no-repeat;
   text-indent: 15px;
 }
 #section-header ul li a {
@@ -1557,12 +1557,6 @@ textarea:focus {
 }
 #section-header ul li:nth-child(2) {
   margin-left: 10px;
-}
-
-#section-mv {
-  width: 780px;
-  height: 250px;
-  background: url("../images/icatch.jpg?v=20151208040227") no-repeat;
 }
 
 #section-gnav {
@@ -1576,7 +1570,7 @@ textarea:focus {
 }
 #section-gnav ul li a {
   padding-top: 10px;
-  background: url("../images/bg_menu.gif?v=20151208040227");
+  background: url("../images/bg_menu.gif?v=20151214022040");
   background-position: 0px -25px;
   color: white;
   display: block;
@@ -1614,7 +1608,7 @@ textarea:focus {
   margin-bottom: 25px;
 }
 #section-rTop a {
-  background: url("../images/bg_pagetop.gif?v=20151208040227") left no-repeat;
+  background: url("../images/bg_pagetop.gif?v=20151214022040") left no-repeat;
   color: #8A390A;
   padding-left: 13px;
 }
@@ -1655,6 +1649,17 @@ textarea:focus {
   font-size: 12px;
   width: 780px;
   margin: 0 auto;
+}
+.index #section-mv #slide {
+  width: 780px;
+  height: 250px;
+  margin: 0 auto;
+  position: relative;
+}
+.index #section-mv #slide img {
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 .index #section-content {
   padding-top: 30px;
@@ -1707,7 +1712,7 @@ textarea:focus {
   margin: 0 auto;
 }
 .example #section-mv {
-  background: url("../images/icatch4.png?v=20151208040227") no-repeat;
+  background: url("../images/icatch4.png?v=20151214022040") no-repeat;
 }
 .example #section-gnav ul li:first-child + * a {
   background-position: 130px -10px;
@@ -1727,7 +1732,7 @@ textarea:focus {
 .example #section-contents #lMenu ul li a {
   color: #8A390A;
   border-bottom: 1px dotted #8A390A;
-  background: url("../images/bg_list.gif?v=20151208040227") no-repeat left;
+  background: url("../images/bg_list.gif?v=20151214022040") no-repeat left;
   padding: 5px 0 5px 10px;
   display: block;
 }
@@ -1759,7 +1764,7 @@ textarea:focus {
   background: #ffeee9;
 }
 .example #section-contents #main .mark {
-  background: url("../images/bg_list.gif?v=20151208040227") no-repeat left;
+  background: url("../images/bg_list.gif?v=20151214022040") no-repeat left;
   padding: 5px 0 5px 10px;
 }
 .example #section-contents #main h3 {
