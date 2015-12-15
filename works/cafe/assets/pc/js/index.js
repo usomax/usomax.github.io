@@ -12,7 +12,7 @@
         // 設定
         var $width = 780; // 横幅
         var $height = 250; // 高さ
-        var $interval = 3000; // 切り替わりの間隔（ミリ秒）
+        var $interval = 5000; // 切り替わりの間隔（ミリ秒）
         var $fade_speed = 1000; // フェード処理の早さ（ミリ秒）
         $("#slide ul li").css({
             "position": "relative",
