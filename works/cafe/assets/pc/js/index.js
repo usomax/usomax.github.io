@@ -12,24 +12,10 @@
 (function() {
   (function() {
     $(function() {
-      var $fade_speed, $height, $interval, $width;
-      $width = 780;
-      $height = 250;
+      var $fade_speed, $interval;
       $interval = 5000;
       $fade_speed = 1000;
-      $('#slide ul li').css({
-        'position': 'relative',
-        'overflow': 'hidden',
-        'width': $width,
-        'height': $height
-      });
-      $('#slide ul li').css({
-        'position': 'absolute',
-        'top': 0,
-        'left': 0,
-        'opacity': 0
-      });
-      $('#slide ul li:first').addClass('active').animate({opacity:1});
+      $('#slide ul li:first').addClass('active').show();
       setInterval((function() {
         var $active, $next;
         $active = $('#slide ul li.active');
