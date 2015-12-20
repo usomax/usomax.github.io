@@ -11,11 +11,6 @@
 
 (function() {
   (function() {
-    $('#slide ul li').addClass('src', "./images/img_icatch1.jpg").show();
-    $('#slide ul li').addClass('src', "./images/img_icatch2.png").show();
-    $('#slide ul li').addClass('src', "./images/img_icatch3.png").show();
-    $('#slide ul li').addClass('src', "./images/img_icatch4.png").show();
-    $('#slide ul li').addClass('src', "./images/img_icatch5.png").show();
     $(function() {
       var $fade_speed, $height, $interval, $width;
       $width = 780;
@@ -28,12 +23,13 @@
         'width': $width,
         'height': $height
       });
-      $('#slide ul li').hide().css({
+      $('#slide ul li').css({
         'position': 'absolute',
         'top': 0,
-        'left': 0
+        'left': 0,
+        'opacity': 0
       });
-      $('#slide ul li:first').addClass('active').show();
+      $('#slide ul li:first').addClass('active').animate({opacity:1});
       setInterval((function() {
         var $active, $next;
         $active = $('#slide ul li.active');
