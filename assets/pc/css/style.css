@@ -1,17 +1,17 @@
 @charset "UTF-8";
 /* ------------------------------------------- SASS Information
  Name:      style.scss
- Author:
- Update:    2015-12-02 05:11:56 +0900
- Info:
+ Author:    編集者の名前
+ Update:    2015-12-21 02:37:35 +0900
+ Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
  helper
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      helper/_util.scss
- Author:
- Update:
+ Author:    編集者の名前
+ Update:    2015/09/16
  Info:      Util properties
 ----------------------------------------------------------- */
 .mt0 {
@@ -1350,6 +1350,18 @@
   font-weight: bold !important;
 }
 
+.normal {
+  font-weight: normal !important;
+}
+
+.w50 {
+  width: 50% !important;
+}
+
+.w100 {
+  width: 100% !important;
+}
+
 .hide {
   display: none !important;
 }
@@ -1383,8 +1395,8 @@
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      base/_reset.scss
- Author:
- Update:
+ Author:    編集者の名前
+ Update:    編集または保存した日付時刻を記述
  Info:      setting for reset style
 ----------------------------------------------------------- */
 html, body, div, span, applet, object, iframe,
@@ -1461,24 +1473,27 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* ------------------------------------------- SASS Information
  Name:      base/_default.scss
- Author:
- Update:
+ Author:    編集者の名前
+ Update:    編集または保存した日付時刻を記述
  Info:      setting for default style
 ----------------------------------------------------------- */
 html {
   width: 100%;
+  height: 100%;
 }
 
 body {
-  background-color: #fff;
+  background: #fff;
   color: #000;
-  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, メイリオ, sans-serif;
+  font-family: "Hiragino Sans", "ヒラギノ角ゴシック", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", sans-serif;
   font-size: 12px;
+  font-weight: 300;
   line-height: 1.6;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  width: 100%;
+  min-width: 1280px;
+  height: 100%;
 }
 
 a, a:link, a:focus {
@@ -1487,8 +1502,10 @@ a, a:link, a:focus {
 }
 
 img {
+  border: 0;
   vertical-align: bottom;
   line-height: 0;
+  -ms-interpolation-mode: bicubic;
 }
 
 textarea {
@@ -1501,7 +1518,14 @@ label {
 
 input:focus,
 textarea:focus {
-  background-color: #fff;
+  background: #fff;
+}
+
+.wHover, .oHover {
+  position: relative;
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
 }
 
 /* -----------------------------------------------------------
@@ -1512,21 +1536,14 @@ textarea:focus {
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_wrapper.scss
- Author:
- Update:
+ Author:    編集者の名前
+ Update:    編集または保存した日付時刻を記述
  Info:      layout of wrapper
 ----------------------------------------------------------- */
-#section-contents .wHover {
-  position: relative;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
-}
-
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_header.scss
- Author:
- Update:
+ Author:    編集者の名前
+ Update:    編集または保存した日付時刻を記述
  Info:      layout of header
 ----------------------------------------------------------- */
 #section-header {
@@ -1540,8 +1557,8 @@ textarea:focus {
 
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_footer.scss
- Author:
- Update:
+ Author:    編集者の名前
+ Update:    編集または保存した日付時刻を記述
  Info:      layout of footer
 ----------------------------------------------------------- */
 #section-footer {
@@ -1554,10 +1571,13 @@ textarea:focus {
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/page/_index.scss
- Author:
- Update:
- Info:      index layout
+ Author:    編集者の名前
+ Update:    編集または保存した日付時刻を記述
+ Info:      layout of index
 ----------------------------------------------------------- */
+.index {
+  min-width: 100%;
+}
 .index #section-contents {
   width: 100%;
   text-align: center;
@@ -1576,3 +1596,10 @@ textarea:focus {
   vertical-align: middle;
   color: white;
 }
+
+/* ------------------------------------------- SASS Information
+ Name:      layout/page/_example.scss
+ Author:    編集者の名前
+ Update:    編集または保存した日付時刻を記述
+ Info:      layout of example
+----------------------------------------------------------- */

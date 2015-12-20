@@ -1,74 +1,87 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og: http://ogp.me/ns# mixi: http://mixi-platform.com/ns# fb: http://www.facebook.com/2008/fbml" class="no-js">
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns# website: http://ogp.me/ns/website#" class="no-js">
   <head>
     <meta charset="utf-8">
+    <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
 
     <title>tu3q - portfolio</title>
     <meta name="robots" content="index,follow">
     <meta name="keywords" content="PC,Template">
-    <meta name="description" content="ポートフォリオサイトです">
-    <meta name="author" content="Y.takaoka">
-    <link rel="index" href="http://tu3q.tk/">
-    <link rel="canonical" href="http://tu3q.tk/">
+    <meta name="description" content="PCサイトのテンプレートです">
+    <meta name="author" content="">
+    <link rel="index" href="http://example.com/">
+    <link rel="canonical" href="http://example.com/">
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://example.com/sp/">
 
     <!-- Viewportの設定-->
     <meta name="viewport" content="width=1280">
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
     <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Facebook用OGP指定-->
-    <meta property="og:title" content="tu3q - portfolio">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="ポートフォリオサイトです">
     <meta property="og:site_name" content="tu3q - portfolio">
-    <meta property="og:url" content="http://tu3q.tk/">
+    <meta property="og:title" content="tu3q - portfolio">
+    <meta property="og:description" content="PCサイトのテンプレートです">
+    <meta property="og:url" content="http://example.com/">
+    <meta property="og:image" content="http://example.com/assets/common/images/ogp_image.jpg">
     <meta property="og:locale" content="ja_JP">
 
     <!-- アイコン指定(iOS/Android込)-->
-    <link rel="apple-touch-icon-precomposed" href="./assets/common/images/favicon.ico">
+    <link rel="image_src" href="http://example.com/assets/common/images/ogp_image.jpg">
+    <link rel="apple-touch-icon-precomposed" href="./assets/common/images/favicon.png">
     <link rel="shortcut icon" href="./assets/common/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./assets/common/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./assets/common/images/favicon.png" type="image/png">
 
     <!-- スタイルシート指定-->
     <link rel="stylesheet" href="./assets/pc/css/style.css">
 
     <!-- JavaScript指定-->
+    <script src="./assets/common/js/lib/lab.min.js"></script>
     <script src="./assets/common/js/common.js"></script>
+    <script>redirectSP("./sp/");</script>
 
     <!--[if lt IE 9]>
     <script src="./assets/common/js/lib/html5shiv.min.js"></script>
-    <script src="./assets/common/js/lib/selectivizr.min.js"></script>
     <![endif]-->
   </head>
 
   <body class="index">
-
-    <div id="section-header">
-      <h1>tu3q - portfolio</h1>
-    </div>
-    <!-- #section-header-->
-
-    <div id="section-contents">
-      <div id="works" class="section">
-        <ul>
-          <li><a href="works/cafe">cafe ゆるらぎ</a></li>
-          <li><a href="works/mistake">間違い探し</a></li>
-          <li><a href="works/pf2015">ポートフォリオ</a></li>
-          <li><a href="works/salon">美容室</a></li>
-          <li><a href="works/your">ブログ</a></li>
-        </ul>
+    <header id="section-header">
+      <div id="section-header">
+        <h1>tu3q - portfolio</h1>
       </div>
-      <!-- #works-->
-    </div>
-    <!-- #section-contents-->
+      <!-- #section-header-->
+    </header>
+    <!-- /#section-header-->
 
-    <div id="section-footer">
-      <p>Copyrigth &copy; 2015 tu3q ALL Rights Reserved.</p>
-    </div>
-    <!-- #section-footer-->
+    <main id="section-contents">
+      <div id="section-contents">
+        <div id="works" class="section">
+          <ul>
+            <li class="oHover"><a href="works/cafe">cafe ゆるらぎ</a></li>
+            <li class="oHover"><a href="works/mistake">間違い探し</a></li>
+            <li class="oHover"><a href="works/pf2015">ポートフォリオ</a></li>
+            <li class="oHover"><a href="works/salon">美容室</a></li>
+            <li class="oHover"><a href="works/your">ブログ</a></li>
+          </ul>
+        </div>
+        <!-- #works-->
+      </div>
+      <!-- #section-contents-->
+    </main>
+    <!-- /#section-contents-->
 
-    <script src="./assets/common/js/lib/lab.min.js"></script>
+    <footer id="section-footer">
+      <div id="section-footer">
+        <p>Copyrigth &copy; 2015 tu3q ALL Rights Reserved.</p>
+      </div>
+      <!-- #section-footer-->
+    </footer>
+    <!-- /#section-footer-->
+
     <script src="./assets/common/js/dispatcher.js"></script>
   </body>
 </html>

@@ -1,6 +1,6 @@
 
 /*!
- * example.js - サイト名（●●のスクリプト）
+ * common.js - サイト名（●●のスクリプト）
  * 動作環境： iPad / iPhone / Android
  * 対応ブラウザ： 標準ブラウザ / GoogleChrome
  * --------------------
@@ -11,14 +11,10 @@
 
 (function() {
   (function($) {
-    $('#sample').on('touchend', function() {
-      console.log('hogehoge');
-      return false;
-    });
     if (smartphoneType[3] === "iphone") {
-      return console.log('example: iphone');
+      return console.log('common: iphone');
     } else {
-      return console.log('example: android');
+      return console.log('common: android');
     }
   })(jQuery);
 

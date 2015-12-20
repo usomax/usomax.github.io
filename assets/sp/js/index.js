@@ -11,14 +11,14 @@
 
 (function() {
   (function($) {
-    $('#sample').on('click', function() {
+    $('#sample').on('touchend', function() {
       console.log('hogehoge');
       return false;
     });
     if (smartphoneType[3] === "iphone") {
-      return console.log('iphone');
+      return console.log('index: iphone');
     } else {
-      return console.log('android');
+      return console.log('index: android');
     }
   })(jQuery);
 
