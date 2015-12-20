@@ -11,6 +11,11 @@
 
 (function() {
   (function() {
+    $('#slide ul li').addClass('src', "./images/img_icatch1.jpg").show();
+    $('#slide ul li').addClass('src', "./images/img_icatch2.png").show();
+    $('#slide ul li').addClass('src', "./images/img_icatch3.png").show();
+    $('#slide ul li').addClass('src', "./images/img_icatch4.png").show();
+    $('#slide ul li').addClass('src', "./images/img_icatch5.png").show();
     $(function() {
       var $fade_speed, $height, $interval, $width;
       $width = 780;
