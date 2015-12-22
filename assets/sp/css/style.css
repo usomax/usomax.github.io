@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2015-12-15 10:59:29 +0900
+ Update:    2015-12-23 01:48:22 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1559,6 +1559,28 @@ textarea:focus {
  Update:    編集または保存した日付時刻を記述
  Info:      layout of index
 ----------------------------------------------------------- */
+.index {
+  min-width: 100%;
+}
+.index #section-contents {
+  width: 100%;
+  text-align: center;
+}
+.index #section-contents #works ul li {
+  display: table;
+  height: 320px;
+  width: 95%;
+  margin: 0 auto 25px;
+  font-size: 60px;
+  background: #FF9286;
+  border-radius: 10px;
+}
+.index #section-contents #works ul li a {
+  display: table-cell;
+  vertical-align: middle;
+  color: white;
+}
+
 /* ------------------------------------------- SASS Information
  Name:      layout/page/_example.scss
  Author:    編集者の名前
