@@ -16,7 +16,7 @@
     } else {
       console.log('common: modern');
     }
-    return $LAB.script(PC_JS_DIR + 'lib/jquery.wHover.js').wait(function() {
+    $LAB.script(PC_JS_DIR + 'lib/jquery.wHover.js').wait(function() {
       $('.wHover').wHover();
       return $('.oHover').on({
         mouseenter: function() {
@@ -26,6 +26,10 @@
           return $(this).stop().fadeTo('fast', 1);
         }
       });
+    });
+    $("header, main, footer").hide();
+    $("#loader").delay(600).fadeOut(300, function() {
+      return $("header, main, footer").fadeIn();
     });
   })(jQuery);
 

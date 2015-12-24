@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2015-12-23 02:34:08 +0900
+ Update:    2015-12-24 18:06:49 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1546,29 +1546,14 @@ textarea:focus {
  Update:    編集または保存した日付時刻を記述
  Info:      layout of header
 ----------------------------------------------------------- */
-#loader-bg {
-  display: none;
-  position: fixed;
+#loader {
+  background: #fff url("../images/img-loading.gif") center center no-repeat;
+  position: absolute;
   width: 100%;
   height: 100%;
   top: 0px;
   left: 0px;
-  background: #fff;
   z-index: 1;
-}
-
-#loader {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 200px;
-  height: 200px;
-  margin-top: -100px;
-  margin-left: -100px;
-  text-align: center;
-  color: #fff;
-  z-index: 2;
 }
 
 #section-header {
