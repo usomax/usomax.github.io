@@ -13,6 +13,7 @@
   var _sp, _ua, dataUriInfo, screenInfo, selector, selector_n, userAgent;
 
   window.SITE_URL = location.protocol + '//' + location.host + '/works/pf2015/';
+  //window.SITE_URL = location.protocol + '//' + location.host + '/';
 
   window.ASSETS_DIR = SITE_URL + 'assets/';
 

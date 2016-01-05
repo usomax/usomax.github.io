@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ------------------------------------------- SASS Information
  Name:      base/_config.scss
  Author:
@@ -1411,19 +1412,32 @@ body {
 }
 
 .mb100 {
-  margin-bottom: 150px;
+  margin-bottom: 100px;
 }
 
 .since {
-  font-size: 2em;
+  font-size: 23px;
+}
+.since:first-child + * {
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.h700 {
+  height: 700px;
 }
 
 .sinceCont {
-  width: 780px;
+  width: 502px;
   margin: 0 auto;
+}
+.sinceCont h2 {
+  font-size: 20px;
+  margin: 0;
 }
 .sinceCont p {
   text-align: left;
+  margin: 0;
 }
 
 .popup {
@@ -1467,10 +1481,6 @@ body {
   margin-left: -8px;
 }
 
-h1 {
-  font-size: 20em;
-}
-
 p {
   font-size: 15px;
 }
@@ -1482,6 +1492,9 @@ p {
   padding-top: 20px;
 }
 
+/* -----------------------------------------------------------
+ 左上ヘッダー
+----------------------------------------------------------- */
 #section-header #menu {
   position: fixed;
   top: 0;
@@ -1489,7 +1502,7 @@ p {
   z-index: 70;
   padding: 0;
   margin: 0;
-  background: #3a3a3a;
+  background: #f00;
 }
 #section-header #menu li {
   display: block;
@@ -1547,15 +1560,9 @@ p {
 }
 
 h1 {
-  font-size: 4em;
+  font-size: 40px;
   color: #4d4d4d;
   margin: 0;
-}
-
-h2 {
-  font-size: 35px;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }
 
 .intro p {
@@ -1566,6 +1573,10 @@ h2 {
 * --------------------------------------- */
 .section {
   text-align: center;
+}
+
+#section0 img {
+  margin-bottom: 40px;
 }
 
 #section3 h2 {
