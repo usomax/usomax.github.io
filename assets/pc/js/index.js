@@ -22,7 +22,7 @@
     mouseenter: function() {
       $(this).find("img").stop().animate({
         top: -$height / 3,
-        left: -$width / 3,
+        left: -$width / 4,
         width: $width * zoom,
         height: $height * zoom
       });
