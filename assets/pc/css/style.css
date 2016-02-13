@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2015-12-24 18:06:49 +0900
+ Update:    2016-02-09 15:46:47 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1574,6 +1574,7 @@ textarea:focus {
 #section-footer {
   width: 100%;
   text-align: center;
+  margin-top: 60px;
 }
 
 /* -----------------------------------------------------------
@@ -1586,25 +1587,74 @@ textarea:focus {
  Info:      layout of index
 ----------------------------------------------------------- */
 .index {
+  background-color: #fff;
+  background-image: url("http://www.transparenttextures.com/patterns/egg-shell.png");
   min-width: 100%;
+}
+.index #section-header h1 {
+  color: transparent;
+  background-color: black;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 3px 5px, rgba(255, 255, 255, 0.4) 1px 3px 3px;
+  -webkit-background-clip: text;
 }
 .index #section-contents {
   width: 100%;
-  text-align: center;
 }
-.index #section-contents #works ul li {
-  display: table;
+.index #section-contents #works #thumbs {
+  width: 950px;
+  margin: 0 auto;
+}
+.index #section-contents #works #thumbs .box {
   height: 320px;
-  width: 95%;
-  margin: 0 auto 25px;
-  font-size: 60px;
-  background: #FF9286;
-  border-radius: 10px;
+  width: 950px;
+  overflow: hidden;
+  margin: 45px 0 0 0;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  display: table;
 }
-.index #section-contents #works ul li a {
+.index #section-contents #works #thumbs .box:hover {
+  box-shadow: 0px 0px 10px 2px #000;
+  transition: box-shadow 0.3s;
+}
+.index #section-contents #works #thumbs .box:first-child {
+  margin-top: 0;
+}
+.index #section-contents #works #thumbs .box img {
+  height: 320px;
+  width: 950px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.index #section-contents #works #thumbs .box .overlay {
+  background: rgba(0, 0, 0, 0.7);
+  height: 320px;
+  width: 950px;
   display: table-cell;
   vertical-align: middle;
-  color: white;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  color: #fff;
+}
+.index #section-contents #works #thumbs .box .overlay .inbox h2 {
+  font-size: 36px;
+  font-weight: bold;
+}
+.index #section-contents #works #thumbs .box .overlay .inbox a {
+  color: #fff;
+}
+.index #section-contents #works #thumbs .box .overlay .inbox a:hover {
+  color: #ff9286;
+}
+.index #section-contents #works #thumbs .box .overlay .inbox .pink {
+  color: #ff9286;
+}
+.index #section-contents #works #thumbs .box .overlay .inbox .fs16 {
+  font-size: 16px;
 }
 
 /* ------------------------------------------- SASS Information
