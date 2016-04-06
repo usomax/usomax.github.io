@@ -1,54 +1,56 @@
-
-/*!
- * index.js - サイト名（●●のスクリプト）
- * 動作環境： Windows / Macintosh
- * 対応ブラウザ： GoogleChrome / Firefox / Safari / Opera / IE11 / IE10 / IE9 / IE8
- * --------------------
- * @version: 1.0
- * @author :
- * --------------------
- */
-
 (function() {
-  var $box, $height, $width, zoom;
-
-  (function($) {
-    if (browserType[1] === "ie8" || browserType[1] === "ie7") {
-
-    } else {
-      return console.log('index: modern');
-    }
-  }, $box = $(".box"), $height = $box.height(), $width = $box.width(), zoom = 1.5, $box.on({
-    mouseenter: function() {
-      $(this).find("img").stop().animate({
-        top: -$height / 3,
-        left: -$width / 4,
-        width: $width * zoom,
-        height: $height * zoom
-      });
-      return $(this).find(".overlay").stop().animate({
-        opacity: 1
-      });
-    },
-    mouseleave: function() {
-      $(this).find("img").stop().animate({
-        top: 0,
-        left: 0,
-        width: $width,
-        height: $height
-      });
-      return $(this).find(".overlay").stop().animate({
-        opacity: 0
-      });
-    }
-
-    /*$("li").on
-      mouseenter: ->
-        $(this).addClass "mOver"
-      mouseleave: ->
-        $(this).removeClass "mOver"
-     */
-  }))(jQuery);
+  $(function() {
+    var $all, $box, $height, $html, $jade, $jquery, $list, $width, selectedClass, zoom;
+    $box = $('.box');
+    $list = $('li');
+    $height = $box.height();
+    $width = $box.width();
+    zoom = 1.5;
+    selectedClass = '';
+    $all = $('.all').length;
+    $html = $('.html').length;
+    $jade = $('.jade').length;
+    $jquery = $('.jquery').length;
+    $('li span').eq(0).html($all);
+    $('li span').eq(1).html($html);
+    $('li span').eq(2).html($jade);
+    $('li span').eq(3).html($jquery);
+    $box.on({
+      'mouseenter': function() {
+        $(this).find('img').stop().animate({
+          top: -$height / 3,
+          left: -$width / 4,
+          width: $width * zoom,
+          height: $height * zoom
+        });
+        $(this).find('.overlay').stop().animate({
+          opacity: 1
+        });
+      },
+      'mouseleave': function() {
+        $(this).find('img').stop().animate({
+          top: 0,
+          left: 0,
+          width: $width,
+          height: $height
+        });
+        $(this).find('.overlay').stop().animate({
+          opacity: 0
+        });
+      }
+    });
+    $list.on('click', function() {
+      selectedClass = $(this).attr('data-rel');
+      $list.not('.' + selectedClass).removeClass('active');
+      $(this).addClass('active');
+      $box.addClass('active').fadeTo(100, 0);
+      $box.not('.' + selectedClass).removeClass('active').fadeOut();
+      setTimeout((function() {
+        $('.' + selectedClass).fadeIn();
+        $box.fadeTo(500, 1);
+      }), 500);
+    });
+  });
 
 }).call(this);
 

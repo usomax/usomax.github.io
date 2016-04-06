@@ -82,14 +82,14 @@
         }
       }
     $("#gameStart").click(function(){
-     $(this).fadeOut("slow");
+     $(this).hide("slow");
      gameStart();
     });
     $("#gameReset").click(function(){
-     gameStart();
       if (level >= 1) {
         level = 0;
         dim = DIM_FIRST;
+        gameStart();
         return false;
       }
     });

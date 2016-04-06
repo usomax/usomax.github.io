@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2016-02-09 15:46:47 +0900
+ Update:    2016-04-06 17:56:59 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1598,13 +1598,32 @@ textarea:focus {
   -webkit-background-clip: text;
 }
 .index #section-contents {
-  width: 100%;
-}
-.index #section-contents #works #thumbs {
   width: 950px;
   margin: 0 auto;
 }
-.index #section-contents #works #thumbs .box {
+.index #section-contents ul {
+  text-align: center;
+}
+.index #section-contents ul li {
+  padding: 10px;
+  border-bottom: 1px #ccc dotted;
+  text-decoration: none;
+  font-family: Arial;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #333;
+  display: inline-block;
+}
+.index #section-contents ul li.active {
+  background: #ff9286;
+  color: white;
+}
+.index #section-contents ul li:hover {
+  cursor: pointer;
+  background: #333;
+  color: #eee;
+}
+.index #section-contents .box {
   height: 320px;
   width: 950px;
   overflow: hidden;
@@ -1615,21 +1634,21 @@ textarea:focus {
   border-radius: 8px;
   display: table;
 }
-.index #section-contents #works #thumbs .box:hover {
+.index #section-contents .box:hover {
   box-shadow: 0px 0px 10px 2px #000;
   transition: box-shadow 0.3s;
 }
-.index #section-contents #works #thumbs .box:first-child {
+.index #section-contents .box:first-child {
   margin-top: 0;
 }
-.index #section-contents #works #thumbs .box img {
+.index #section-contents .box img {
   height: 320px;
   width: 950px;
   position: absolute;
   top: 0;
   left: 0;
 }
-.index #section-contents #works #thumbs .box .overlay {
+.index #section-contents .box .overlay {
   background: rgba(0, 0, 0, 0.7);
   height: 320px;
   width: 950px;
@@ -1640,20 +1659,20 @@ textarea:focus {
   opacity: 0;
   color: #fff;
 }
-.index #section-contents #works #thumbs .box .overlay .inbox h2 {
+.index #section-contents .box .overlay .inbox h2 {
   font-size: 36px;
   font-weight: bold;
 }
-.index #section-contents #works #thumbs .box .overlay .inbox a {
+.index #section-contents .box .overlay .inbox a {
   color: #fff;
 }
-.index #section-contents #works #thumbs .box .overlay .inbox a:hover {
+.index #section-contents .box .overlay .inbox a:hover {
   color: #ff9286;
 }
-.index #section-contents #works #thumbs .box .overlay .inbox .pink {
+.index #section-contents .box .overlay .inbox .pink {
   color: #ff9286;
 }
-.index #section-contents #works #thumbs .box .overlay .inbox .fs16 {
+.index #section-contents .box .overlay .inbox .fs16 {
   font-size: 16px;
 }
 
