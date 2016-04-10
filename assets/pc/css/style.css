@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2016-04-11 04:06:13 +0900
+ Update:    2016-04-11 04:17:51 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1606,6 +1606,14 @@ textarea:focus {
 .index #section-contents ul {
   text-align: center;
 }
+.index #section-contents ul:after {
+  display: block;
+  content: "";
+  border-bottom: 1px #ccc dotted;
+  margin: 0 auto;
+  padding-top: 10px;
+  width: 380px;
+}
 .index #section-contents ul li {
   padding: 10px;
   text-decoration: none;
@@ -1621,6 +1629,8 @@ textarea:focus {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
+  border: #333 1px solid;
+  margin: -1px;
 }
 .index #section-contents ul li:hover {
   cursor: pointer;
@@ -1628,7 +1638,6 @@ textarea:focus {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
-  color: #333;
   margin: -1px;
 }
 .index #section-contents .box {
