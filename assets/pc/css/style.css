@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2016-04-06 17:56:59 +0900
+ Update:    2016-04-11 03:49:16 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1557,7 +1557,8 @@ textarea:focus {
 }
 
 #section-header {
-  width: 100%;
+  width: 950px;
+  margin: 0 auto;
   text-align: center;
   font-size: 70px;
   padding: 30px 0;
@@ -1572,9 +1573,10 @@ textarea:focus {
  Info:      layout of footer
 ----------------------------------------------------------- */
 #section-footer {
-  width: 100%;
+  width: 950px;
+  margin: 0 auto;
   text-align: center;
-  margin-top: 60px;
+  padding: 50px 0 20px;
 }
 
 /* -----------------------------------------------------------
@@ -1606,7 +1608,6 @@ textarea:focus {
 }
 .index #section-contents ul li {
   padding: 10px;
-  border-bottom: 1px #ccc dotted;
   text-decoration: none;
   font-family: Arial;
   text-transform: uppercase;
@@ -1615,13 +1616,24 @@ textarea:focus {
   display: inline-block;
 }
 .index #section-contents ul li.active {
-  background: #ff9286;
+  background: #9a9a9a;
   color: white;
+  /* box-shadow */
+  -moz-box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.48) inset;
+  -webkit-box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.48) inset;
+  box-shadow: 0px 2px 3px 3px rgba(0, 0, 0, 0.48) inset;
+  /* border-radius */
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
 }
 .index #section-contents ul li:hover {
   cursor: pointer;
-  background: #333;
-  color: #eee;
+  border: #333 1px solid;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  color: #333;
 }
 .index #section-contents .box {
   height: 320px;

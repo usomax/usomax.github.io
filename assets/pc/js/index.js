@@ -1,20 +1,21 @@
 (function() {
   $(function() {
-    var $all, $box, $height, $html, $jade, $jquery, $list, $width, selectedClass, zoom;
+    var $allCount, $box, $height, $htmlCount, $jadeCount, $jqueryCount, $list, $width, selectedClass, zoom;
     $box = $('.box');
     $list = $('li');
     $height = $box.height();
     $width = $box.width();
     zoom = 1.5;
     selectedClass = '';
-    $all = $('.all').length;
-    $html = $('.html').length;
-    $jade = $('.jade').length;
-    $jquery = $('.jquery').length;
-    $('li span').eq(0).html($all);
-    $('li span').eq(1).html($html);
-    $('li span').eq(2).html($jade);
-    $('li span').eq(3).html($jquery);
+    $list.eq(0).addClass('active');
+    $allCount = $('.all').length;
+    $htmlCount = $('.html').length;
+    $jadeCount = $('.jade').length;
+    $jqueryCount = $('.jquery').length;
+    $list.eq(0).append('(' + $allCount + ')');
+    $list.eq(1).append('(' + $htmlCount + ')');
+    $list.eq(2).append('(' + $jadeCount + ')');
+    $list.eq(3).append('(' + $jqueryCount + ')');
     $box.on({
       'mouseenter': function() {
         $(this).find('img').stop().animate({
