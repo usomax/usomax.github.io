@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2016-04-11 04:17:51 +0900
+ Update:    2016-04-11 04:37:28 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1577,6 +1577,26 @@ textarea:focus {
   margin: 0 auto;
   text-align: center;
   padding: 50px 0 20px;
+}
+#section-footer #page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 77%;
+}
+#section-footer #page-top a {
+  background: #666;
+  text-decoration: none;
+  color: #fff;
+  width: 100px;
+  padding: 30px 0;
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+}
+#section-footer #page-top a:hover {
+  text-decoration: none;
+  background: #999;
 }
 
 /* -----------------------------------------------------------
