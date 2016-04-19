@@ -63,10 +63,8 @@
       }, 500);
       return false;
     });
-    $('h2').on('click', function() {
-      $('ul').animate({
-        display: block
-      }, 500);
+    $('label').on('click', function() {
+      $('ul').slideToggle(300);
     });
     $list.on('click', function() {
       selectedClass = $(this).attr('data-rel');

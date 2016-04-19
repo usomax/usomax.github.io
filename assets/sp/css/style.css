@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2016-04-19 09:43:58 +0900
+ Update:    2016-04-20 02:43:17 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1634,6 +1634,7 @@ textarea:focus {
 .index #section-contents .ac_menu ul {
   text-align: center;
   transition: all 0.5s;
+  display: none;
 }
 .index #section-contents .ac_menu ul:after {
   display: block;
@@ -1666,15 +1667,6 @@ textarea:focus {
   -webkit-border-radius: 6px;
   border-radius: 6px;
   margin: -1px;
-}
-.index #section-contents .ac_menu input[type="checkbox"].bellows + ul {
-  height: 0;
-  /* チェックが入っていない時の高さ */
-  overflow: hidden;
-}
-.index #section-contents .ac_menu input[type="checkbox"].bellows:checked + ul {
-  height: 140px;
-  /* チェックが入っているときの高さ */
 }
 .index #section-contents .box {
   height: 320px;
