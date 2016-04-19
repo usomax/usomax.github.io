@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2015-12-23 01:48:22 +0900
+ Update:    2016-04-19 09:43:58 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1534,22 +1534,69 @@ textarea:focus {
  Update:    編集または保存した日付時刻を記述
  Info:      layout of wrapper
 ----------------------------------------------------------- */
-#section-contents {
-  overflow-x: hidden;
-}
-
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_header.scss
  Author:    編集者の名前
  Update:    編集または保存した日付時刻を記述
  Info:      layout of header
 ----------------------------------------------------------- */
+#loader {
+  background: #fff url("../images/img-loading.gif") center center no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+#section-header {
+  text-align: center;
+  padding: 30px 0;
+  font-weight: bold;
+  color: #4a4a4a;
+}
+#section-header h1 {
+  font-size: 160%;
+  color: transparent;
+  background-color: black;
+  text-shadow: rgba(255, 255, 255, 0.5) 0 3px 5px, rgba(255, 255, 255, 0.4) 1px 3px 3px;
+  -webkit-background-clip: text;
+}
+
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_footer.scss
  Author:    編集者の名前
  Update:    編集または保存した日付時刻を記述
  Info:      layout of footer
 ----------------------------------------------------------- */
+#section-footer {
+  width: 950px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px 0 20px;
+}
+#section-footer #page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 77%;
+}
+#section-footer #page-top a {
+  background: #666;
+  text-decoration: none;
+  color: #fff;
+  width: 100px;
+  padding: 30px 0;
+  text-align: center;
+  display: block;
+  border-radius: 5px;
+}
+#section-footer #page-top a:hover {
+  text-decoration: none;
+  background: #999;
+}
+
 /* -----------------------------------------------------------
  page layout
 ----------------------------------------------------------- */
@@ -1560,25 +1607,125 @@ textarea:focus {
  Info:      layout of index
 ----------------------------------------------------------- */
 .index {
+  background-color: #fff;
+  background-image: url("http://www.transparenttextures.com/patterns/egg-shell.png");
   min-width: 100%;
 }
 .index #section-contents {
   width: 100%;
-  text-align: center;
+  margin: 0 auto;
 }
-.index #section-contents #works ul li {
-  display: table;
+.index #section-contents label {
+  padding: 10px;
+  text-align: center;
+  display: block;
+  margin: 0;
+  color: #333;
+  border: 1px solid #333;
+  cursor: pointer;
+}
+.index #section-contents input[type="checkbox"].bellows {
+  display: none;
+  /* チェックボックスの非表示 */
+}
+.index #section-contents .ac_menu {
+  /* ▽▽アコーディオン開閉指定▽▽ */
+}
+.index #section-contents .ac_menu ul {
+  text-align: center;
+  transition: all 0.5s;
+}
+.index #section-contents .ac_menu ul:after {
+  display: block;
+  content: "";
+  border-bottom: 1px #ccc dotted;
+  margin: 0 auto;
+  padding-top: 10px;
+  width: 380px;
+}
+.index #section-contents .ac_menu li {
+  padding: 10px;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #333;
+}
+.index #section-contents .ac_menu li.active {
+  background: #333;
+  color: white;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  border: #333 1px solid;
+  margin: -1px;
+}
+.index #section-contents .ac_menu li:hover {
+  cursor: pointer;
+  border: #333 1px solid;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  margin: -1px;
+}
+.index #section-contents .ac_menu input[type="checkbox"].bellows + ul {
+  height: 0;
+  /* チェックが入っていない時の高さ */
+  overflow: hidden;
+}
+.index #section-contents .ac_menu input[type="checkbox"].bellows:checked + ul {
+  height: 140px;
+  /* チェックが入っているときの高さ */
+}
+.index #section-contents .box {
   height: 320px;
   width: 95%;
-  margin: 0 auto 25px;
-  font-size: 60px;
-  background: #FF9286;
-  border-radius: 10px;
+  overflow: hidden;
+  margin: 45px auto 0 auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  display: table;
 }
-.index #section-contents #works ul li a {
+.index #section-contents .box:hover {
+  box-shadow: 0px 0px 10px 2px #000;
+  transition: box-shadow 0.3s;
+}
+.index #section-contents .box:first-child {
+  margin-top: 0;
+}
+.index #section-contents .box img {
+  height: 320px;
+  width: 950px;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.index #section-contents .box .overlay {
+  background: rgba(0, 0, 0, 0.5);
+  height: 320px;
+  width: 950px;
   display: table-cell;
   vertical-align: middle;
-  color: white;
+  text-align: center;
+  position: relative;
+  color: #fff;
+}
+.index #section-contents .box .overlay .inbox h3 {
+  font-size: 36px;
+  font-weight: bold;
+}
+.index #section-contents .box .overlay .inbox a {
+  color: #fff;
+}
+.index #section-contents .box .overlay .inbox a:hover {
+  color: #ff9286;
+}
+.index #section-contents .box .overlay .inbox .pink {
+  color: #ff9286;
+}
+.index #section-contents .box .overlay .inbox .fs16 {
+  font-size: 16px;
 }
 
 /* ------------------------------------------- SASS Information

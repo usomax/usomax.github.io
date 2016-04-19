@@ -12,10 +12,14 @@
 (function() {
   (function($) {
     if (smartphoneType[3] === "iphone") {
-      return console.log('common: iphone');
+      console.log('common: iphone');
     } else {
-      return console.log('common: android');
+      console.log('common: android');
     }
+    $("header, main, footer").hide();
+    $("#loader").delay(600).fadeOut(300, function() {
+      return $("header, main, footer").fadeIn();
+    });
   })(jQuery);
 
 }).call(this);

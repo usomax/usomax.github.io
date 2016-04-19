@@ -5,9 +5,9 @@
 
     <title>tu3q - portfolio</title>
     <meta name="robots" content="index,follow">
-    <meta name="keywords" content="SP,Template">
-    <meta name="description" content="SPサイトのテンプレートです">
-    <meta name="author" content="">
+    <meta name="keywords" content="landing,landing page">
+    <meta name="description" content="作品にアクセスするために作成したランディングページです。">
+    <meta name="author" content="Y.takaoka">
     <link rel="index" href="http://example.com/sp/">
     <link rel="canonical" href="http://example.com/">
 
@@ -20,7 +20,7 @@
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="tu3q - portfolio">
     <meta property="og:title" content="tu3q - portfolio">
-    <meta property="og:description" content="SPサイトのテンプレートです">
+    <meta property="og:description" content="作品にアクセスするために作成したランディングページです。">
     <meta property="og:url" content="http://example.com/sp/">
     <meta property="og:image" content="http://example.com/assets/common/images/ogp_image.jpg">
     <meta property="og:locale" content="ja_JP">
@@ -49,31 +49,80 @@
     <!-- /#section-header-->
 
     <main id="section-contents">
-      <div id="section-contents">
-        <div id="works" class="section">
-          <ul>
-            <li class="oHover"><a href="works/cafe">cafe ゆるらぎぎぎ
-                <!--img(src="http://placehold.jp/84/cc9999/993333/1145x514.png")--></a></li>
-            <li class="oHover"><a href="works/mistake">間違い探し</a></li>
-            <li class="oHover"><a href="works/pf2015">ポートフォリオ</a></li>
-            <li class="oHover"><a href="works/salon">美容室</a></li>
-            <li class="oHover"><a href="works/your">ブログ</a></li>
-          </ul>
-        </div>
-        <!-- #works-->
+      <div class="ac_menu">
+        <label for="nav01">MENU</label>
+        <input id="nav01" type="checkbox" class="bellows">
+        <ul>
+          <li href="" data-rel="all">All</li>
+          <li data-rel="html">html/css</li>
+          <li data-rel="jade">jade/scss</li>
+          <li data-rel="jquery">jQuery</li>
+        </ul>
       </div>
-      <!-- #section-contents-->
+      <div class="box jade jquery all"><img src="../assets/sp/images/img_cafe.png" width="120" alt="">
+        <div class="overlay">
+          <div class="inbox">
+            <h3><a href="works/cafe" target="blank">カフェゆるらぎ</a></h3><a href="http://www.coolwebwindow.com/temp/source/public/pub019/src/index.html" target="blank">模写元様URL</a>
+            <p>2015年 10月</p>
+            <p>jade scss jQuery</p>
+            <p>コーディング模写3回目</p>
+            <p class="mt10">クロスフェードの実装に苦戦しました。</p>
+          </div>
+        </div>
+      </div>
+      <div class="box jade jquery all"><img src="../assets/sp/images/img_mistake.png" width="150" alt="">
+        <div class="overlay">
+          <div class="inbox">
+            <h3> <a href="works/mistake" target="blank">間違い探し </a></h3>
+            <p>2015年 8月</p>
+            <p>jade scss jQuery</p>
+            <p class="mt10"><span class="bold fs16">「jQueryに慣れていく」</span>という事を名目に作り上げたサイトです。                    </p>
+          </div>
+        </div>
+      </div>
+      <div class="box jade jquery all"><img src="../assets/sp/images/img_pf2015.png" width="150" alt="">
+        <div class="overlay">
+          <div class="inbox">
+            <h3> <a href="works/pf2015" target="blank">ポートフォリオ</a></h3>
+            <p>2015年 8月</p>
+            <p>jade scss jQuery</p>
+            <p class="mt10">とある公式サイトに似せた自分のポートフォリオサイトを作りたいと思い作成しました。<br>友人の勧めでこのサイトで<span class="bold fs16">初めてJadeとscssを使い</span>コーディングをしました。</p>
+          </div>
+        </div>
+      </div>
+      <div class="box html jquery all"><img src="../assets/sp/images/img_salon.png" width="150" alt="">
+        <div class="overlay">
+          <div class="inbox">
+            <h3><a href="works/salon/" target="blank">美容室</a></h3><a href="http://www.coolwebwindow.com/temp/source/public/pub025/src/" target="blank">模写元様サイト          </a>
+            <p>2014年 11月</p>
+            <p>html css jQuery</p>
+            <p class="mt10">コーディング模写<span class="bold fs16">2回目</span>です。<br>1回目よりも規模の大きなサイトに挑戦しようと思い、2カラムのサイトを作成しました。<br>jQueryのライブラリを使用してスライダーの実装に挑戦しましたが、ここが一番苦戦しました。</p>
+          </div>
+        </div>
+      </div>
+      <div class="box html all"><img src="../assets/sp/images/img_blog.png" width="150" alt="">
+        <div class="overlay">
+          <div class="inbox">
+            <h3> <a href="works/your" target="blank">ブログ</a></h3><a href="http://www.coolwebwindow.com/temp/source/private/f001/" target="blank">模写元様サイト</a>
+            <p>2014年 10月</p>
+            <p>html css</p>
+            <p class="mt10">コーディング模写<span class="bold fs16">1回目</span>です。<br>専門学校卒業後htmlとcssの自主勉強の末<span class="bold fs16">初めて</span>コーディングをしたサイトです。<br>コーディング初心者でしたが、外見をなんとか元のサイトに近づける事ができました。</p>
+          </div>
+        </div>
+      </div>
     </main>
     <!-- #section-contents-->
 
     <footer id="section-footer">
       <div id="section-footer">
+        <p id="page-top"><a href="#wrap">PAGE TOP</a></p>
         <p>Copyrigth &copy; 2015 tu3q ALL Rights Reserved.</p>
       </div>
       <!-- #section-footer-->
     </footer>
     <!-- /#section-footer-->
 
+    <div id="loader"></div>
     <script src="../assets/common/js/lib/lab.min.js"></script>
     <script src="../assets/common/js/dispatcher.js"></script>
   </body>

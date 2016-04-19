@@ -11,15 +11,26 @@
 
 (function() {
   (function($) {
-    $('#sample').on('touchend', function() {
-      console.log('hogehoge');
-      return false;
-    });
     if (smartphoneType[3] === "iphone") {
-      return console.log('example: iphone');
+      console.log('example: iphone');
     } else {
-      return console.log('example: android');
+      console.log('example: android');
     }
+    $LAB.script(SP_JS_DIR + 'lib/jquery.wHover.js').wait(function() {
+      $('.wHover').wHover();
+      return $('.oHover').on({
+        mouseenter: function() {
+          return $(this).stop().fadeTo('fast', .6);
+        },
+        mouseleave: function() {
+          return $(this).stop().fadeTo('fast', 1);
+        }
+      });
+    });
+    $("header, main, footer").hide();
+    return $("#loader").delay(600).fadeOut(300, function() {
+      return $("header, main, footer").fadeIn();
+    });
   })(jQuery);
 
 }).call(this);
