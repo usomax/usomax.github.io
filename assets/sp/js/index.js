@@ -64,7 +64,7 @@
       return false;
     });
     $('label').on('click', function() {
-      $('ul').slideToggle(300);
+      $('ul').stop().slideToggle(300);
     });
     $list.on('click', function() {
       selectedClass = $(this).attr('data-rel');

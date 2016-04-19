@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2016-04-20 02:43:17 +0900
+ Update:    2016-04-20 02:52:45 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1633,7 +1633,6 @@ textarea:focus {
 }
 .index #section-contents .ac_menu ul {
   text-align: center;
-  transition: all 0.5s;
   display: none;
 }
 .index #section-contents .ac_menu ul:after {
