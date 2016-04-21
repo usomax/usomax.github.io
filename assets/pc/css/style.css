@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    編集者の名前
- Update:    2016-04-19 02:59:09 +0900
+ Update:    2016-04-22 03:46:51 +0900
  Info:      サイト情報を記述
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1668,6 +1668,8 @@ textarea:focus {
   position: relative;
   top: 0;
   left: 0;
+  -moz-border-radius: 8px;
+  -webkit-border-radius: 8px;
   border-radius: 8px;
   display: table;
 }
