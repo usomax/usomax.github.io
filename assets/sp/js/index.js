@@ -21,6 +21,10 @@
     } else {
       console.log('index: android');
     }
+    $('h1').on('click', function() {
+      $('.menu-trigger').toggleClass('active');
+      $('ul').stop().slideToggle(300);
+    });
     $box = $('.box');
     $list = $('li');
     $height = $box.height();
@@ -62,9 +66,6 @@
         scrollTop: 0
       }, 500);
       return false;
-    });
-    $('label').on('click', function() {
-      $('ul').stop().slideToggle(300);
     });
     $list.on('click', function() {
       selectedClass = $(this).attr('data-rel');
