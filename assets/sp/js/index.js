@@ -43,24 +43,6 @@
     showFlag = false;
     topBtn = $('#page-top');
     topBtn.css('bottom', '-100px');
-    showFlag = false;
-    $(window).scroll(function() {
-      if ($(this).scrollTop() > 300) {
-        if (showFlag === false) {
-          showFlag = true;
-          topBtn.stop().animate({
-            'bottom': '20px'
-          }, 200);
-        }
-      } else {
-        if (showFlag) {
-          showFlag = false;
-          topBtn.stop().animate({
-            'bottom': '-100px'
-          }, 200);
-        }
-      }
-    });
     topBtn.click(function() {
       $('body,html').animate({
         scrollTop: 0

@@ -1,16 +1,16 @@
 @charset "UTF-8";
 /* ------------------------------------------- SASS Information
  Name:      style.scss
- Author:    編集者の名前
- Update:    2016-04-22 03:46:51 +0900
- Info:      サイト情報を記述
+ Author:    Y.takaoka
+ Update:    2016-04-22 12:29:25 +0900
+ Info:      成果物を掲載したランディングページ
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
  helper
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      helper/_util.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    2015/09/16
  Info:      Util properties
 ----------------------------------------------------------- */
@@ -1395,7 +1395,7 @@
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      base/_reset.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      setting for reset style
 ----------------------------------------------------------- */
@@ -1473,7 +1473,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* ------------------------------------------- SASS Information
  Name:      base/_default.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      setting for default style
 ----------------------------------------------------------- */
@@ -1536,13 +1536,13 @@ textarea:focus {
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_wrapper.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of wrapper
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_header.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of header
 ----------------------------------------------------------- */
@@ -1568,7 +1568,7 @@ textarea:focus {
 
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_footer.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of footer
 ----------------------------------------------------------- */
@@ -1604,7 +1604,7 @@ textarea:focus {
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/page/_index.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of index
 ----------------------------------------------------------- */
@@ -1717,7 +1717,7 @@ textarea:focus {
 
 /* ------------------------------------------- SASS Information
  Name:      layout/page/_example.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of example
 ----------------------------------------------------------- */

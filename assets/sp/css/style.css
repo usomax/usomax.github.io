@@ -1,16 +1,16 @@
 @charset "UTF-8";
 /* ------------------------------------------- SASS Information
  Name:      style.scss
- Author:    編集者の名前
- Update:    2016-04-22 03:48:22 +0900
- Info:      サイト情報を記述
+ Author:    Y.takaoka
+ Update:    2016-04-22 12:51:34 +0900
+ Info:      成果物を掲載したランディングページ
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
  helper
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      helper/_util.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    2015/09/16
  Info:      Util properties
 ----------------------------------------------------------- */
@@ -1395,7 +1395,7 @@
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      base/_reset.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      setting for reset style
 ----------------------------------------------------------- */
@@ -1473,7 +1473,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* ------------------------------------------- SASS Information
  Name:      base/_default.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      setting for default style
 ----------------------------------------------------------- */
@@ -1530,13 +1530,13 @@ textarea:focus {
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_wrapper.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of wrapper
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_header.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of header
 ----------------------------------------------------------- */
@@ -1627,7 +1627,7 @@ textarea:focus {
   -webkit-background-clip: text;
   position: relative;
 }
-#section-header ul li:hover {
+#section-header ul li.active {
   cursor: pointer;
   border: #333 1px solid;
   -moz-border-radius: 6px;
@@ -1638,34 +1638,44 @@ textarea:focus {
 
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_footer.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of footer
 ----------------------------------------------------------- */
 #section-footer {
   margin: 0 auto;
   text-align: center;
-  padding: 50px 0 20px;
+  padding-top: 30px;
+  position: relative;
 }
 #section-footer #page-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
   font-size: 77%;
+  margin-top: 10px;
 }
 #section-footer #page-top a {
-  background: #666;
+  background: #333;
   text-decoration: none;
   color: #fff;
-  width: 100px;
+  width: 100%;
   padding: 30px 0;
   text-align: center;
   display: block;
-  border-radius: 5px;
 }
-#section-footer #page-top a:hover {
-  text-decoration: none;
-  background: #999;
+#section-footer #page-top a:after {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  margin-top: 27px;
+  width: 8px;
+  height: 8px;
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 /* -----------------------------------------------------------
@@ -1673,7 +1683,7 @@ textarea:focus {
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/page/_index.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of index
 ----------------------------------------------------------- */
@@ -1714,7 +1724,8 @@ textarea:focus {
   width: 950px;
   position: absolute;
   top: 0;
-  left: 0;
+  left: 50%;
+  margin-left: -475px;
 }
 .index #section-contents .box a {
   display: block;
@@ -1747,7 +1758,7 @@ textarea:focus {
 
 /* ------------------------------------------- SASS Information
  Name:      layout/page/_example.scss
- Author:    編集者の名前
+ Author:    Y.takaoka
  Update:    編集または保存した日付時刻を記述
  Info:      layout of example
 ----------------------------------------------------------- */
