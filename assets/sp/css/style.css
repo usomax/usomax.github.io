@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-04-22 12:51:34 +0900
+ Update:    2016-04-22 19:37:34 +0900
  Info:      成果物を掲載したランディングページ
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1633,7 +1633,6 @@ textarea:focus {
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
   border-radius: 6px;
-  margin: -1px;
 }
 
 /* ------------------------------------------- SASS Information
@@ -1660,6 +1659,20 @@ textarea:focus {
   padding: 30px 0;
   text-align: center;
   display: block;
+}
+#section-footer #page-top a:before {
+  display: block;
+  content: "";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  margin-top: 15px;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+  border-radius: 16px;
+  background: #222;
+  width: 30px;
+  height: 30px;
 }
 #section-footer #page-top a:after {
   display: block;
