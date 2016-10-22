@@ -378,7 +378,7 @@
       $win.off('load scroll resize');
     });
     $(this).animate({top: "+=45px"}, 700).animate({top: '50'},speed, 'easeOutBounce', function() {
-      Loader.page('../../../lolis/');
+      Loader.page('../../lolis/');
       $("#section-ajax").delay(delay).fadeIn(delay, function() {
         $('.logo').removeClass('hide');
         $('.logo').css('pointer-events','auto');
