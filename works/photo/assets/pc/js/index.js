@@ -385,6 +385,7 @@
       $win.off('load scroll resize');
     });
     $(this).animate({top: "+=45px"}, 700).animate({top: 100},speed, 'easeOutBounce', function() {
+      /* 更新 */
       Loader.page('/works/photo/lolis/');
       $("#section-ajax").delay(delay).fadeIn(delay, function() {
         $('.logo').removeClass('hide');
