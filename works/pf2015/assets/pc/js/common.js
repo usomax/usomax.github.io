@@ -1,6 +1,6 @@
 
 /*!
- * example.js - サイト名（●●のスクリプト）
+ * common.js - サイト名（●●のスクリプト）
  * 動作環境： Windows / Macintosh
  * 対応ブラウザ： GoogleChrome / Firefox / Safari / Opera / IE11 / IE10 / IE9 / IE8
  * --------------------
@@ -12,9 +12,9 @@
 (function() {
   (function($) {
     if (browserType[1] === "ie8" || browserType[1] === "ie7") {
-
+      $LAB.script(COMMON_JS_DIR + 'lib/selectivizr.min.js');
     } else {
-      console.log('example: modern');
+      console.log('common: modern');
     }
     $LAB.script(PC_JS_DIR + 'lib/jquery.wHover.js').wait(function() {
       $('.wHover').wHover();

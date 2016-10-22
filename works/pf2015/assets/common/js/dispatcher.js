@@ -11,47 +11,54 @@
 
 (function() {
   $LAB.script(COMMON_JS_DIR + 'lib/jquery-1.10.2.min.js').wait(function() {
-    $LAB.script(COMMON_JS_DIR + 'lib/jquery.fullPage.min.js');
-    $LAB.script(COMMON_JS_DIR + 'lib/flexGauge.js');
-    var pathname, pcorsp;
-    pathname = location.pathname;
+    var SOURCE_DIR, pathname;
     if ($('.mobile').length) {
-      pcorsp = SP_DIR;
+      SOURCE_DIR = SP_JS_DIR;
     } else {
-      pcorsp = PC_DIR;
-      $LAB.script(PC_JS_DIR + 'lib/jquery.wHover.js').wait(function() {
-        return $('.wHover').wHover();
-      });
+      SOURCE_DIR = PC_JS_DIR;
     }
+    pathname = location.pathname;
     $.route = function() {
       $.each(arguments, function(index) {
         var func, path;
         path = this['path'];
         func = this['func'];
-        path && func && pathname.match(path) && $(function() {
-          func.apply(this);
+        path && func && pathname.match(path) && pathname.match('/')(!$(function() {
+          $LAB.script(SOURCE_DIR + 'common.js').wait(function() {
+            return func.apply(this);
+          });
+        }));
+        path && func && pathname.match('/') && $(function() {
+          $LAB.script(SOURCE_DIR + 'common.js').wait(function() {
+            return $LAB.script(SOURCE_DIR + 'index.js');
+          });
         });
       });
     };
-    $.route({
-      path: /^(?!.*\/example\/).+$|^(?!.*\/example\/).+$/,
-      func: function() {
-        $LAB.script(pcorsp + 'js/index.js');
-      }
-    }, {
+    return $.route({
       path: /^(?=.*\/example\/)/,
       func: function() {
-        $LAB.script(pcorsp + 'js/example.js');
+        $LAB.script(SOURCE_DIR + 'example.js');
       }
     }, {
       path: /^(?=.*\/example2\/)/,
       func: function() {
-        $LAB.script(pcorsp + 'js/example2.js');
+        $LAB.script(SOURCE_DIR + 'example2.js');
       }
     }, {
       path: /^(?=.*\/example3\/)/,
       func: function() {
-        $LAB.script(pcorsp + 'js/example3.js');
+        $LAB.script(SOURCE_DIR + 'example3.js');
+      }
+    }, {
+      path: /^(?=.*\/example4\/)/,
+      func: function() {
+        $LAB.script(SOURCE_DIR + 'example4.js');
+      }
+    }, {
+      path: /^(?=.*\/example5\/)/,
+      func: function() {
+        $LAB.script(SOURCE_DIR + 'example5.js');
       }
     });
   });

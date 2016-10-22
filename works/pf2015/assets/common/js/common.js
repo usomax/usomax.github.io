@@ -10,10 +10,9 @@
  */
 
 (function() {
-  var _sp, _ua, dataUriInfo, screenInfo, selector, selector_n, userAgent;
+  var _isMobile, _mo, _pl, _ua, dataUriInfo, screenInfo, selector, selector_n, userAgent;
 
-  window.SITE_URL = location.protocol + '//' + location.host + '/works/pf2015/';
-  //window.SITE_URL = location.protocol + '//' + location.host + '/';
+  window.SITE_URL = location.protocol + '//' + location.host + '/';
 
   window.ASSETS_DIR = SITE_URL + 'assets/';
 
@@ -240,9 +239,40 @@
 
   window.browserType = _ua.split(/\s/);
 
-  _sp = userAgent.getPlatform().join(" ");
+  _pl = userAgent.getPlatform().join(" ");
 
-  window.smartphoneType = _sp.split(/\s/);
+  window.smartphoneType = _pl.split(/\s/);
+
+  _mo = userAgent.getMobile().join(" ");
+
+  window.mobileType = _mo.split(/\s/);
+
+  _isMobile = mobileType[0] === "mobile";
+
+  window.redirectPC = function(url) {
+    return _isMobile || (location.href = url);
+  };
+
+  window.redirectSP = function(url) {
+    return _isMobile && (location.href = url);
+  };
+
+  (function(document) {
+    var e, i, link, servers;
+    servers = ["static.evernote.com", "d7x5nblzs94me.cloudfront.net", "widgets.getpocket.com", "img.mixi.net", "static.mixi.jp", "plugins.mixi.jp", "oauth.googleusercontent.com", "ssl.gstatic.com", "accounts.google.com", "apis.google.com", "www.google-analytics.com", "www.facebook.com", "s-static.ak.facebook.com", "static.ak.fbcdn.net", "static.ak.facebook.com", "connect.facebook.net", "twitter.com", "cdn.api.twitter.com", "p.twitter.com", "platform.twitter.com", "cdn-ak.b.st-hatena.com", "cdn.api.b.hatena.ne.jp", "b.st-hatena.com", "web-jp.ad-v.jp", "w.zenback.jp"];
+    i = void 0;
+    e = void 0;
+    link = document.createDocumentFragment();
+    i = servers.length - 1;
+    while (i >= 0) {
+      e = document.createElement("link");
+      e.setAttribute("rel", "dns-prefetch");
+      e.setAttribute("href", "//" + servers[i]);
+      link.appendChild(e);
+      i--;
+    }
+    return document.getElementsByTagName("head")[0].appendChild(link);
+  })(document);
 
 }).call(this);
 
