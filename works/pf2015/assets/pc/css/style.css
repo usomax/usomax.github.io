@@ -1,17 +1,17 @@
 @charset "UTF-8";
 /* ------------------------------------------- SASS Information
- Name:      style.scss
- Author:    Y.takaoka
- Update:    2016-04-22 12:29:25 +0900
- Info:      成果物を掲載したランディングページ
+ Name:      base/_config.scss
+ Author:
+ Update:
+ Info:      setting for general style
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
  helper
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      helper/_util.scss
- Author:    Y.takaoka
- Update:    2015/09/16
+ Author:
+ Update:
  Info:      Util properties
 ----------------------------------------------------------- */
 .mt0 {
@@ -1350,18 +1350,6 @@
   font-weight: bold !important;
 }
 
-.normal {
-  font-weight: normal !important;
-}
-
-.w50 {
-  width: 50% !important;
-}
-
-.w100 {
-  width: 100% !important;
-}
-
 .hide {
   display: none !important;
 }
@@ -1390,334 +1378,466 @@
   color: blue !important;
 }
 
-/* -----------------------------------------------------------
- base
------------------------------------------------------------ */
-/* ------------------------------------------- SASS Information
- Name:      base/_reset.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
- Info:      setting for reset style
------------------------------------------------------------ */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup,
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 html {
-  line-height: 1;
-}
-
-ol, ul {
-  list-style: none;
-}
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-caption, th, td {
-  text-align: left;
-  font-weight: normal;
-  vertical-align: middle;
-}
-
-q, blockquote {
-  quotes: none;
-}
-q:before, q:after, blockquote:before, blockquote:after {
-  content: "";
-  content: none;
-}
-
-a img {
-  border: none;
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block;
-}
-
-/* For modern browsers */
-.clearfix:before,
-.clearfix:after {
-  content: "";
-  display: table;
-}
-
-.clearfix:after {
-  clear: both;
-}
-
-/* For IE 6/7 (trigger hasLayout) */
-.clearfix {
-  *zoom: 1;
-}
-
-/* ------------------------------------------- SASS Information
- Name:      base/_default.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
- Info:      setting for default style
------------------------------------------------------------ */
-html {
-  width: 100%;
-  height: 100%;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 body {
+  display: block;
+  color: #4d4d4d;
+  font-size: 14px;
+  font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-weight: 400;
+  line-height: 1.42857143;
+  margin: 0;
+}
+
+.wrap {
+  margin-left: auto;
+  margin-right: auto;
+  width: 960px;
+  position: relative;
+}
+
+.fl {
+  float: left;
+}
+
+.mb100 {
+  margin-bottom: 100px;
+}
+
+.since {
+  font-size: 23px;
+}
+.since:first-child + * {
+  margin-top: 90px;
+  margin-bottom: 90px;
+}
+
+.h700 {
+  height: 700px;
+}
+
+.sinceCont {
+  width: 502px;
+  margin: 0 auto;
+}
+.sinceCont h2 {
+  font-size: 20px;
+  margin: 0;
+}
+.sinceCont p {
+  text-align: left;
+  margin: 0;
+}
+
+.popup {
+  background-color: #08a;
+  bottom: 20px;
+  right: 10px;
+  width: 145px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+}
+.popup:hover {
+  background-color: #29b;
+}
+
+.arrow-down:after {
+  content: '';
+  height: 0;
+  position: absolute;
+  width: 0;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  -ms-transition: all 0.2s;
+  -o-transition: all 0.2s;
+}
+
+.arrow-down:hover:after {
+  border-top-color: #29b;
+}
+
+.arrow-down:after {
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #08a;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -8px;
+}
+
+p {
+  font-size: 15px;
+}
+
+.slide ul {
+  text-align: left;
+  width: 480px;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+/* -----------------------------------------------------------
+ 左上ヘッダー
+----------------------------------------------------------- */
+#section-header #menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 70;
+  padding: 0;
+  margin: 0;
+  background: #f00;
+}
+#section-header #menu li {
+  display: block;
+  color: #fff;
+  background: #3a3a3a;
+  width: 120px;
+  position: relative;
+}
+#section-header #menu li a {
+  text-decoration: none;
+  color: #fff;
+}
+#section-header #menu li a:hover {
+  color: #fff;
+}
+#section-header #menu li.active a:hover {
+  color: #fff;
+}
+#section-header #menu li:hover {
+  background: rgba(88, 88, 88, 0.5);
+}
+#section-header #menu li a {
+  padding: 9px 28px;
+  display: block;
+}
+#section-header #menu li.active {
+  background: rgba(88, 88, 88, 0.5);
+}
+#section-header #menu li.active a {
+  padding: 9px 28px;
+  display: block;
+  color: #fff;
+}
+#section-header #menu li span {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  height: 4px;
+  width: 4px;
+  border: 0;
   background: #fff;
-  color: #000;
-  font-family: "Hiragino Sans", "ヒラギノ角ゴシック", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", sans-serif;
-  font-size: 12px;
-  font-weight: 300;
-  line-height: 1.6;
+  left: 10%;
+  top: 50%;
+  margin-top: -1px;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+#section-header #menu li.active span, #section-header #menu li:hover span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -4px;
+  border-radius: 100%;
+}
+
+h1 {
+  font-size: 40px;
+  color: #4d4d4d;
+  margin: 0;
+}
+
+.intro p {
+  color: #4d4d4d;
+}
+
+/* Centered texts in each section
+* --------------------------------------- */
+.section {
+  text-align: center;
+}
+
+#section0 img {
+  margin-bottom: 40px;
+}
+
+#section3 h2 {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Overwriting styles for control arrows for slides
+* --------------------------------------- */
+.controlArrow.prev {
+  left: 50px;
+}
+.controlArrow.next {
+  right: 50px;
+}
+
+/** these classes are pre-generated **/
+.col-md-4 {
+  position: relative;
+  min-height: 1px;
+  padding: 15px;
+}
+
+.fg-dial {
+  color: #3a3a3f;
+  font-size: 23.12682533px;
+  font-weight: bold;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 115px;
+  width: 100%;
+}
+
+.fg-dial-label {
+  color: #4d4d4d;
+  font-size: 16px;
+  font-weight: bold;
+  left: 0;
+  position: absolute;
+  text-align: center;
+  top: 190px;
+  width: 100%;
+}
+
+canvas {
+  display: block;
+  margin: 25px auto 0;
+}
+
+@media (min-width: 992px) {
+  .col-md-4 {
+    float: left;
+    width: 33.33333333%;
+  }
+}
+/*
+fullPage.scss
+-----------------*/
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  /*Avoid flicker on slides transitions for mobile phones #336 */
   -webkit-tap-highlight-color: transparent;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  min-width: 1280px;
+}
+
+#superContainer {
+  height: 100%;
+  position: relative;
+  /* Touch detection for Windows 8 */
+  -ms-touch-action: none;
+  /* IE 11 on Windows Phone 8.1*/
+  touch-action: none;
+}
+
+.fp-section {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  /* Safari<=5 Android<=3 */
+  -moz-box-sizing: border-box;
+  /* <=28 */
+  box-sizing: border-box;
   height: 100%;
 }
 
-a, a:link, a:focus {
-  color: #000;
-  text-decoration: none;
+.fp-slide {
+  float: left;
+  height: 100%;
+  display: block;
 }
 
-img {
-  border: 0;
-  vertical-align: bottom;
-  line-height: 0;
-  -ms-interpolation-mode: bicubic;
+.fp-slidesContainer {
+  height: 100%;
+  display: block;
 }
 
-textarea {
-  overflow: auto;
-}
-
-label {
-  cursor: pointer;
-}
-
-input:focus,
-textarea:focus {
-  background: #fff;
-}
-
-.wHover, .oHover {
+.fp-slides {
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
   position: relative;
-  display: inline-block;
-  *display: inline;
-  *zoom: 1;
+  -webkit-transition: all 0.3s ease-out;
+  /* Safari<=6 Android<=4.3 */
+  transition: all 0.3s ease-out;
 }
 
-/* -----------------------------------------------------------
- layout
------------------------------------------------------------ */
-/* -----------------------------------------------------------
- common layout
------------------------------------------------------------ */
-/* ------------------------------------------- SASS Information
- Name:      layout/common/_wrapper.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
- Info:      layout of wrapper
------------------------------------------------------------ */
-/* ------------------------------------------- SASS Information
- Name:      layout/common/_header.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
- Info:      layout of header
------------------------------------------------------------ */
-#loader {
-  background: #fff url("../images/img-loading.gif") center center no-repeat;
-  position: absolute;
+.fp-section.fp-table, .fp-slide.fp-table {
+  display: table;
+  table-layout: fixed;
   width: 100%;
   height: 100%;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
 }
 
-#section-header {
-  width: 950px;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 70px;
-  padding: 30px 0;
-  font-weight: bold;
-  color: #4a4a4a;
-}
-
-/* ------------------------------------------- SASS Information
- Name:      layout/common/_footer.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
- Info:      layout of footer
------------------------------------------------------------ */
-#section-footer {
-  width: 950px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 50px 0 20px;
-}
-#section-footer #page-top {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  font-size: 77%;
-}
-#section-footer #page-top a {
-  background: #666;
-  text-decoration: none;
-  color: #fff;
-  width: 100px;
-  padding: 30px 0;
-  text-align: center;
-  display: block;
-  border-radius: 5px;
-}
-#section-footer #page-top a:hover {
-  text-decoration: none;
-  background: #999;
-}
-
-/* -----------------------------------------------------------
- page layout
------------------------------------------------------------ */
-/* ------------------------------------------- SASS Information
- Name:      layout/page/_index.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
- Info:      layout of index
------------------------------------------------------------ */
-.index {
-  background-color: #fff;
-  background-image: url("http://www.transparenttextures.com/patterns/egg-shell.png");
-  min-width: 100%;
-}
-.index #section-header h1 {
-  color: transparent;
-  background-color: black;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 3px 5px, rgba(255, 255, 255, 0.4) 1px 3px 3px;
-  -webkit-background-clip: text;
-}
-.index #section-contents {
-  width: 950px;
-  margin: 0 auto;
-}
-.index #section-contents ul {
-  text-align: center;
-}
-.index #section-contents ul:after {
-  display: block;
-  content: "";
-  border-bottom: 1px #ccc dotted;
-  margin: 0 auto;
-  padding-top: 10px;
-  width: 380px;
-}
-.index #section-contents ul li {
-  padding: 10px;
-  text-decoration: none;
-  font-family: Arial;
-  text-transform: uppercase;
-  font-size: 12px;
-  color: #333;
-  display: inline-block;
-}
-.index #section-contents ul li.active {
-  background: #333;
-  color: white;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  border: #333 1px solid;
-  margin: -1px;
-}
-.index #section-contents ul li:hover {
-  cursor: pointer;
-  border: #333 1px solid;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-  margin: -1px;
-}
-.index #section-contents .box {
-  height: 320px;
-  width: 950px;
-  overflow: hidden;
-  margin: 45px 0 0 0;
-  position: relative;
-  top: 0;
-  left: 0;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  display: table;
-}
-.index #section-contents .box:hover {
-  box-shadow: 0px 0px 10px 2px #000;
-  transition: box-shadow 0.3s;
-}
-.index #section-contents .box:first-child {
-  margin-top: 0;
-}
-.index #section-contents .box img {
-  height: 320px;
-  width: 950px;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-.index #section-contents .box .overlay {
-  background: rgba(0, 0, 0, 0.7);
-  height: 320px;
-  width: 950px;
+.fp-tableCell {
   display: table-cell;
   vertical-align: middle;
-  text-align: center;
-  position: relative;
-  opacity: 0;
-  color: #fff;
-}
-.index #section-contents .box .overlay .inbox h2 {
-  font-size: 36px;
-  font-weight: bold;
-}
-.index #section-contents .box .overlay .inbox a {
-  color: #fff;
-}
-.index #section-contents .box .overlay .inbox a:hover {
-  color: #ff9286;
-}
-.index #section-contents .box .overlay .inbox .pink {
-  color: #ff9286;
-}
-.index #section-contents .box .overlay .inbox .fs16 {
-  font-size: 16px;
+  width: 100%;
+  height: 100%;
 }
 
-/* ------------------------------------------- SASS Information
- Name:      layout/page/_example.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
- Info:      layout of example
------------------------------------------------------------ */
+.fp-slidesContainer {
+  float: left;
+  position: relative;
+}
+
+.fp-controlArrow {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-top: -38px;
+}
+.fp-controlArrow.fp-prev {
+  left: 15px;
+  width: 0;
+  border-width: 38.5px 34px 38.5px 0;
+  border-color: transparent #4d4d4d transparent transparent;
+}
+.fp-controlArrow.fp-next {
+  right: 15px;
+  border-width: 38.5px 0 38.5px 34px;
+  border-color: transparent transparent transparent #4d4d4d;
+}
+
+.fp-scrollable {
+  overflow: scroll;
+}
+
+.fp-notransition {
+  -webkit-transition: none !important;
+  transition: none !important;
+}
+
+#fp-nav {
+  position: fixed;
+  z-index: 100;
+  opacity: 1;
+  width: 100px;
+  top: 0;
+  background: #3a3a3a;
+}
+#fp-nav.left {
+  left: 0;
+}
+
+.fp-slidesNav {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  opacity: 1;
+}
+.fp-slidesNav.bottom {
+  bottom: 17px;
+}
+.fp-slidesNav.top {
+  top: 17px;
+}
+
+#fp-nav ul, .fp-slidesNav ul {
+  margin: 0;
+  padding: 5px;
+}
+
+#fp-nav ul li {
+  display: block;
+  width: 20px;
+  height: 25px;
+  margin: 10px 0;
+  position: relative;
+}
+
+.fp-slidesNav ul li {
+  display: block;
+  width: 14px;
+  height: 13px;
+  margin: 7px;
+  position: relative;
+  display: inline-block;
+}
+
+#fp-nav ul li a, .fp-slidesNav ul li a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 100%;
+}
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  height: 4px;
+  width: 4px;
+  border: 0;
+  background: #fff;
+  left: 50%;
+  top: 50%;
+  margin: -2px 0 0 -2px;
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+
+#fp-nav ul li .fp-tooltip {
+  position: absolute;
+  top: 3px;
+  color: #fff;
+  font-size: 20px;
+  font-family: arial, helvetica, sans-serif;
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  display: block;
+}
+#fp-nav ul li:hover .fp-tooltip {
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  width: auto;
+  opacity: 1;
+}
+#fp-nav.fp-show-active a.active + .fp-tooltip {
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  width: auto;
+  opacity: 1;
+}
+#fp-nav ul li .fp-tooltip.left {
+  left: 23px;
+}

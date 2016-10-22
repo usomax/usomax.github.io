@@ -1,143 +1,181 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns# website: http://ogp.me/ns/website#" class="no-js">
+<html lang="ja" prefix="og: http://ogp.me/ns# mixi: http://mixi-platform.com/ns# fb: http://www.facebook.com/2008/fbml" class="no-js">
   <head>
     <meta charset="utf-8">
-    <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <![endif]-->
 
-    <title>tu3q - portfolio</title>
+    <title>ポートフォリオ</title>
     <meta name="robots" content="index,follow">
-    <meta name="keywords" content="landing,landing page">
-    <meta name="description" content="作品にアクセスするために作成したランディングページです。">
+    <meta name="keywords" content="portfolio">
+    <meta name="description" content="ポートフォリオ">
     <meta name="author" content="Y.takaoka">
-    <link rel="index" href="http://example.com/">
-    <link rel="canonical" href="http://example.com/">
-    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://example.com/sp/">
+    <link rel="index" href="http://google.com/">
+    <link rel="canonical" href="http://google.com/">
 
     <!-- Viewportの設定-->
     <meta name="viewport" content="width=1280">
-    <meta name="format-detection" content="telephone=no,address=no,email=no">
+    <meta name="format-detection" content="telephone=no">
     <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Facebook用OGP指定-->
+    <meta property="og:title" content="ポートフォリオ">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="tu3q - portfolio">
-    <meta property="og:title" content="tu3q - portfolio">
-    <meta property="og:description" content="作品にアクセスするために作成したランディングページです。">
-    <meta property="og:url" content="http://example.com/">
-    <meta property="og:image" content="http://example.com/assets/common/images/ogp_image.jpg">
+    <meta property="og:description" content="ポートフォリオ">
+    <meta property="og:site_name" content="ポートフォリオ">
+    <meta property="og:url" content="http://google.com/">
     <meta property="og:locale" content="ja_JP">
 
     <!-- アイコン指定(iOS/Android込)-->
-    <link rel="image_src" href="http://example.com/assets/common/images/ogp_image.jpg">
-    <link rel="apple-touch-icon-precomposed" href="./assets/common/images/favicon.png">
+    <link rel="apple-touch-icon-precomposed" href="./assets/common/images/favicon.ico">
     <link rel="shortcut icon" href="./assets/common/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./assets/common/images/favicon.png" type="image/png">
+    <link rel="icon" href="./assets/common/images/favicon.ico" type="image/x-icon">
 
     <!-- スタイルシート指定-->
     <link rel="stylesheet" href="./assets/pc/css/style.css">
 
     <!-- JavaScript指定-->
-    <script src="./assets/common/js/lib/lab.min.js"></script>
     <script src="./assets/common/js/common.js"></script>
-    <script>redirectSP("./sp/");</script>
 
     <!--[if lt IE 9]>
     <script src="./assets/common/js/lib/html5shiv.min.js"></script>
+    <script src="./assets/common/js/lib/selectivizr.min.js"></script>
     <![endif]-->
   </head>
 
   <body class="index">
-    <header id="section-header">
-      <div id="section-header">
-        <h1>tu3q - portfolio</h1>
-      </div>
-      <!-- #section-header-->
-    </header>
-    <!-- /#section-header-->
 
-    <main id="section-contents">
-      <ul class="clearfix">
-        <li href="" data-rel="all">All</li>
-        <li data-rel="html">html/css</li>
-        <li data-rel="jade">jade/scss</li>
-        <li data-rel="jquery">jQuery</li>
+    <div id="section-header">
+      <ul id="menu">
+        <li data-menuanchor="top" class="active"><span></span><a href="#top">トップ</a></li>
+        <li data-menuanchor="skill"><span></span><a href="#skill">技術</a></li>
+        <li data-menuanchor="history"><span></span><a href="#history">経験</a></li>
+        <li data-menuanchor="work"><span></span><a href="#work">作品</a></li>
       </ul>
-      <div class="box jade jquery all"><img src="./assets/pc/images/img_g4.png" width="150" alt="">
-        <div class="overlay">
-          <div class="inbox">
-            <h2><a href="#" target="blank">LG G4 - Photo Gallery</a></h2>
-            <p>2016年 XX月</p>
-            <p>jade scss jQuery</p>
-            <p class="mt10">デザインはシンプルで可能な限り演出に力を入れる事を目標に制作しました。<br>ほとんどのJSを1人で書けるようになり、JSに対する苦手意識がなくなったので作ってよかったです。</p>
-          </div>
-        </div>
-      </div>
-      <div class="box jade jquery all"><img src="./assets/pc/images/img_cafe.png" width="150" alt="">
-        <div class="overlay">
-          <div class="inbox">
-            <h2><a href="works/cafe" target="blank">カフェゆるらぎ</a></h2><a href="http://www.coolwebwindow.com/temp/source/public/pub019/src/index.html" target="blank">模写元様URL</a>
-            <p>2015年 10月</p>
-            <p>jade scss jQuery</p>
-            <p>コーディング模写3回目</p>
-            <p class="mt10">クロスフェードの実装に苦戦しました。</p>
-          </div>
-        </div>
-      </div>
-      <div class="box jade jquery all"><img src="./assets/pc/images/img_mistake.png" width="150" alt="">
-        <div class="overlay">
-          <div class="inbox">
-            <h2> <a href="works/mistake" target="blank">間違い探し </a></h2>
-            <p>2015年 8月</p>
-            <p>jade scss jQuery</p>
-            <p class="mt10"><span class="bold fs16">「jQueryに慣れていく」</span>という事を名目に作り上げたサイトです。                    </p>
-          </div>
-        </div>
-      </div>
-      <div class="box jade jquery all"><img src="./assets/pc/images/img_pf2015.png" width="150" alt="">
-        <div class="overlay">
-          <div class="inbox">
-            <h2> <a href="works/pf2015" target="blank">ポートフォリオ</a></h2>
-            <p>2015年 8月</p>
-            <p>jade scss jQuery</p>
-            <p class="mt10">とある公式サイトに似せた自分のポートフォリオサイトを作りたいと思い作成しました。<br>友人の勧めでこのサイトで<span class="bold fs16">初めてJadeとscssを使い</span>コーディングをしました。</p>
-          </div>
-        </div>
-      </div>
-      <div class="box html jquery all"><img src="./assets/pc/images/img_salon.png" width="150" alt="">
-        <div class="overlay">
-          <div class="inbox">
-            <h2><a href="works/salon/" target="blank">美容室</a></h2><a href="http://www.coolwebwindow.com/temp/source/public/pub025/src/" target="blank">模写元様サイト          </a>
-            <p>2014年 11月</p>
-            <p>html css jQuery</p>
-            <p class="mt10">コーディング模写<span class="bold fs16">2回目</span>です。<br>1回目よりも規模の大きなサイトに挑戦しようと思い、2カラムのサイトを作成しました。<br>jQueryのライブラリを使用してスライダーの実装に挑戦しましたが、ここが一番苦戦しました。</p>
-          </div>
-        </div>
-      </div>
-      <div class="box html all"><img src="./assets/pc/images/img_blog.png" width="150" alt="">
-        <div class="overlay">
-          <div class="inbox">
-            <h2> <a href="works/your" target="blank">ブログ</a></h2><a href="http://www.coolwebwindow.com/temp/source/private/f001/" target="blank">模写元様サイト</a>
-            <p>2014年 10月</p>
-            <p>html css</p>
-            <p class="mt10">コーディング模写<span class="bold fs16">1回目</span>です。<br>専門学校卒業後htmlとcssの自主勉強の末<span class="bold fs16">初めて</span>コーディングをしたサイトです。<br>コーディング初心者でしたが、外見をなんとか元のサイトに近づける事ができました。</p>
-          </div>
-        </div>
-      </div>
-    </main>
-    <!-- /#section-contents-->
+      <!-- /#menu-->
+    </div>
+    <!-- #section-header-->
 
-    <footer id="section-footer">
-      <div id="section-footer">
-        <p id="page-top"><a href="#wrap">PAGE TOP</a></p>
-        <p>Copyrigth &copy; 2015 tu3q ALL Rights Reserved.</p>
-      </div>
-      <!-- #section-footer-->
-    </footer>
-    <!-- /#section-footer-->
+    <html>
+      <body>
+        <div id="fullpage">
+          <div id="section0" class="section">
+            <div class="intro h700"><img src="assets/pc/images/img_mv.png" alt="成果物の画像">
+              <h1>こんにちは</h1>
+              <p>当サイトでは製作者の技術・経験・作品などを紹介しています。</p>
+              <!--a#moveTo.popup.arrow-down(href='#') イチオシ作品-->
+            </div>
+            <!-- /.intro-->
+          </div>
+          <!-- /section0-->
+          <div id="section1" class="section">
+            <div class="intro">
+              <div id="example1" class="col-md-4"></div>
+              <div id="example2" class="col-md-4"></div>
+              <div id="example3" class="col-md-4"></div>
+            </div>
+            <!-- /.intro-->
+          </div>
+          <!-- /section1-->
+          <div id="section2" class="section">
+            <div class="since">- 2016 -
+              <div class="sinceCont">
+                <h2>夢は岡山でWeb屋を起業 (抱負)</h2>
+                <p>
+                  友人と30歳頃から岡山でWeb屋を営む事を決めました。
+                  最初は少数から始める予定なのでそのためにもコーディングの技術が必要だと感じました。
+                  夢を叶えるためにもまずは、Web屋さんに就職して自己の成長と会社の発展の仕方などを勉強していきたいと思っています。
+                </p>
+              </div>
+              <!-- .sinceCont-->
+            </div>
+            <div class="since">- 2015 -
+              <div class="sinceCont">
+                <h2>働きたいと思える仕事だと実感する</h2>
+                <p>
+                  就きたい職が見つからずにいた所、友人からコーディングの自主勉強を勧められコーディング模写を実践しました。
+                  その中で手応えを感じ、人生をマークアップに費やしたいと感じました。
+                </p>
+              </div>
+              <!-- .sinceCont-->
+            </div>
+            <div class="since">- 2013 -
+              <div class="sinceCont">
+                <h2>初コーディング</h2>
+                <p>
+                  システム開発演習という、グループ制作の科目で初めてコーディングを経験。
+                  完成品は荒削りなものになりましたが、コーディングをする事の楽しさを体験しました。
+                </p>
+              </div>
+              <!-- .sinceCont-->
+            </div>
+          </div>
+          <!-- /section2-->
+          <div id="section3" class="section">
+            <div class="slide">
+              <div class="intro"><img src="assets/pc/images/icon_01inafix.png" alt="サムネイル">
+                <h2>imgGetter</h2>
+                <ul>
+                  <li>制作経緯：専門学校の卒業研究</li>
+                  <li>苦労した所：html,css,jQuery,phpの書き方や読み方</li>
+                  <li>感想：ゼロからWebサイトをベタ打ちで書くのは初めてで苦労したことも多いですが、 楽しく制作に取り組むことが出来ました。</li>
+                  <li>日付：2013年 7月</li>
+                </ul>
+              </div>
+              <!-- /.intro-->
+            </div>
+            <!-- /.slide-->
+            <div class="slide">
+              <div class="intro"><img src="assets/pc/images/icon_hanger.png" alt="サムネイル">
+                <h2>Hanger</h2>
+                <ul>
+                  <li>制作経緯：専門学校の演習課題</li>
+                  <li>苦労した所：cssのスタイリング,jQueryの実装</li>
+                  <li>感想：jqueryを使ったメニュー作りに力を入れた事で、jQueryの使い方に慣れる事ができました。</li>
+                  <li>日付：2013年 12月</li>
+                </ul>
+              </div>
+              <!-- /.intro-->
+            </div>
+            <!-- /.slide-->
+            <div class="slide">
+              <div class="intro"><img src="assets/pc/images/icon_m1.png" alt="サムネイル">
+                <h2>コーディング模写1号</h2>
+                <ul>
+                  <li>制作経緯：コーディングの基本を学ぶため</li>
+                  <li>苦労した所：旧ブラウザでも閲覧できる互換性のあるサイト作り</li>
+                  <li>感想：ソースを見ずに外見を似せることができたので、コーディングに対して自信が持てました。</li>
+                  <li>日付：2014年 10月</li>
+                </ul>
+              </div>
+              <!-- /.intro-->
+            </div>
+            <!-- /.slide-->
+            <div class="slide">
+              <div class="intro"><img src="assets/pc/images/icon_m21.png" alt="サムネイル">
+                <h2>コーディング模写2号</h2>
+                <ul>
+                  <li>制作経緯：jQueryがあるサイトを模写するため</li>
+                  <li>苦労した所：jQueryの実装</li>
+                  <li>感想：前回の模写よりもコーディング速度が早くなっている事を体感しました。しかしjQueryの実装に手こずってしまったので、jQuery習得が今後の課題となりました。</li>
+                  <li>日付：2014年 11月</li>
+                </ul>
+              </div>
+              <!-- /.intro-->
+            </div>
+            <!-- /.slide-->
+          </div>
+          <!-- /section3-->
+        </div>
+        <!-- /fullpage-->
+      </body>
+    </html>
 
-    <div id="loader"></div>
+    <div id="section-footer">
+      <p>Footer</p>
+    </div>
+    <!-- #section-footer-->
+
+    <script src="./assets/common/js/lib/lab.min.js"></script>
     <script src="./assets/common/js/dispatcher.js"></script>
   </body>
 </html>

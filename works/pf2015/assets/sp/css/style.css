@@ -1,17 +1,17 @@
 @charset "UTF-8";
 /* ------------------------------------------- SASS Information
  Name:      style.scss
- Author:    Y.takaoka
- Update:    2016-10-22 15:13:50 +0900
- Info:      成果物を掲載したランディングページ
+ Author:
+ Update:      2015-08-27 13:15:36 +0900
+ Info:
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
  helper
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      helper/_util.scss
- Author:    Y.takaoka
- Update:    2015/09/16
+ Author:
+ Update:
  Info:      Util properties
 ----------------------------------------------------------- */
 .mt0 {
@@ -1350,18 +1350,6 @@
   font-weight: bold !important;
 }
 
-.normal {
-  font-weight: normal !important;
-}
-
-.w50 {
-  width: 50% !important;
-}
-
-.w100 {
-  width: 100% !important;
-}
-
 .hide {
   display: none !important;
 }
@@ -1395,8 +1383,8 @@
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      base/_reset.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
+ Author:
+ Update:
  Info:      setting for reset style
 ----------------------------------------------------------- */
 html, body, div, span, applet, object, iframe,
@@ -1473,24 +1461,22 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
 
 /* ------------------------------------------- SASS Information
  Name:      base/_default.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
+ Author:
+ Update:
  Info:      setting for default style
 ----------------------------------------------------------- */
 html {
-  width: 100%;
   height: 100%;
+  width: 100%;
 }
 
 body {
-  background: #fff;
+  background-color: #fff;
   color: #000;
-  font-family: "Hiragino Sans", "ヒラギノ角ゴシック", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, "メイリオ", sans-serif;
+  font-family: "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN", Meiryo, メイリオ, sans-serif;
   font-size: 12px;
-  font-weight: 300;
   line-height: 1.6;
   -webkit-tap-highlight-color: transparent;
-  -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
@@ -1503,10 +1489,8 @@ a:link {
 }
 
 img {
-  border: 0;
   vertical-align: bottom;
   line-height: 0;
-  -ms-interpolation-mode: bicubic;
 }
 
 textarea {
@@ -1519,7 +1503,7 @@ label {
 
 input:focus,
 textarea:focus {
-  background: #fff;
+  background-color: #fff;
 }
 
 /* -----------------------------------------------------------
@@ -1530,238 +1514,28 @@ textarea:focus {
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_wrapper.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
+ Author:
+ Update:
  Info:      layout of wrapper
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_header.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
+ Author:
+ Update:
  Info:      layout of header
 ----------------------------------------------------------- */
-#loader {
-  background: #fff url("../images/img-loading.gif") center center no-repeat;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  z-index: 1;
-}
-
-#section-header {
-  font-weight: bold;
-  color: #4a4a4a;
-}
-#section-header h1 {
-  position: relative;
-  font-size: 210%;
-  padding: 30px 0 30px 30px;
-  color: transparent;
-  background-color: black;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 3px 5px, rgba(255, 255, 255, 0.4) 1px 3px 3px;
-  -webkit-background-clip: text;
-  cursor: pointer;
-}
-#section-header h1 .menu-trigger {
-  display: inline-block;
-  transition: all .4s;
-  box-sizing: border-box;
-  position: absolute;
-  top: 50%;
-  margin-top: -12px;
-  right: 20px;
-  width: 30px;
-  height: 20px;
-}
-#section-header h1 .menu-trigger span {
-  display: inline-block;
-  transition: all .4s;
-  box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  width: 100%;
-  height: 4px;
-  background-color: #333;
-  border-radius: 4px;
-  box-shadow: 0px 0px 3px 2px rgba(133, 133, 133, 0.5) inset;
-}
-#section-header h1 .menu-trigger span:nth-of-type(1) {
-  top: 0;
-}
-#section-header h1 .menu-trigger span:nth-of-type(2) {
-  top: 8px;
-}
-#section-header h1 .menu-trigger span:nth-of-type(3) {
-  bottom: 0;
-}
-#section-header h1 .menu-trigger.active span:nth-of-type(1) {
-  -webkit-transform: translateY(8px) rotate(-45deg);
-  transform: translateY(8px) rotate(-45deg);
-}
-#section-header h1 .menu-trigger.active span:nth-of-type(2) {
-  opacity: 0;
-}
-#section-header h1 .menu-trigger.active span:nth-of-type(3) {
-  -webkit-transform: translateY(-8px) rotate(45deg);
-  transform: translateY(-8px) rotate(45deg);
-}
-#section-header ul {
-  text-align: center;
-  display: none;
-  width: 95%;
-  margin: 0 auto;
-  padding-bottom: 30px;
-}
-#section-header ul li {
-  padding-top: 15px;
-  padding-bottom: 15px;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 160%;
-  letter-spacing: 2px;
-  color: transparent;
-  background-color: black;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 3px 5px, rgba(255, 255, 255, 0.4) 1px 3px 3px;
-  -webkit-background-clip: text;
-  position: relative;
-}
-#section-header ul li.active {
-  cursor: pointer;
-  border: #333 1px solid;
-  -moz-border-radius: 6px;
-  -webkit-border-radius: 6px;
-  border-radius: 6px;
-}
-
 /* ------------------------------------------- SASS Information
  Name:      layout/common/_footer.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
+ Author:
+ Update:
  Info:      layout of footer
 ----------------------------------------------------------- */
-#section-footer {
-  margin: 0 auto;
-  text-align: center;
-  padding-top: 30px;
-  position: relative;
-}
-#section-footer #page-top {
-  font-size: 77%;
-  margin-top: 10px;
-  width: 100%;
-}
-#section-footer #page-top a {
-  background: #333;
-  text-decoration: none;
-  color: #fff;
-  padding: 30px 0;
-  padding-left: 40px;
-  text-align: center;
-  letter-spacing: 2px;
-  display: block;
-  font-size: 12px;
-}
-#section-footer #page-top a:after {
-  display: block;
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  margin-left: -40px;
-  margin-top: 26px;
-  width: 8px;
-  height: 8px;
-  border-top: 2px solid white;
-  border-left: 2px solid white;
-  -moz-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
 /* -----------------------------------------------------------
  page layout
 ----------------------------------------------------------- */
 /* ------------------------------------------- SASS Information
  Name:      layout/page/_index.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
- Info:      layout of index
------------------------------------------------------------ */
-.index {
-  background-color: #fff;
-  background-image: url("http://www.transparenttextures.com/patterns/egg-shell.png");
-  min-width: 100%;
-}
-.index #section-contents {
-  width: 100%;
-  margin: 0 auto;
-}
-.index #section-contents .box {
-  height: 320px;
-  width: 90%;
-  overflow: hidden;
-  margin: 45px auto 0 auto;
-  position: relative;
-  top: 0;
-  left: 0;
-  -moz-border-radius: 8px;
-  -webkit-border-radius: 8px;
-  border-radius: 8px;
-  -moz-transform: translate3d(0, 0, 0);
-  -webkit-transform: translate3d(0, 0, 0);
-  transform: translate3d(0, 0, 0);
-  display: table;
-}
-.index #section-contents .box:hover {
-  box-shadow: 0px 0px 10px 2px #000;
-  transition: box-shadow 0.3s;
-}
-.index #section-contents .box:first-child {
-  margin-top: 0;
-}
-.index #section-contents .box img {
-  height: 320px;
-  width: 950px;
-  position: absolute;
-  top: 0;
-  left: 50%;
-  -moz-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  -webkit-transform: translateX(-50%);
-  transform: translateX(-50%);
-}
-.index #section-contents .box a {
-  display: block;
-  width: 100%;
-  height: 320px;
-}
-.index #section-contents .box a .overlay {
-  background: rgba(0, 0, 0, 0.5);
-  height: 320px;
-  width: 950px;
-  display: table-cell;
-  vertical-align: middle;
-  text-align: center;
-  position: relative;
-  color: #fff;
-}
-.index #section-contents .box a .overlay .inbox h3 {
-  font-size: 36px;
-  font-weight: bold;
-}
-.index #section-contents .box a .overlay .inbox .pink {
-  color: #ff9286;
-}
-.index #section-contents .box a .overlay .inbox .fs16 {
-  font-size: 16px;
-}
-
-/* ------------------------------------------- SASS Information
- Name:      layout/page/_example.scss
- Author:    Y.takaoka
- Update:    編集または保存した日付時刻を記述
- Info:      layout of example
+ Author:
+ Update:
+ Info:      index layout
 ----------------------------------------------------------- */
