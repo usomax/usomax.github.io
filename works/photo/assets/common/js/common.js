@@ -12,7 +12,7 @@
 (function() {
   var _isMobile, _mo, _pl, _ua, dataUriInfo, screenInfo, selector, selector_n, userAgent;
 
-  window.SITE_URL = location.protocol + '//' + location.host + '/';
+  window.SITE_URL = location.protocol + '//' + location.host + '/works/photo/';
 
   window.ASSETS_DIR = SITE_URL + 'assets/';
 
