@@ -1,97 +1,84 @@
-
-/*!
- * index.js - サイト名（●●のスクリプト）
- * 動作環境： Windows / Macintosh
- * 対応ブラウザ： GoogleChrome / Firefox / Safari / Opera / IE11 / IE10 / IE9 / IE8
- * --------------------
- * @version: 1.0
- * @author :
- * --------------------
- */
-$(function() {
-
-  //$("#section1 li").eq(1).css({margin: "0 160px"});
-
-  $('#fullpage').fullpage({
-    anchors: ['top', 'skill', 'history','work'],
-    sectionsColor: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'],
-    navigation: false,
-    menu: '#menu',
-    css3: true,
-    scrollingSpeed: 1000,
-    afterLoad: function(anchorLink, index){
-      if(index == 2) {
-        gauge01.update({ arcFillInt: 7 });
-        gauge02.update({ arcFillInt: 8 });
-        gauge03.update({ arcFillInt: 5 });
+(function() {
+  $(function() {
+    var $allCount, $box, $height, $htmlCount, $jadeCount, $jqueryCount, $list, $width, selectedClass, showFlag, topBtn, zoom;
+    $box = $('.box');
+    $list = $('li');
+    $height = $box.height();
+    $width = $box.width();
+    zoom = 1.5;
+    selectedClass = '';
+    $list.eq(0).addClass('active');
+    $allCount = $('.all').length;
+    $htmlCount = $('.html').length;
+    $jadeCount = $('.jade').length;
+    $jqueryCount = $('.jquery').length;
+    $list.eq(0).append('(' + $allCount + ')');
+    $list.eq(1).append('(' + $htmlCount + ')');
+    $list.eq(2).append('(' + $jadeCount + ')');
+    $list.eq(3).append('(' + $jqueryCount + ')');
+    showFlag = false;
+    topBtn = $('#page-top');
+    topBtn.css('bottom', '-100px');
+    showFlag = false;
+    $(window).scroll(function() {
+      if ($(this).scrollTop() > 300) {
+        if (showFlag === false) {
+          showFlag = true;
+          topBtn.stop().animate({
+            'bottom': '20px'
+          }, 200);
+        }
+      } else {
+        if (showFlag) {
+          showFlag = false;
+          topBtn.stop().animate({
+            'bottom': '-100px'
+          }, 200);
+        }
       }
-    }
+    });
+    topBtn.click(function() {
+      $('body,html').animate({
+        scrollTop: 0
+      }, 500);
+      return false;
+    });
+    $box.on({
+      'mouseenter': function() {
+        $(this).find('img').stop().animate({
+          top: -$height / 3,
+          left: -$width / 4,
+          width: $width * zoom,
+          height: $height * zoom
+        });
+        $(this).find('.overlay').stop().animate({
+          opacity: 1
+        });
+      },
+      'mouseleave': function() {
+        $(this).find('img').stop().animate({
+          top: 0,
+          left: 0,
+          width: $width,
+          height: $height
+        });
+        $(this).find('.overlay').stop().animate({
+          opacity: 0
+        });
+      }
+    });
+    $list.on('click', function() {
+      selectedClass = $(this).attr('data-rel');
+      $list.not('.' + selectedClass).removeClass('active');
+      $(this).addClass('active');
+      $box.addClass('active').fadeTo(100, 0);
+      $box.not('.' + selectedClass).removeClass('active').fadeOut();
+      setTimeout((function() {
+        $('.' + selectedClass).fadeIn();
+        $box.fadeTo(500, 1);
+      }), 500);
+    });
   });
 
-  $('#moveTo').click(function(e){
-    e.preventDefault();
-    $.fn.fullpage.moveTo('work', 3);
-  });
-
-  gauge01 = new FlexGauge({
-    appendTo: '#example1',
-    arcBgColorLight: 100,
-    arcBgColorSat: 0,
-    colorArcFg: '#00cda9',
-    colorArcBg: '#cccccc',
-    dialValue: true,
-    dialLabel: "(X)HTML & CSS",
-    arcStrokeFg: 23.49777222,
-    arcStrokeBg: 23.49777222,
-    dialUnit: '/10',
-    dialUnitPosition: 'after',
-    arcFillInt: 0,
-    arcFillTotal: 10
-  });
-  gauge02 = new FlexGauge({
-    appendTo: '#example2',
-    arcBgColorLight: 100,
-    arcBgColorSat: 0,
-    colorArcFg: '#0073cd',
-    colorArcBg: '#cccccc',
-    dialValue: true,
-    dialLabel: "Design",
-    arcStrokeFg: 23.49777222,
-    arcStrokeBg: 23.49777222,
-    dialUnit: '/10',
-    dialUnitPosition: 'after',
-    arcFillInt: 0,
-    arcFillTotal: 10
-  });
-  gauge03 = new FlexGauge({
-    appendTo: '#example3',
-    arcBgColorLight: 185,
-    arcBgColorSat: 0,
-    colorArcFg: '#00cd15',
-    colorArcBg: '#cccccc',
-    dialValue: true,
-    dialLabel: "jQuery & javascript",
-    arcStrokeFg: 23.49777222,
-    arcStrokeBg: 23.49777222,
-    dialUnit: '/10',
-    dialUnitPosition: 'after',
-    arcFillInt: 0,
-    arcFillTotal: 10
-  });
-
-});
-
-$(function () {
-    rect(); //アニメーションを実行
-});
-
-function rect() {
-    $('.popup').animate({
-        bottom: '-=10px'
-    }, 800).animate({
-        bottom: '+=10px'
-    }, 800);
-    setTimeout('rect()', 1600); //アニメーションを繰り返す間隔
-}
-
+}).call(this);
 

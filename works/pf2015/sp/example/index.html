@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og: http://ogp.me/ns# mixi: http://mixi-platform.com/ns# fb: http://www.facebook.com/2008/fbml" class="no-js">
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns# article: http://ogp.me/ns/article#" class="no-js">
   <head>
     <meta charset="utf-8">
 
@@ -7,55 +7,71 @@
     <meta name="robots" content="index,follow">
     <meta name="keywords" content="SP,Template">
     <meta name="description" content="SPサイトのテンプレートです">
-    <meta name="author" content="Y.takaoka">
-    <link rel="index" href="http://google.com/">
-    <link rel="canonical" href="http://google.com/">
+    <meta name="author" content="">
+    <link rel="index" href="http://example.com/sp/">
+    <link rel="canonical" href="http://example.com/example/">
 
     <!-- Viewportの設定-->
-    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,minimal-ui">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
     <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Facebook用OGP指定-->
-    <meta property="og:title" content="SPサイト">
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="SPサイトのテンプレートです">
+    <meta property="og:type" content="article">
     <meta property="og:site_name" content="SPサイト">
-    <meta property="og:url" content="http://google.com/">
+    <meta property="og:title" content="SPサイト">
+    <meta property="og:description" content="SPサイトのテンプレートです">
+    <meta property="og:url" content="http://example.com/sp/example/">
+    <meta property="og:image" content="http://example.com/assets/common/images/ogp_image.jpg">
     <meta property="og:locale" content="ja_JP">
 
     <!-- アイコン指定(iOS/Android込)-->
-    <link rel="apple-touch-icon-precomposed" href="../../assets/common/images/favicon.ico">
+    <link rel="image_src" href="http://example.com/assets/common/images/ogp_image.jpg">
+    <link rel="apple-touch-icon-precomposed" href="../../assets/common/images/favicon.png">
     <link rel="shortcut icon" href="../../assets/common/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="../../assets/common/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../../assets/common/images/favicon.png" type="image/png">
 
     <!-- スタイルシート指定-->
     <link rel="stylesheet" href="../../assets/sp/css/style.css">
 
     <!-- JavaScript指定-->
     <script src="../../assets/common/js/common.js"></script>
+    <script>redirectPC("../../example");</script>
   </head>
 
-  <body class="index">
-
-    <div id="section-header">
-      <h1>Header</h1>
-    </div>
-    <!-- #section-header-->
-
-    <div id="section-contents">
-      <div id="example" class="section">
-        <h1><a href="../">SPサイト にようこそ。</a></h1>
+  <body class="example">
+    <header id="section-header">
+      <div id="section-header">
+        <h1>SPサイト<a href="#" class="menu-trigger"><span></span><span></span><span></span></a></h1>
+        <ul>
+          <li href="" data-rel="all">All</li>
+          <li data-rel="html">html/css</li>
+          <li data-rel="jade">jade/scss</li>
+          <li data-rel="jquery">jQuery  </li>
+        </ul>
       </div>
-      <!-- #example-->
-    </div>
+      <!-- #section-header-->
+    </header>
+    <!-- /#section-header-->
+
+    <main id="section-contents">
+      <section id="example" class="section">
+        <h2><a href="../">SPサイト にようこそ。</a></h2>
+      </section>
+      <!-- /#example-->
+    </main>
     <!-- #section-contents-->
 
-    <div id="section-footer">
-      <p>Footer</p>
-    </div>
-    <!-- #section-footer-->
+    <footer id="section-footer">
+      <div id="section-footer">
+        <spall>Copyrigth &copy; 2015 tu3q ALL Rights Reserved.</spall>
+        <p id="page-top"><a href="#wrap">PAGE TOP  </a></p>
+      </div>
+      <!-- #section-footer-->
+    </footer>
+    <!-- /#section-footer-->
 
+    <div id="loader"></div>
     <script src="../../assets/common/js/lib/lab.min.js"></script>
     <script src="../../assets/common/js/dispatcher.js"></script>
   </body>
