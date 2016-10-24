@@ -25,7 +25,7 @@
   //------------------------------------------------------ 
   $.ajax({
     type: "GET",
-    url: PC_JS_DIR + "favorite.js",
+    url: SP_JS_DIR + "favorite.js",
     dataType:"json",
     success: function(data) {
 
