@@ -1,7 +1,7 @@
 [{
   "division": "circle.left",
   "article": [
-    { "img": "../assets/pc/images/content_thumb36.jpg", "width":190, "height":90, "head":1,"src": "../assets/pc/images/content_img36"},
+    { "img": "../assets/pc/images/content_thumb36.jpg", "width":190, "height":90, "head":1,"src": ".../assets/pc/images/content_img36"},
     { "img": "../assets/pc/images/content_thumb37.jpg", "width":190, "height":90, "head":2,"src": "../assets/pc/images/content_img37"},
     { "img": "../assets/pc/images/content_thumb38.jpg", "width":190, "height":90, "head":3,"src": "../assets/pc/images/content_img38"},
     { "img": "../assets/pc/images/content_thumb39.jpg", "width":190, "height":90, "head":4,"src": "../assets/pc/images/content_img39"},
