@@ -11,9 +11,9 @@
     <meta name="keywords" content="LGG4,G4,H815,PhotoGallery">
     <meta name="description" content="LG製Android端末「LG G4」で撮影した写真を掲載しています。">
     <meta name="author" content="Y.takaoka">
-    <link rel="index" href="http://example.com/">
-    <link rel="canonical" href="http://example.com/">
-    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://example.com/sp/">
+    <link rel="index" href="http://tu3q.tk/works/photo/">
+    <link rel="canonical" href="http://tu3q.tk/works/photo/">
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://tu3q.tk/sp/works/photo/">
 
     <!-- Viewportの設定-->
     <meta name="viewport" content="width=1280">
@@ -25,26 +25,27 @@
     <meta property="og:site_name" content="LG G4 - Photo Gallery">
     <meta property="og:title" content="LG G4 - Photo Gallery">
     <meta property="og:description" content="LG製Android端末「LG G4」で撮影した写真を掲載しています。">
-    <meta property="og:url" content="http://example.com/">
-    <meta property="og:image" content="http://example.com/assets/common/images/ogp_image.jpg">
+    <meta property="og:url" content="http://tu3q.tk/">
+    <meta property="og:image" content="http://tu3q.tk/assets/common/images/photo/ogp_image.jpg">
     <meta property="og:locale" content="ja_JP">
 
     <!-- アイコン指定(iOS/Android込)-->
-    <link rel="image_src" href="http://example.com/assets/common/images/ogp_image.jpg">
-    <link rel="apple-touch-icon-precomposed" href="./assets/common/images/favicon.png">
-    <link rel="shortcut icon" href="./assets/common/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./assets/common/images/favicon.png" type="image/png">
+    <link rel="image_src" href="http://tu3q.tk/assets/common/images/photo/ogp_image.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/assets/common/images/photo/favicon.png">
+    <link rel="shortcut icon" href="/assets/common/images/photo/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/common/images/photo/favicon.png" type="image/png">
 
     <!-- スタイルシート指定-->
-    <link rel="stylesheet" href="./assets/pc/css/style.css">
+    <link rel="stylesheet" href="/assets/pc/css/photo/style.css">
 
     <!-- JavaScript指定-->
-    <script src="./assets/common/js/lib/lab.min.js"></script>
-    <script src="./assets/common/js/common.js"></script>
-    <script>redirectSP("./sp/");</script>
+    <script src="/assets/common/js/lib/jquery-1.10.2.min.js"></script>
+    <script src="/assets/common/js/common.js"></script>
+    <script>redirectSP("/sp/works/photo/")</script>
 
     <!--[if lt IE 9]>
-    <script src="./assets/common/js/lib/html5shiv.min.js"></script>
+    <script src="/assets/common/js/lib/html5shiv.min.js"></script>
+    <script src="/assets/common/js/lib/selectivizr.min.js"></script>
     <![endif]-->
   </head>
 
@@ -52,9 +53,9 @@
     <header id="section-header"></header>
     <!-- /#section-header-->
 
-    <main id="section-contents">
+    <main id="section-contents" class="clearfix">
       <div id="main">
-        <div id="logo"><a href="#"><img src="./assets/pc/images/logo_img.png" width="184" height="83" alt=""></a></div>
+        <div id="logo"><a href="#"><img src="/assets/pc/images/photo/logo_img.png" width="184" height="83" alt=""></a></div>
         <div id="stage">
           <div class="circle left"></div>
           <div class="circle right"></div>
@@ -68,17 +69,17 @@
         </div>
       </div>
       <div id="section-ajax">
-        <div class="logo"><a href="#"><img src="./assets/pc/images/logo_img.png" width="184" height="83" alt=""></a></div>
+        <div class="logo"><a href="#"><img src="/assets/pc/images/photo/logo_img.png" width="184" height="83" alt=""></a></div>
         <div class="content"></div>
       </div>
       <div id="loader"><img src="http://preloaders.net/preloaders/3/Chasing%20arrows.gif" width="64" height="64" alt="loader"></div>
     </main>
     <!-- /#section-contents-->
 
-    <footer id="section-footer">
-    </footer>
+    <footer id="section-footer"></footer>
     <!-- /#section-footer-->
 
-    <script src="./assets/common/js/dispatcher.js"></script>
+    <script src="/assets/pc/js/photo/common.js"></script>
+    <script src="/assets/pc/js/photo/index.js"></script>
   </body>
 </html>

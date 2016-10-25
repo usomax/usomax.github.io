@@ -1,51 +1,58 @@
 <!DOCTYPE html>
-<html lang="ja" prefix="og: http://ogp.me/ns# mixi: http://mixi-platform.com/ns# fb: http://www.facebook.com/2008/fbml" class="no-js">
+<html lang="ja" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# mixi: http://mixi-platform.com/ns# website: http://ogp.me/ns/website#" class="no-js">
   <head>
     <meta charset="utf-8">
+    <!--[if IE]>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <![endif]-->
 
     <title>間違い探し！</title>
     <meta name="robots" content="index,follow">
-    <meta name="keywords" content="PC,Template">
-    <meta name="description" content="PCサイトのテンプレートです">
-    <meta name="author" content="K.saruta">
-    <link rel="index" href="http://google.com/">
-    <link rel="canonical" href="http://google.com/">
+    <meta name="keywords" content="lookmisstake,machigaisagasi,machigai,sagashi,sagasi">
+    <meta name="description" content="間違い探しです">
+    <meta name="author" content="Y.takaoka">
+    <link rel="index" href="http://tu3q.tk/works/mistake/">
+    <link rel="canonical" href="http://tu3q.tk/works/mistake/">
+    <link rel="alternate" media="only screen and (max-width: 640px)" href="http://tu3q.tk/sp/works/mistake/">
 
     <!-- Viewportの設定-->
     <meta name="viewport" content="width=1280">
-    <meta name="format-detection" content="telephone=no">
+    <meta name="format-detection" content="telephone=no,address=no,email=no">
     <meta name="mobile-web-app-capable" content="yes">
 
     <!-- Facebook用OGP指定-->
-    <meta property="og:title" content="間違い探し！">
     <meta property="og:type" content="website">
-    <meta property="og:description" content="PCサイトのテンプレートです">
     <meta property="og:site_name" content="間違い探し！">
-    <meta property="og:url" content="http://google.com/">
+    <meta property="og:title" content="間違い探し！">
+    <meta property="og:description" content="間違い探しです">
+    <meta property="og:url" content="http://tu3q.tk/">
+    <meta property="og:image" content="http://tu3q.tk/assets/common/images/mistake/ogp_image.jpg">
     <meta property="og:locale" content="ja_JP">
 
     <!-- アイコン指定(iOS/Android込)-->
-    <link rel="apple-touch-icon-precomposed" href="./assets/common/images/favicon.ico">
-    <link rel="shortcut icon" href="./assets/common/images/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="./assets/common/images/favicon.ico" type="image/x-icon">
+    <link rel="image_src" href="http://tu3q.tk/assets/common/images/mistake/ogp_image.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/assets/common/images/mistake/favicon.png">
+    <link rel="shortcut icon" href="/assets/common/images/mistake/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/assets/common/images/mistake/favicon.png" type="image/png">
 
     <!-- スタイルシート指定-->
-    <link rel="stylesheet" href="./assets/pc/css/style.css">
+    <link rel="stylesheet" href="/assets/pc/css/mistake/style.css">
 
     <!-- JavaScript指定-->
-    <script src="./assets/common/js/common.js"></script>
+    <script src="/assets/common/js/lib/jquery-1.10.2.min.js"></script>
+    <script src="/assets/common/js/common.js"></script>
 
     <!--[if lt IE 9]>
-    <script src="./assets/common/js/lib/html5shiv.min.js"></script>
-    <script src="./assets/common/js/lib/selectivizr.min.js"></script>
+    <script src="/assets/common/js/lib/html5shiv.min.js"></script>
+    <script src="/assets/common/js/lib/selectivizr.min.js"></script>
     <![endif]-->
   </head>
 
   <body class="index">
+    <header id="section-header"></header>
+    <!-- /#section-header-->
 
-
-    <div id="section-contents">
+    <main id="section-contents">
       <div id="about" class="section">
         <div class="inner">
           <div class="logo">
@@ -58,11 +65,13 @@
           <div id="cells"></div>
         </div>
       </div>
-    </div>
-    <!-- #section-contents-->
+    </main>
+    <!-- /#section-contents-->
 
+    <footer id="section-footer"></footer>
+    <!-- /#section-footer-->
 
-    <script src="./assets/common/js/lib/lab.min.js"></script>
-    <script src="./assets/common/js/dispatcher.js"></script>
+    <script src="/assets/pc/js/mistake/common.js"></script>
+    <script src="/assets/pc/js/mistake/index.js"></script>
   </body>
 </html>
