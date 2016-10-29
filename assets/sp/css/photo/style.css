@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-10-25 16:27:30 +0900
+ Update:    2016-10-29 16:23:09 +0900
  Info:      LG G4 Gallery
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1575,6 +1575,16 @@ textarea:focus {
   left: 50%;
   margin-left: -46px;
   margin-top: -20.75px;
+}
+.index #section-contents #particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 .index #section-contents #main {
   opacity: 0;
