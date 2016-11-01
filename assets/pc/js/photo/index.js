@@ -11,7 +11,7 @@
 
 (function() {
   (function($) {
-    var Loader, circle, contents, delay, messages, speed, targetContents;
+    var Loader, circle, contents, delay, get_file_photos, messages, speed, targetContents;
     $('#loader').delay(1000).fadeOut(300, function() {
       $('#main').css({
         visibility: 'visible'
@@ -267,6 +267,32 @@
         return d.promise();
       }
     };
+    get_file_photos = function() {
+      var html;
+      $('#section-ajax .content .inner').html('');
+      html = '';
+      $.ajax({
+        url: 'https://api.github.com/repos/usomax/usomax.github.io/contents/assets/pc/images/photo',
+        dataType: 'jsonp',
+        success: function(returndata) {
+          $.each(returndata.data, function(i, item) {
+            html += '<a href="/assets/pc/images/photo/pics/' + this.name + ' target="_blank">' + '<div class="border one">' + '<div class="border two"><img src="/assets/pc/images/photo/thumbs/' + this.name + '" alt=""></div>' + '</div>' + '</a>';
+          });
+          $('#section-ajax .content .inner').append(html);
+          $('#section-ajax').delay(delay).fadeIn(delay, function() {
+            $('.logo').removeClass('hide');
+            $('.logo').css('pointer-events', 'auto');
+            $('#logo').addClass('hide');
+            $('.content img').each(function(i) {
+              $(this).delay(100 * i).animate({
+                opacity: 1
+              }, speed);
+            });
+            returnScroll();
+          });
+        }
+      });
+    };
     delay = 700;
     speed = 1500;
     $('#logo').on('click', function() {
@@ -288,18 +314,7 @@
       }, speed, 'easeOutBounce', function() {
 
         /* 更新 */
-        Loader.page('/works/photo/gallery/');
-        $('#section-ajax').delay(delay).fadeIn(delay, function() {
-          $('.logo').removeClass('hide');
-          $('.logo').css('pointer-events', 'auto');
-          $('#logo').addClass('hide');
-          $('.content img').each(function(i) {
-            $(this).delay(100 * i).animate({
-              opacity: 1
-            }, speed);
-          });
-          returnScroll();
-        });
+        get_file_photos();
       });
       return false;
     });
