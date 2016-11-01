@@ -269,14 +269,14 @@
     };
     get_file_photos = function() {
       var html;
-      $('#section-ajax .content .inner').html('');
+      $('#section-ajax .contents .inner').html('');
       html = '';
       $.ajax({
-        url: 'https://api.github.com/repos/usomax/usomax.github.io/contents/assets/pc/images/photo/thumbs',
+        url: 'https://api.github.com/repos/usomax/usomax.github.io/contents/assets/pc/images/photo/pics',
         dataType: 'jsonp',
         success: function(returndata) {
           $.each(returndata.data, function(i, item) {
-            html += '<a href="/assets/pc/images/photo/thumbs/' + this.name + ' target="_blank">' + '<div class="border one">' + '<div class="border two"><img src="/assets/pc/images/photo/thumbs/' + this.name + '" alt=""></div>' + '</div>' + '</a>';
+            html += '<a href="http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '" target="_blank">' + '<div class="border one">' + '<div class="border two"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980" alt=""></div>' + '</div>' + '</a>';
           });
           $('#section-ajax .content .inner').append(html);
           $('#section-ajax').delay(delay).fadeIn(delay, function() {
