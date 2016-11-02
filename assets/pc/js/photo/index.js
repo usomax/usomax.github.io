@@ -95,151 +95,28 @@
       });
     };
     $.ajax({
-      type: 'GET',
-      url: '/assets/pc/js/photo/favorite.js',
-      dataType: 'json',
-      success: function(data) {
-        var h, j, listmax;
-        h = 0;
-        data[0].article.sort(function(val1, val2) {
-          if (val1.head > val2.head) {
-            return 1;
-          } else {
-            return -1;
+      url: 'https://api.github.com/repos/usomax/usomax.github.io/contents/assets/pc/images/photo/thumbs',
+      dataType: 'jsonp',
+      success: function(returndata) {
+        $.each(returndata.data, function(i, item) {
+          if (i < 8) {
+            $('.left').append('<a href="#"><img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '"></a>');
+            return circle();
+          } else if (i > 8) {
+            $('.right').append('<a href="#"><img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '"></a>');
+            circle();
+            if (i === 16) {
+              return false;
+            }
           }
         });
-        j = 0;
-        while (j < data[0].article.length) {
-          h++;
-          $('.left').append('<a href=\'#\'><img src=' + data[0].article[j].img + ' class=\'obj\',  width=' + data[0].article[j].width + ', height=' + data[0].article[j].height + ', alt=\'\', data-img=' + [h] + ' ></a>');
-          j++;
-        }
-        data[1].article.sort(function(val1, val2) {
-          if (val1.head < val2.head) {
-            return 1;
-          } else {
-            return -1;
-          }
-        });
-        listmax = data[1].article.length;
-        j = 0;
-        while (j < data[1].article.length) {
-          $('.right').append('<a href=\'#\'><img src=' + data[1].article[j].img + ' class=\'obj\', width=' + data[1].article[j].width + ', height=' + data[1].article[j].height + ', alt=\'\', data-img=' + [listmax] + ' ></a>');
-          listmax--;
-          j++;
-        }
         $('.left').find('img').on('click', function() {
-          var ascend, descend, listMax, listMin, modalChange, obj;
+          var src;
+          src = $(this).attr('src');
           $('#inbox').find('#modal').remove();
           $('#box').fadeIn();
-          obj = $(this).data('img') - 1;
-          listMax = data[0].article.length - 2;
-          listMin = data[0].article.length - 1;
-          ascend = function() {
-            if (obj < 0 || obj > listMax) {
-              obj = 0;
-            } else {
-              obj++;
-            }
-          };
-          descend = function() {
-            if (obj < 1 || obj > listMin) {
-              obj = listMin;
-            } else {
-              obj--;
-            }
-          };
-          modalChange = function() {
-            $('#inbox').find('#modal').remove();
-            $('#box').find('#inbox').append('<div id=\'modal\'><img src=' + data[0].article[obj].img + '>' + '<p>' + data[0].article[obj].head + '&#47;' + data[0].article.length + '</p>' + '</div>');
-          };
-          modalChange();
-          $('.rightarrow').on('click', function() {
-            ascend();
-            modalChange();
-          });
-          $('.leftarrow').on('click', function() {
-            descend();
-            modalChange();
-          });
-          $('.close').on('click', function() {
-            $('html').css('overflow-x', 'auto');
-            $('#box').fadeOut();
-          });
-          $('html').keyup(function(e) {
-            var key;
-            key = 'which' in e ? e.which : e.keyCode;
-            switch (key) {
-              case 39:
-                ascend();
-                modalChange();
-                break;
-              case 37:
-                descend();
-                modalChange();
-                break;
-              case 27:
-                $('html').css('overflow-x', 'auto');
-                $('#box').fadeOut();
-            }
-          });
+          $('#box').find('#inbox').append('<div id=\'modal\'><img src=' + src + '></div>');
         });
-        $('.right').find('img').on('click', function() {
-          var ascend, descend, listMax, listMin, modalChange, obj;
-          $('#inbox').find('#modal').remove();
-          $('#box').fadeIn();
-          obj = $(this).data('img') - 1;
-          listMax = data[1].article.length - 2;
-          listMin = data[1].article.length - 1;
-          ascend = function() {
-            if (obj < 0 || obj > listMax) {
-              obj = 0;
-            } else {
-              obj++;
-            }
-          };
-          descend = function() {
-            if (obj < 1 || obj > listMin) {
-              obj = listMin;
-            } else {
-              obj--;
-            }
-          };
-          modalChange = function() {
-            $('#inbox').find('#modal').remove();
-            $('#box').find('#inbox').append('<div id=\'modal\'><img src=' + data[0].article[obj].img + '>' + '<p>' + data[0].article[obj].head + '&#47;' + data[0].article.length + '</p>' + '<p>' + '</div>');
-            console.log(data[0].article[obj].img);
-          };
-          modalChange();
-          $('.rightarrow').on('click', function() {
-            descend();
-            modalChange();
-          });
-          $('.leftarrow').on('click', function() {
-            ascend();
-            modalChange();
-          });
-          $('.close').on('click', function() {
-            $('#box').fadeOut();
-          });
-          $('html').keyup(function(e) {
-            var key;
-            key = 'which' in e ? e.which : e.keyCode;
-            switch (key) {
-              case 39:
-                descend();
-                modalChange();
-                break;
-              case 37:
-                ascend();
-                modalChange();
-                break;
-              case 27:
-                $('#box').fadeOut();
-            }
-          });
-        });
-        circle();
       }
     });
     contents = '#section-ajax .content';
