@@ -98,7 +98,9 @@
       url: 'https://api.github.com/repos/usomax/usomax.github.io/contents/assets/pc/images/photo/thumbs',
       dataType: 'jsonp',
       success: function(returndata) {
+        var modalClose, modalLeft, modalRight;
         $.each(returndata.data, function(i, item) {
+          $('#box').find('#modal').append('<img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '", class="hide">');
           if (i < 8) {
             $('.left').append('<a href="#"><img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '"></a>');
             return circle();
@@ -110,13 +112,63 @@
             }
           }
         });
-        $('.left').find('img').on('click', function() {
-          var src;
-          src = $(this).attr('src');
-          $('#inbox').find('#modal').remove();
+        $('.circle').find('img').on('click', function() {
+          var imgSrc;
+          imgSrc = $(this).attr('src');
           $('#box').fadeIn();
-          $('#box').find('#inbox').append('<div id=\'modal\'><img src=' + src + '></div>');
+          $('#modal').find('img[src="' + imgSrc + '"]').removeClass("hide").addClass("active");
         });
+        $('.rightarrow').on('click', function() {
+          modalRight();
+        });
+        $('.leftarrow').on('click', function() {
+          modalLeft();
+        });
+        $('#box').on('click', function() {
+          modalClose();
+        });
+        $('#inbox').on('click', function(e) {
+          event.stopPropagation();
+        });
+        $('.close').on('click', function() {
+          modalClose();
+        });
+        $('html').keyup(function(e) {
+          var key;
+          key = 'which' in e ? e.which : e.keyCode;
+          switch (key) {
+            case 39:
+              modalRight();
+              break;
+            case 37:
+              modalLeft();
+              break;
+            case 27:
+              modalClose();
+          }
+        });
+        modalRight = function() {
+          if ($('#modal').find('img[class="active"]').is(':last-child')) {
+            $('#modal').find('img[class="active"]').removeClass('active').addClass('hide');
+            $('#modal img:first-child').addClass('active').removeClass('hide');
+          } else {
+            $('#modal').find('img[class="active"]').next().removeClass('hide').addClass('active');
+            $('#modal').find('img[class="active"]').prev().removeClass('active').addClass('hide');
+          }
+        };
+        modalLeft = function() {
+          if ($('#modal').find('img[class="active"]').is(':first-child')) {
+            $('#modal').find('img[class="active"]').removeClass('active').addClass('hide');
+            $('#modal img:last-child').removeClass('hide').addClass('active');
+          } else {
+            $('#modal').find('img[class="active"]').prev().removeClass('hide').addClass('active');
+            $('#modal').find('img[class="active"]').next().removeClass('active').addClass('hide');
+          }
+        };
+        modalClose = function() {
+          $('#box').fadeOut();
+          $('#modal').find('img[class="active"]').removeClass('active').addClass('hide');
+        };
       }
     });
     contents = '#section-ajax .content';
@@ -217,12 +269,6 @@
         });
       });
       return false;
-    });
-    $('#box').on('click', function() {
-      $(this).fadeOut();
-    });
-    $('#inbox').on('click', function(e) {
-      event.stopPropagation();
     });
     return particlesJS('particles-js', {
       'particles': {
