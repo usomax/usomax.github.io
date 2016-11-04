@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-11-04 01:31:01 +0900
+ Update:    2016-11-05 04:11:42 +0900
  Info:      LG G4 Gallery
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1574,11 +1574,11 @@ textarea:focus {
 .index #section-contents .clear {
   clear: both;
 }
-.index #section-contents .hide {
-  display: none !important;
+.index #section-contents .unactive {
+  opacity: 0 !important;
 }
 .index #section-contents .active {
-  display: block !important;
+  opacity: 1 !important;
 }
 .index #section-contents .logo {
   text-align: center;
@@ -1726,8 +1726,8 @@ textarea:focus {
 }
 .index #section-contents #main #box #inbox .close {
   position: absolute;
-  top: -5px;
-  right: -46px;
+  top: -45px;
+  right: -6px;
   width: 36px;
   height: 36px;
   -moz-transform: rotate(45deg);
@@ -1753,8 +1753,18 @@ textarea:focus {
   background: #fff;
   content: "";
 }
+.index #section-contents #main #box #inbox #modal {
+  width: 960px;
+  height: 540px;
+}
 .index #section-contents #main #box #inbox #modal img {
   border: 1px solid #fff;
+  position: absolute;
+  margin-left: -480px;
+  -moz-transition: all 0.5s linear;
+  -o-transition: all 0.5s linear;
+  -webkit-transition: all 0.5s linear;
+  transition: all 0.5s linear;
 }
 .index #section-contents #main #box #inbox #modal p {
   color: #fff;
@@ -1863,6 +1873,9 @@ textarea:focus {
   left: 50%;
   margin-top: -32px;
   margin-left: -32px;
+}
+.index #section-contents #temp {
+  display: none;
 }
 @media screen and (max-width: 960px) {
   .index {
