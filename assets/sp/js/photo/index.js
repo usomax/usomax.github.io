@@ -11,7 +11,7 @@
 
 (function() {
   (function($) {
-    var Loader, circle, contents, delay, messages, speed, targetContents;
+    var Loader, circle, contents, delay, get_file_photos, messages, speed, targetContents;
     $('#loader').delay(1000).fadeOut(300, function() {
       $('#main').css({
         visibility: 'visible'
@@ -91,149 +91,81 @@
       });
     };
     $.ajax({
-      type: 'GET',
-      url: '/assets/sp/js/photo/favorite.js',
-      dataType: 'json',
-      success: function(data) {
-        var h, j, listmax;
-        h = 0;
-        data[0].article.sort(function(val1, val2) {
-          if (val1.head > val2.head) {
-            return 1;
-          } else {
-            return -1;
+      url: 'https://api.github.com/repos/usomax/usomax.github.io/contents/assets/pc/images/photo/thumbs',
+      dataType: 'jsonp',
+      success: function(returndata) {
+        var modalClose, modalLeft, modalRight;
+        $.each(returndata.data, function(i, item) {
+          $('#box').find('#modal').append('<img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '", class="hide">');
+          if (i < 8) {
+            $('.left').append('<a href="#"><img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '"></a>');
+            return circle();
+          } else if (i > 8) {
+            $('.right').append('<a href="#"><img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '"></a>');
+            circle();
+            if (i === 16) {
+              return false;
+            }
           }
         });
-        j = 0;
-        while (j < data[0].article.length) {
-          h++;
-          $('.left').append('<a href=\'#\'><img src=' + data[0].article[j].img + ' class=\'obj\',  width=' + data[0].article[j].width + ', height=' + data[0].article[j].height + ', alt=\'\', data-img=' + [h] + ' ></a>');
-          j++;
-        }
-        data[1].article.sort(function(val1, val2) {
-          if (val1.head < val2.head) {
-            return 1;
-          } else {
-            return -1;
+        $('.circle').find('img').on('click', function() {
+          var imgSrc;
+          imgSrc = $(this).attr('src');
+          $('#box').fadeIn();
+          $('#modal').find('img[src="' + imgSrc + '"]').removeClass("hide").addClass("active");
+        });
+        $('.rightarrow').on('click', function() {
+          modalRight();
+        });
+        $('.leftarrow').on('click', function() {
+          modalLeft();
+        });
+        $('#box').on('click', function() {
+          modalClose();
+        });
+        $('#inbox').on('click', function(e) {
+          event.stopPropagation();
+        });
+        $('.close').on('click', function() {
+          modalClose();
+        });
+        $('html').keyup(function(e) {
+          var key;
+          key = 'which' in e ? e.which : e.keyCode;
+          switch (key) {
+            case 39:
+              modalRight();
+              break;
+            case 37:
+              modalLeft();
+              break;
+            case 27:
+              modalClose();
           }
         });
-        listmax = data[1].article.length;
-        j = 0;
-        while (j < data[1].article.length) {
-          $('.right').append('<a href=\'#\'><img src=' + data[1].article[j].img + ' class=\'obj\', width=' + data[1].article[j].width + ', height=' + data[1].article[j].height + ', alt=\'\', data-img=' + [listmax] + ' ></a>');
-          listmax--;
-          j++;
-        }
-        $('.left').find('img').on('click', function() {
-          var ascend, descend, listMax, listMin, modalChange, obj;
-          $('#inbox').find('#modal').remove();
-          $('#box').fadeIn();
-          obj = $(this).data('img') - 1;
-          listMax = data[0].article.length - 2;
-          listMin = data[0].article.length - 1;
-          ascend = function() {
-            if (obj < 0 || obj > listMax) {
-              obj = 0;
-            } else {
-              obj++;
-            }
-          };
-          descend = function() {
-            if (obj < 1 || obj > listMin) {
-              obj = listMin;
-            } else {
-              obj--;
-            }
-          };
-          modalChange = function() {
-            $('#inbox').find('#modal').remove();
-            $('#box').find('#inbox').append('<div id=\'modal\'><img src=' + data[0].article[obj].img + '>' + '<p>' + data[0].article[obj].head + '&#47;' + data[0].article.length + '</p>' + '</div>');
-          };
-          modalChange();
-          $('.rightarrow').on('click', function() {
-            ascend();
-            modalChange();
-          });
-          $('.leftarrow').on('click', function() {
-            descend();
-            modalChange();
-          });
-          $('.close').on('click', function() {
-            $('html').css('overflow-x', 'auto');
-            $('#box').fadeOut();
-          });
-          $('html').keyup(function(e) {
-            var key;
-            key = 'which' in e ? e.which : e.keyCode;
-            switch (key) {
-              case 39:
-                ascend();
-                modalChange();
-                break;
-              case 37:
-                descend();
-                modalChange();
-                break;
-              case 27:
-                $('html').css('overflow-x', 'auto');
-                $('#box').fadeOut();
-            }
-          });
-        });
-        $('.right').find('img').on('click', function() {
-          var ascend, descend, listMax, listMin, modalChange, obj;
-          $('#inbox').find('#modal').remove();
-          $('#box').fadeIn();
-          obj = $(this).data('img') - 1;
-          listMax = data[1].article.length - 2;
-          listMin = data[1].article.length - 1;
-          ascend = function() {
-            if (obj < 0 || obj > listMax) {
-              obj = 0;
-            } else {
-              obj++;
-            }
-          };
-          descend = function() {
-            if (obj < 1 || obj > listMin) {
-              obj = listMin;
-            } else {
-              obj--;
-            }
-          };
-          modalChange = function() {
-            $('#inbox').find('#modal').remove();
-            $('#box').find('#inbox').append('<div id=\'modal\'><img src=' + data[0].article[obj].img + '>' + '<p>' + data[0].article[obj].head + '&#47;' + data[0].article.length + '</p>' + '<p>' + '</div>');
-          };
-          modalChange();
-          $('.rightarrow').on('click', function() {
-            descend();
-            modalChange();
-          });
-          $('.leftarrow').on('click', function() {
-            ascend();
-            modalChange();
-          });
-          $('.close').on('click', function() {
-            $('#box').fadeOut();
-          });
-          $('html').keyup(function(e) {
-            var key;
-            key = 'which' in e ? e.which : e.keyCode;
-            switch (key) {
-              case 39:
-                descend();
-                modalChange();
-                break;
-              case 37:
-                ascend();
-                modalChange();
-                break;
-              case 27:
-                $('#box').fadeOut();
-            }
-          });
-        });
+        modalRight = function() {
+          if ($('#modal').find('img[class="active"]').is(':last-child')) {
+            $('#modal').find('img[class="active"]').removeClass('active').addClass('hide');
+            $('#modal img:first-child').addClass('active').removeClass('hide');
+          } else {
+            $('#modal').find('img[class="active"]').next().removeClass('hide').addClass('active');
+            $('#modal').find('img[class="active"]').prev().removeClass('active').addClass('hide');
+          }
+        };
+        modalLeft = function() {
+          if ($('#modal').find('img[class="active"]').is(':first-child')) {
+            $('#modal').find('img[class="active"]').removeClass('active').addClass('hide');
+            $('#modal img:last-child').removeClass('hide').addClass('active');
+          } else {
+            $('#modal').find('img[class="active"]').prev().removeClass('hide').addClass('active');
+            $('#modal').find('img[class="active"]').next().removeClass('active').addClass('hide');
+          }
+        };
+        modalClose = function() {
+          $('#box').fadeOut();
+          $('#modal').find('img[class="active"]').removeClass('active').addClass('hide');
+        };
+        return;
         circle();
       }
     });
@@ -264,6 +196,32 @@
     };
     delay = 700;
     speed = 1500;
+    get_file_photos = function() {
+      var html;
+      $('#section-ajax .contents .inner').html('');
+      html = '';
+      $.ajax({
+        url: 'https://api.github.com/repos/usomax/usomax.github.io/contents/assets/pc/images/photo/pics',
+        dataType: 'jsonp',
+        success: function(returndata) {
+          $.each(returndata.data, function(i, item) {
+            html += '<a href="http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '" target="_blank">' + '<div class="border one">' + '<div class="border two"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980" alt=""></div>' + '</div>' + '</a>';
+          });
+          $('#section-ajax .content .inner').append(html);
+          $('#section-ajax').delay(delay).fadeIn(delay, function() {
+            $('.logo').removeClass('hide');
+            $('.logo').css('pointer-events', 'auto');
+            $('#logo').addClass('hide');
+            $('.content').find('img').each(function(i) {
+              $(this).delay(100 * i).animate({
+                opacity: 1
+              }, speed);
+            });
+            returnScroll();
+          });
+        }
+      });
+    };
     $('#logo').on('click', function() {
       noScroll();
       $(this).css('pointer-events', 'none');
@@ -279,22 +237,11 @@
       $(this).animate({
         top: '+=45px'
       }, 700).animate({
-        top: '50'
+        top: 50
       }, speed, 'easeOutBounce', function() {
 
         /* 更新 */
-        Loader.page('/works/photo/gallery/');
-        $('#section-ajax').delay(delay).fadeIn(delay, function() {
-          $('.logo').removeClass('hide');
-          $('.logo').css('pointer-events', 'auto');
-          $('#logo').addClass('hide');
-          $('.content img').each(function(i) {
-            $(this).delay(100 * i).animate({
-              opacity: 1
-            }, speed);
-          });
-          returnScroll();
-        });
+        get_file_photos();
       });
       return false;
     });

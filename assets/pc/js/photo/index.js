@@ -11,7 +11,7 @@
 
 (function() {
   (function($) {
-    var Loader, circle, contents, delay, get_file_photos, messages, speed, targetContents;
+    var circle, delay, get_file_photos, speed;
     $('#loader').delay(1000).fadeOut(300, function() {
       $('#main').css({
         visibility: 'visible'
@@ -171,31 +171,6 @@
         };
       }
     });
-    contents = '#section-ajax .content';
-    targetContents = '#section-contents';
-    messages = 'ページの読み込みに失敗しました。';
-    $.ajaxSetup({
-      cache: false
-    });
-    Loader = {
-      page: function(url) {
-        var d;
-        d = $.Deferred();
-        $.ajax({
-          url: url,
-          cache: false,
-          type: 'GET',
-          dataType: 'html',
-          success: d.resolve,
-          error: d.reject
-        }).done(function(url) {
-          $(contents).html($(url).filter(targetContents)[0].innerHTML);
-        }).fail(function(url) {
-          alert(messages);
-        });
-        return d.promise();
-      }
-    };
     get_file_photos = function() {
       var html;
       $('#section-ajax .contents .inner').html('');
