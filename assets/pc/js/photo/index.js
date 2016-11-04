@@ -241,7 +241,8 @@
         opacity: 0
       }, speed, function() {
         return $(this).css({
-          visibility: 'hidden'
+          visibility: 'hidden',
+          height: '0px'
         });
       });
       $('html, body').delay(delay).animate({
@@ -280,7 +281,8 @@
             top: '50%'
           }, speed, 'easeOutBack', function() {
             $('#stage').css({
-              visibility: ''
+              visibility: '',
+              height: ''
             }).animate({
               opacity: 1
             }, speed, function() {

@@ -11,7 +11,7 @@
 
 (function() {
   (function($) {
-    var Loader, circle, contents, delay, get_file_photos, messages, speed, targetContents;
+    var circle, delay, firstGetPhotos, get_file_photos, get_file_photos_clone, speed;
     $('#loader').delay(1000).fadeOut(300, function() {
       $('#main').css({
         visibility: 'visible'
@@ -43,6 +43,15 @@
         var scroll_event;
         scroll_event = 'onwheel' in document ? 'wheel' : 'onmousewheel' in document ? 'mousewheel' : 'DOMMouseScroll';
         $(document).off(scroll_event);
+      };
+      window.imageClick = function() {
+        return $('#section-ajax .content img').on('click', function() {
+          var imgSrc;
+          imgSrc = $(this).attr('src');
+          $('#box').fadeIn();
+          $('#modal').find('img[src="' + imgSrc + '"]').removeClass("unactive").addClass("active");
+          return false;
+        });
       };
       window.scrollEvent = function() {
         var $dh, $itemList, $itemSize, $wh, $windowTop, $ww, angle, i, increase, itemSizeDiff, leftX, leftY, logger, rightX, rightY;
@@ -86,7 +95,7 @@
         }
       };
       scrollEvent();
-      $(window).on('scroll resize', function() {
+      $win.on('scroll resize', function() {
         scrollEvent();
       });
     };
@@ -96,12 +105,12 @@
       success: function(returndata) {
         var modalClose, modalLeft, modalRight;
         $.each(returndata.data, function(i, item) {
-          $('#box').find('#modal').append('<img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '", class="hide">');
+          $('#box #modal, #temp .firstTemp').append('<img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980", class="unactive">');
           if (i < 8) {
-            $('.left').append('<a href="#"><img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '"></a>');
+            $('.left').append('<a href="#"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980"></a>');
             return circle();
           } else if (i > 8) {
-            $('.right').append('<a href="#"><img src="http://tu3q.tk/assets/pc/images/photo/thumbs/' + this.name + '"></a>');
+            $('.right').append('<a href="#"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980"></a>');
             circle();
             if (i === 16) {
               return false;
@@ -112,7 +121,7 @@
           var imgSrc;
           imgSrc = $(this).attr('src');
           $('#box').fadeIn();
-          $('#modal').find('img[src="' + imgSrc + '"]').removeClass("hide").addClass("active");
+          $('#modal').find('img[src="' + imgSrc + '"]').removeClass("unactive").addClass("active");
         });
         $('.rightarrow').on('click', function() {
           modalRight();
@@ -145,90 +154,93 @@
         });
         modalRight = function() {
           if ($('#modal').find('img[class="active"]').is(':last-child')) {
-            $('#modal').find('img[class="active"]').removeClass('active').addClass('hide');
-            $('#modal img:first-child').addClass('active').removeClass('hide');
+            $('#modal').find('img[class="active"]').removeClass('active').addClass('unactive');
+            $('#modal img:first-child').addClass('active').removeClass('unactive');
           } else {
-            $('#modal').find('img[class="active"]').next().removeClass('hide').addClass('active');
-            $('#modal').find('img[class="active"]').prev().removeClass('active').addClass('hide');
+            $('#modal').find('img[class="active"]').next().removeClass('unactive').addClass('active');
+            $('#modal').find('img[class="active"]').prev().removeClass('active').addClass('unactive');
           }
         };
         modalLeft = function() {
           if ($('#modal').find('img[class="active"]').is(':first-child')) {
-            $('#modal').find('img[class="active"]').removeClass('active').addClass('hide');
-            $('#modal img:last-child').removeClass('hide').addClass('active');
+            $('#modal').find('img[class="active"]').removeClass('active').addClass('unactive');
+            $('#modal img:last-child').removeClass('unactive').addClass('active');
           } else {
-            $('#modal').find('img[class="active"]').prev().removeClass('hide').addClass('active');
-            $('#modal').find('img[class="active"]').next().removeClass('active').addClass('hide');
+            $('#modal').find('img[class="active"]').prev().removeClass('unactive').addClass('active');
+            $('#modal').find('img[class="active"]').next().removeClass('active').addClass('unactive');
           }
         };
         modalClose = function() {
           $('#box').fadeOut();
-          $('#modal').find('img[class="active"]').removeClass('active').addClass('hide');
+          $('#modal').find('img[class="active"]').removeClass('active').addClass('unactive');
         };
-        return;
-        circle();
       }
     });
-    contents = '#section-ajax .content';
-    targetContents = '#section-contents';
-    messages = 'ページの読み込みに失敗しました。';
-    $.ajaxSetup({
-      cache: false
-    });
-    Loader = {
-      page: function(url) {
-        var d;
-        d = $.Deferred();
-        $.ajax({
-          url: url,
-          cache: false,
-          type: 'GET',
-          dataType: 'html',
-          success: d.resolve,
-          error: d.reject
-        }).done(function(url) {
-          $(contents).html($(url).filter(targetContents)[0].innerHTML);
-        }).fail(function(url) {
-          alert(messages);
-        });
-        return d.promise();
-      }
-    };
-    delay = 700;
-    speed = 1500;
     get_file_photos = function() {
-      var html;
-      $('#section-ajax .contents .inner').html('');
+      var html, modalImage;
+      $('#section-ajax .content .inner').html('');
       html = '';
+      modalImage = '';
       $.ajax({
         url: 'https://api.github.com/repos/usomax/usomax.github.io/contents/assets/pc/images/photo/pics',
         dataType: 'jsonp',
         success: function(returndata) {
           $.each(returndata.data, function(i, item) {
-            html += '<a href="http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '" target="_blank">' + '<div class="border one">' + '<div class="border two"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980" alt=""></div>' + '</div>' + '</a>';
+            html += '<a href="#">' + '<div class="border one">' + '<div class="border two"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980" alt=""></div>' + '</div>' + '</a>';
+            modalImage += '<img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980" alt="" class="unactive">';
           });
-          $('#section-ajax .content .inner').append(html);
+          $('#section-ajax .content .inner, #temp .secondTempContent').append(html);
+          $('#box #modal, #temp .secondTemp').append(modalImage);
           $('#section-ajax').delay(delay).fadeIn(delay, function() {
             $('.logo').removeClass('hide');
             $('.logo').css('pointer-events', 'auto');
             $('#logo').addClass('hide');
-            $('.content').find('img').each(function(i) {
+            $('.content img').each(function(i) {
               $(this).delay(100 * i).animate({
                 opacity: 1
               }, speed);
             });
             returnScroll();
+            imageClick();
           });
         }
       });
     };
+    get_file_photos_clone = function() {
+      $('#section-ajax .content .inner').html('');
+      $('#temp .secondTempContent').clone().appendTo('#section-ajax .content .inner');
+      $('#temp .secondTemp').clone().appendTo('#box #modal');
+      $('#section-ajax').delay(delay).fadeIn(delay, function() {
+        $('.logo').removeClass('hide');
+        $('.logo').css('pointer-events', 'auto');
+        $('#logo').addClass('hide');
+        $('.content img').each(function(i) {
+          $(this).delay(100 * i).animate({
+            opacity: 1
+          }, speed);
+        });
+        returnScroll();
+        imageClick();
+      });
+    };
+    delay = 700;
+    speed = 1500;
+    firstGetPhotos = false;
     $('#logo').on('click', function() {
+      $('#modal').empty();
       noScroll();
       $(this).css('pointer-events', 'none');
       $('html,body').animate({
         scrollTop: $win.scrollTop(3)
       }, 0);
-      $('#stage').delay(delay).fadeOut(speed);
+      $('#stage').delay(delay).animate({
+        opacity: 0
+      }, speed, function() {
+        return $(this).css({
+          visibility: 'hidden',
+          height: '0px'
+        });
+      });
       $('html, body').delay(delay).animate({
         scrollTop: 0
       }, speed, function() {
@@ -240,12 +252,19 @@
         top: 50
       }, speed, 'easeOutBounce', function() {
 
-        /* 更新 */
-        get_file_photos();
+        /* 初回または2回目以降のフラグ分岐処理 */
+        if (firstGetPhotos === false) {
+          firstGetPhotos = true;
+          get_file_photos();
+        } else {
+          get_file_photos_clone();
+        }
       });
       return false;
     });
     $('.logo').on('click', function() {
+      $('#modal').empty();
+      $('#temp .firstTemp').clone().appendTo('#box #modal');
       noScroll();
       $('html, body').animate({
         scrollTop: 0
@@ -253,12 +272,18 @@
         $('.logo').addClass('hide');
         $('#logo').removeClass('hide');
         $('#section-ajax').fadeOut(800, function() {
+          scrollEvent();
           $('#logo').animate({
             top: '50%'
           }, speed, 'easeOutBack', function() {
-            $('#stage').fadeIn(speed, function() {
+            $('#stage').css({
+              visibility: '',
+              height: ''
+            }).animate({
+              opacity: 1
+            }, speed, function() {
               $('#logo').css('pointer-events', 'auto');
-              $(window).on('scroll resize', function() {
+              $win.on('scroll resize', function() {
                 scrollEvent();
               });
               returnScroll();
@@ -267,12 +292,6 @@
         });
       });
       return false;
-    });
-    $('#box').on('click', function() {
-      $(this).fadeOut();
-    });
-    $('#inbox').on('click', function(e) {
-      event.stopPropagation();
     });
     return particlesJS('particles-js', {
       'particles': {
