@@ -71,6 +71,7 @@
             dim += DIM_DELTA;
             if (level > MAX_LEVEL) {
               $('#cells').css('pointer-events', 'none');
+              $('#gameReset').fadeOut();
               t2 = (new Date).getTime();
               $('#score').text((t2 - t1) / 1000 + '秒!!');
               level = 0;
