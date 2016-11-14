@@ -21,13 +21,14 @@
     t1 = void 0;
     t2 = void 0;
     gameStart = function() {
-      var i;
-      var i;
       var cells, chars, dummy, i, offset, seikai;
+      $('#cells').css('pointer-events', 'auto');
+      var i;
+      var i;
       dummy = games[level][0];
       seikai = games[level][1];
       if (level === 0) {
-        $('#score').empty();
+        $('#score').text('クリアタイム');
         t1 = (new Date).getTime();
       }
       cells = '';
@@ -50,30 +51,48 @@
       chars.splice(offset, 1, seikai);
       i = 1;
       while (i <= chars.length) {
+        $('#s' + i).css('opacity', '0');
         $('#s' + i).html('<img src="' + chars[i - 1] + '"/>');
+        $('#s' + i).animate({
+          opacity: 1
+        }, 300);
+        if (level === 0) {
+          $('#cells span img').css('width', '13%');
+        } else if (level === 1) {
+          $('#cells span img').css('width', '11%');
+          $('#gameReset').fadeIn();
+        } else if (level === 2) {
+          $('#cells span img').css('width', '9%');
+        }
         $('#s' + i).click(function() {
           if ($(this).children('img').attr('src') === seikai) {
+            $(this).children('img').css('border-color', '#0f0');
             level++;
             dim += DIM_DELTA;
             if (level > MAX_LEVEL) {
+              $('#cells').css('pointer-events', 'none');
               t2 = (new Date).getTime();
-              $('#score').text('Your score is ' + (t2 - t1) / 1000 + '秒!!');
+              $('#score').text((t2 - t1) / 1000 + '秒!!');
               level = 0;
               dim = DIM_FIRST;
+              $('#gameStart').text('もう一度探す！').fadeIn();
               return false;
             }
-            $('#gameStart').show();
             gameStart();
+          } else {
+            $(this).children('img').css('border-color', '#f00');
           }
         });
         i++;
       }
     };
     $('#gameStart').click(function() {
-      $(this).hide('slow');
+      $(this).hide('20');
+      $('#gameReset').fadeOut();
       gameStart();
     });
     return $('#gameReset').click(function() {
+      $(this).fadeOut();
       if (level >= 1) {
         level = 0;
         dim = DIM_FIRST;

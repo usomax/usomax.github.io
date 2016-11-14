@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-10-25 16:26:11 +0900
+ Update:    2016-11-14 01:38:45 +0900
  Info:      間違い探し
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1561,98 +1561,145 @@ textarea:focus {
  Update:    編集または保存した日付時刻を記述
  Info:      layout of index
 ----------------------------------------------------------- */
-.index .section {
-  overflow: hidden;
-  position: relative;
-  padding: 100px 0;
-  min-height: 400px;
-}
-.index .section .inner {
-  max-width: 1024px;
-  margin: 0 auto;
-}
-.index #about .inner {
-  text-align: center;
-}
-.index #about .inner .logo h1 {
-  overflow: hidden;
-  font-size: 3.25em;
+#section-contents {
   width: 100%;
-  margin: 0;
-  display: block;
-  font-weight: bold;
+  height: 100%;
+  background: #ff8080;
 }
-.index #about .inner .logo h1 span {
-  display: block;
-  font-size: 45%;
-  margin: 25px 0 15px;
+#section-contents .left {
+  float: left;
+  width: 19%;
+  padding-top: .5%;
+  padding-left: .5%;
+  padding-right: .5%;
+  padding-bottom: .5%;
+  height: 98%;
+  background: #ff8080;
 }
-.index #about .inner .logo button {
-  overflow: hidden;
+#section-contents .left h1 {
+  text-align: center;
+  width: 100%;
+  padding-top: 20px;
+  display: block;
+}
+#section-contents .left h1 img {
+  width: 100%;
+}
+#section-contents .left #story {
+  margin-top: 20px;
+}
+#section-contents .left #story img:first-child {
+  width: 40%;
+  padding: 0;
+}
+#section-contents .left #story img {
+  width: 100%;
+  padding-top: 10px;
+}
+#section-contents .left #caution {
+  margin-top: 20px;
+}
+#section-contents .left #caution img:first-child {
+  width: 40%;
+  padding: 0;
+}
+#section-contents .left #caution img {
+  width: 100%;
+  padding-top: 10px;
+}
+#section-contents .left #caution .box {
+  float: left;
+}
+#section-contents .left #caution .box img {
+  width: 117px;
+}
+#section-contents .left #caution .box:first-child + * {
+  float: right;
+}
+#section-contents .center {
+  width: 60%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  position: relative;
+  display: table;
+  background: white;
+}
+#section-contents .center button {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
   border: none;
-  background: #A8A8A9;
+  transform: translate(-50%, -50%);
+  background: #2196F3;
   color: #fff;
-  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
-  font-size: 0.85em;
-  padding: 1.5em 2.5em;
-  margin: 20px 0;
+  border-radius: 15px;
   white-space: nowrap;
+  text-align: center;
+  width: 25%;
+  height: 60px;
 }
-.index #about .inner #cells {
-  max-width: 80%;
-  margin: 0 auto;
+#section-contents .center #cells {
+  display: table-cell;
+  vertical-align: middle;
 }
-.index #about .inner #cells span {
+#section-contents .center #cells span {
   font-size: 25px;
   cursor: pointer;
 }
-.index #about .inner #cells span img {
-  width: 117px;
+#section-contents .center #cells span img {
+  border-radius: 25px;
+  border: 5px solid #EEE;
+  margin: 6px;
 }
-.index #detail .inner .logo {
-  float: right;
+#section-contents .right {
+  float: left;
+  width: 19%;
+  padding-top: .5%;
+  padding-left: .5%;
+  padding-right: .5%;
+  padding-bottom: .5%;
+  height: 98%;
+  text-align: center;
 }
-.index #detail .inner .logo h1 {
-  overflow: hidden;
-  font-size: 3.25em;
+#section-contents .right img {
+  margin-top: 20px;
+}
+#section-contents .right .box {
+  margin-top: 20px;
+  background: white;
+  border-radius: 10px;
+  height: 12%;
+  display: table;
   width: 100%;
-  margin: 0;
-  display: block;
+}
+#section-contents .right #score {
+  color: #ff8080;
   font-weight: bold;
+  font-size: 23px;
+  font-weight: bold;
+  display: table-cell;
+  vertical-align: middle;
 }
-.index #detail .inner .logo h1 span {
-  display: block;
-  font-size: 45%;
-  margin: 25px 0 15px;
-}
-.index #detail .inner .logo button {
-  overflow: hidden;
+#section-contents .right button {
+  display: none;
+  cursor: pointer;
   border: none;
-  background: #A8A8A9;
+  background: #4CAF50;
   color: #fff;
-  line-height: 1;
   text-transform: uppercase;
   letter-spacing: 2px;
   font-weight: bold;
-  font-size: 0.85em;
-  padding: 1.5em 2.5em;
-  margin: 20px 0;
+  border-radius: 15px;
   white-space: nowrap;
+  width: 75%;
+  height: 60px;
+  margin-top: 20px;
 }
-.index #detail .inner .image {
-  position: relative;
-  width: 50%;
-  float: left;
-}
-.index #detail .inner .image .inner {
-  position: relative;
-  height: 300px;
-  line-height: 300px;
-  background: rgba(0, 0, 0, 0.08);
-  text-align: center;
-  font-size: 40px;
-  color: rgba(0, 0, 0, 0.1);
+#section-contents .right button:focus {
+  outline: none;
 }

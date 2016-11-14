@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <![endif]-->
 
-    <title>THE DOG</title>
+    <title>THE・犬探し</title>
     <meta name="robots" content="index,follow">
     <meta name="keywords" content="lookmisstake,machigaisagasi,machigai,sagashi,sagasi">
     <meta name="description" content="間違い探しです">
@@ -22,8 +22,8 @@
 
     <!-- Facebook用OGP指定-->
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="THE DOG">
-    <meta property="og:title" content="THE DOG">
+    <meta property="og:site_name" content="THE・犬探し">
+    <meta property="og:title" content="THE・犬探し">
     <meta property="og:description" content="間違い探しです">
     <meta property="og:url" content="http://tu3q.tk/">
     <meta property="og:image" content="http://tu3q.tk/assets/common/images/mistake/ogp_image.jpg">
@@ -52,18 +52,20 @@
     <header id="section-header"></header>
     <!-- /#section-header-->
 
-    <main id="section-contents">
-      <div id="about" class="section">
-        <div class="inner">
-          <div class="logo">
-            <h1>THE DOG</h1>
-            <p>一匹だけ左右反転しているわんちゃんがいるよ</p>
-            <button id="gameStart" type="button">スタート！</button>
-            <button id="gameReset" type="button">はじめから</button>
-            <p id="score"></p>
-          </div>
-          <div id="cells"></div>
+    <main id="section-contents" class="clearfix">
+      <div class="left">
+        <h1><img src="/assets/pc/images/mistake/heading_title.png"></h1>
+        <div id="story"><img src="/assets/pc/images/mistake/heading_story.png"><img src="/assets/pc/images/mistake/bg_story.png"></div>
+        <div id="caution"><img src="/assets/pc/images/mistake/heading_caution.png"><img src="/assets/pc/images/mistake/bg_caution.png">
         </div>
+      </div>
+      <div class="center">
+        <button id="gameStart" type="button">さがす</button>
+        <div id="cells"></div>
+      </div>
+      <div class="right">
+        <div class="box"><span id="score">クリアタイム</span></div>
+        <button id="gameReset" type="button">やりなおす</button>
       </div>
     </main>
     <!-- /#section-contents-->
