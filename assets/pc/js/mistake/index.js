@@ -11,7 +11,7 @@
 
 (function() {
   (function($) {
-    var DIM_DELTA, DIM_FIRST, MAX_LEVEL, dim, gameStart, games, level, t1, t2;
+    var DIM_DELTA, DIM_FIRST, MAX_LEVEL, dim, gameReset, gameStart, games, level, t1, t2;
     level = 0;
     games = [[PC_IMG_DIR + 'mistake/dummyDog.jpg', PC_IMG_DIR + 'mistake/dog.jpg'], [PC_IMG_DIR + 'mistake/dummyDog.jpg', PC_IMG_DIR + 'mistake/dog.jpg'], [PC_IMG_DIR + 'mistake/dummyDog.jpg', PC_IMG_DIR + 'mistake/dog.jpg']];
     MAX_LEVEL = games.length - 1;
@@ -28,7 +28,6 @@
       dummy = games[level][0];
       seikai = games[level][1];
       if (level === 0) {
-        $('#score').text('クリアタイム');
         t1 = (new Date).getTime();
       }
       cells = '';
@@ -61,15 +60,20 @@
         } else if (level === 1) {
           $('#cells span img').css('width', '11%');
           $('#gameReset').fadeIn();
+          $('#count').text('残り2匹！');
         } else if (level === 2) {
           $('#cells span img').css('width', '9%');
+          $('#count').text('残り1匹！');
         }
         $('#s' + i).click(function() {
           if ($(this).children('img').attr('src') === seikai) {
             $(this).children('img').css('border-color', '#0f0');
+            $('#score').text('正解！');
+            $('.right').find('img').eq(level).attr("src", PC_IMG_DIR + 'mistake/dog.jpg');
             level++;
             dim += DIM_DELTA;
             if (level > MAX_LEVEL) {
+              $('#count').text('目標達成！');
               $('#cells').css('pointer-events', 'none');
               $('#gameReset').fadeOut();
               t2 = (new Date).getTime();
@@ -82,24 +86,32 @@
             gameStart();
           } else {
             $(this).children('img').css('border-color', '#f00');
+            $('#score').text('ニセモノだよ！');
           }
         });
         i++;
       }
     };
+    gameReset = function() {
+      $('.right').find('img').attr("src", PC_IMG_DIR + 'mistake/img_emptyDog.jpg');
+      $('#count').text('残り3匹！');
+      $('#score').text('クリアタイム');
+      if (level >= 1) {
+        level = 0;
+        dim = DIM_FIRST;
+        return false;
+      }
+    };
     $('#gameStart').click(function() {
       $(this).hide('20');
       $('#gameReset').fadeOut();
+      gameReset();
       gameStart();
     });
     return $('#gameReset').click(function() {
       $(this).fadeOut();
-      if (level >= 1) {
-        level = 0;
-        dim = DIM_FIRST;
-        gameStart();
-        return false;
-      }
+      gameReset();
+      gameStart();
     });
   })(jQuery);
 
