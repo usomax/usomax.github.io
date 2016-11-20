@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-11-21 02:10:23 +0900
+ Update:    2016-11-21 02:40:59 +0900
  Info:      間違い探し
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1716,4 +1716,7 @@ textarea:focus {
 }
 #section-contents .right button:focus {
   outline: none;
+}
+#section-contents .right button:hover {
+  background: #47b97f;
 }
