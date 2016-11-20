@@ -55,6 +55,11 @@
         $('#s' + i).animate({
           opacity: 1
         }, 300);
+        $('#cells').find('img').mouseover(function() {
+          $(this).css('border-color', '#ff8fc1');
+        }).mouseout(function() {
+          $(this).css('border-color', '#eee');
+        });
         if (level === 0) {
           $('#cells span img').css('width', '13%');
         } else if (level === 1) {
@@ -86,6 +91,9 @@
             gameStart();
           } else {
             $(this).children('img').css('border-color', '#f00');
+            $(this).children('img').animate({
+              borderColor: '#eee'
+            }, 800);
             $('#score').text('ニセモノだよ！');
           }
         });
