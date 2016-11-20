@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-11-21 02:40:59 +0900
+ Update:    2016-11-21 03:01:21 +0900
  Info:      間違い探し
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1642,6 +1642,9 @@ textarea:focus {
   text-align: center;
   width: 25%;
   height: 60px;
+}
+#section-contents .center button:hover {
+  background: #4dabf5;
 }
 #section-contents .center #cells {
   display: table-cell;
