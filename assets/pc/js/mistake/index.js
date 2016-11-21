@@ -101,7 +101,7 @@
       }
     };
     gameReset = function() {
-      $('.right').find('img').attr("src", PC_IMG_DIR + 'mistake/img_emptyDog.jpg');
+      $('.sideBar-right').find('img').attr("src", PC_IMG_DIR + 'mistake/img_emptyDog.jpg');
       $('.js-count').text('残り3匹！');
       $('.js-score').text('クリアタイム');
       if (level >= 1) {
