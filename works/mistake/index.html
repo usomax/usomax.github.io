@@ -53,22 +53,22 @@
     <!-- /#section-header-->
 
     <main id="section-contents" class="clearfix">
-      <div class="left">
-        <h1><img src="/assets/pc/images/mistake/heading_title.png"></h1>
-        <div id="story"><img src="/assets/pc/images/mistake/heading_story.png"><img src="/assets/pc/images/mistake/bg_story.png"></div>
-        <div id="caution"><img src="/assets/pc/images/mistake/heading_caution.png"><img src="/assets/pc/images/mistake/bg_caution.png"></div>
+      <div class="sideBar sideBar-left">
+        <h1 class="sideBar-content"><a href="./"><img src="/assets/pc/images/mistake/heading_title.png"></a></h1>
+        <div class="sideBar-content"><img src="/assets/pc/images/mistake/heading_story.png" class="contentTitle"><img src="/assets/pc/images/mistake/bg_story.png"></div>
+        <div class="sideBar-content"><img src="/assets/pc/images/mistake/heading_caution.png" class="contentTitle"><img src="/assets/pc/images/mistake/bg_caution.png"></div>
       </div>
       <div class="center">
-        <button id="gameStart" type="button">さがす</button>
+        <button type="button" class="button-blue js-gameStart">さがす</button>
         <div id="cells"></div>
       </div>
-      <div class="right">
-        <div class="box">
-          <p id="count">残り3匹！</p>
+      <div class="sideBar sideBar-right">
+        <div class="box sideBar-content">
+          <p class="js-count sideBar-text">残り3匹！</p>
           <div class="inner"><span><img src="/assets/pc/images/mistake/img_emptyDog.jpg"></span><span><img src="/assets/pc/images/mistake/img_emptyDog.jpg"></span><span><img src="/assets/pc/images/mistake/img_emptyDog.jpg"></span></div>
         </div>
-        <div class="box"><span id="score">クリアタイム</span></div>
-        <button id="gameReset" type="button">やりなおす</button>
+        <div class="box sideBar-content"><span class="js-score sideBar-text">クリアタイム</span></div>
+        <button type="button" class="sideBar-content button-green js-gameReset">やりなおす</button>
       </div>
     </main>
     <!-- /#section-contents-->

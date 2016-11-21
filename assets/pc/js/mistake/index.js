@@ -64,28 +64,28 @@
           $('#cells span img').css('width', '13%');
         } else if (level === 1) {
           $('#cells span img').css('width', '11%');
-          $('#gameReset').fadeIn();
-          $('#count').text('残り2匹！');
+          $('.js-gameReset').fadeIn();
+          $('.js-count').text('残り2匹！');
         } else if (level === 2) {
           $('#cells span img').css('width', '9%');
-          $('#count').text('残り1匹！');
+          $('.js-count').text('残り1匹！');
         }
         $('#s' + i).click(function() {
           if ($(this).children('img').attr('src') === seikai) {
             $(this).children('img').css('border-color', '#0f0');
-            $('#score').text('正解！');
-            $('.right').find('img').eq(level).attr("src", PC_IMG_DIR + 'mistake/dog.jpg');
+            $('.js-score').text('正解！');
+            $('.sideBar-right').find('img').eq(level).attr("src", PC_IMG_DIR + 'mistake/dog.jpg');
             level++;
             dim += DIM_DELTA;
             if (level > MAX_LEVEL) {
-              $('#count').text('目標達成！');
+              $('.js-count').text('目標達成！');
               $('#cells').css('pointer-events', 'none');
-              $('#gameReset').fadeOut();
+              $('.js-gameReset').fadeOut();
               t2 = (new Date).getTime();
-              $('#score').text((t2 - t1) / 1000 + '秒!!');
+              $('.js-score').text((t2 - t1) / 1000 + '秒!!');
               level = 0;
               dim = DIM_FIRST;
-              $('#gameStart').text('もう一度探す！').fadeIn();
+              $('.js-gameStart').text('もう一度探す！').fadeIn();
               return false;
             }
             gameStart();
@@ -94,7 +94,7 @@
             $(this).children('img').animate({
               borderColor: '#eee'
             }, 800);
-            $('#score').text('ニセモノだよ！');
+            $('.js-score').text('ニセモノだよ！');
           }
         });
         i++;
@@ -102,21 +102,21 @@
     };
     gameReset = function() {
       $('.right').find('img').attr("src", PC_IMG_DIR + 'mistake/img_emptyDog.jpg');
-      $('#count').text('残り3匹！');
-      $('#score').text('クリアタイム');
+      $('.js-count').text('残り3匹！');
+      $('.js-score').text('クリアタイム');
       if (level >= 1) {
         level = 0;
         dim = DIM_FIRST;
         return false;
       }
     };
-    $('#gameStart').click(function() {
+    $('.js-gameStart').click(function() {
       $(this).hide('20');
-      $('#gameReset').fadeOut();
+      $('.js-gameReset').fadeOut();
       gameReset();
       gameStart();
     });
-    return $('#gameReset').click(function() {
+    return $('.js-gameReset').click(function() {
       $(this).fadeOut();
       gameReset();
       gameStart();
