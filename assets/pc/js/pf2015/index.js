@@ -38,7 +38,7 @@
             arcFillInt: 8
           });
           gauge03.update({
-            arcFillInt: 5
+            arcFillInt: 7
           });
         }
       }
