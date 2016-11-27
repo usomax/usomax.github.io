@@ -232,6 +232,7 @@
     firstGetPhotos = false;
     $('#logo').on('click', function() {
       $('#modal').empty();
+      $('body').css('min-height', $win.height() + 1 + 'px');
       noScroll();
       $(this).css('pointer-events', 'none');
       $('html,body').animate({
@@ -268,6 +269,7 @@
     });
     $('.logo').on('click', function() {
       $('#modal').empty();
+      $('body').css('min-height', $win.height() + 1 + 'px');
       $('#temp .firstTemp').clone().appendTo('#box #modal');
       noScroll();
       $('html, body').animate({
