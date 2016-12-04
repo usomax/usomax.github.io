@@ -109,12 +109,12 @@
       success: function(returndata) {
         var modalClose, modalLeft, modalRight;
         $.each(returndata.data, function(i, item) {
-          $('#box #modal, #temp .firstTemp').append('<img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980", class="unactive">');
+          $('#box #modal, #temp .firstTemp').append('<img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.ml/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980", class="unactive">');
           if (i < 8) {
-            $('.left').append('<a href="#"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980"></a>');
+            $('.left').append('<a href="#"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.ml/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980"></a>');
             return circle();
           } else if (i > 8) {
-            $('.right').append('<a href="#"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980"></a>');
+            $('.right').append('<a href="#"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.ml/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980"></a>');
             circle();
             if (i === 16) {
               return false;
@@ -190,8 +190,8 @@
         dataType: 'jsonp',
         success: function(returndata) {
           $.each(returndata.data, function(i, item) {
-            html += '<a href="#">' + '<div class="border one">' + '<div class="border two"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980" alt=""></div>' + '</div>' + '</a>';
-            modalImage += '<img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.tk/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980" alt="" class="unactive">';
+            html += '<a href="#">' + '<div class="border one">' + '<div class="border two"><img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.ml/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980" alt=""></div>' + '</div>' + '</a>';
+            modalImage += '<img src="https://i.embed.ly/1/display/resize?width=960&height=540&quality=95&grow=false&url=http://tu3q.ml/assets/pc/images/photo/pics/' + this.name + '&key=a1f82558d8134f6cbebceb9e67d04980" alt="" class="unactive">';
           });
           $('#section-ajax .content .inner, #temp .secondTempContent').append(html);
           $('#box #modal, #temp .secondTemp').append(modalImage);

@@ -11,6 +11,12 @@
 
 (function() {
   (function($) {
+    $('.js-pageTop').click(function() {
+      $('body').animate({
+        scrollTop: 0
+      }, 300);
+      return false;
+    });
     if ($('body.index')) {
       $('#slide ul li').addClass('src', "./images/img_icatch1.jpg").show();
       $('#slide ul li').addClass('src', "./images/img_icatch2.png").show();
