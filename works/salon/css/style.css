@@ -59,6 +59,7 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 
 .wideslider {
 	width: 100%;
+	height: 325px;
 	text-align: left;
 	position: relative;
 	overflow: hidden;
@@ -105,6 +106,22 @@ _/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/_/
 .nav_prev:hover {background: url(../images/nav_prev_on.png) no-repeat right center;}
 .nav_next {background: url(../images/nav_next.png) no-repeat left center;}
 .nav_next:hover {background: url(../images/nav_next_on.png) no-repeat left center;}
+
+.nav_prev:before {
+  background: url(../images/nav_prev_on.png) no-repeat;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.nav_next:before {
+  background: url(../images/nav_next_on.png) no-repeat;
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 0;
+}
 
 .pagination {
 	bottom: 0;
