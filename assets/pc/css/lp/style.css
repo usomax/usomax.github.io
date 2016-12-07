@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-10-25 16:24:19 +0900
+ Update:    2016-12-08 03:44:09 +0900
  Info:      成果物を掲載したランディングページ
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1571,10 +1571,8 @@ textarea:focus {
   color: #4a4a4a;
 }
 #section-header h1 {
-  color: transparent;
-  background-color: black;
-  text-shadow: rgba(255, 255, 255, 0.5) 0 3px 5px, rgba(255, 255, 255, 0.4) 1px 3px 3px;
-  -webkit-background-clip: text;
+  text-shadow: 1px 1px 5px #fff, 0px -2px 1px #000;
+  color: rgba(158, 158, 158, 0.7);
 }
 
 /* ------------------------------------------- SASS Information
@@ -1672,7 +1670,7 @@ textarea:focus {
   -moz-border-radius: 8px;
   -webkit-border-radius: 8px;
   border-radius: 8px;
-  display: table;
+  display: block;
 }
 .index #section-contents .box:hover {
   box-shadow: 0px 0px 10px 2px #000;
