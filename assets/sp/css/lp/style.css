@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-12-08 13:21:53 +0900
+ Update:    2016-12-08 16:49:23 +0900
  Info:      成果物を掲載したランディングページ
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1559,6 +1559,8 @@ textarea:focus {
 #section-header {
   font-weight: bold;
   color: #4a4a4a;
+  width: 90%;
+  margin: 0 auto;
 }
 #section-header h1 {
   position: relative;
@@ -1616,7 +1618,7 @@ textarea:focus {
 #section-header ul {
   text-align: center;
   display: none;
-  width: 95%;
+  width: 100%;
   margin: 0 auto;
   padding-bottom: 30px;
 }
@@ -1703,6 +1705,7 @@ textarea:focus {
   min-width: 100%;
 }
 .index #section-contents .box {
+  background: #fff;
   height: 320px;
   width: 90%;
   overflow: hidden;
