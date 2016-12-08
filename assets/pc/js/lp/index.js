@@ -11,7 +11,7 @@
 
 (function() {
   (function($) {
-    var $allCount, $box, $boxSize, $height, $htmlCount, $jadeCount, $jqueryCount, $list, $width, selectedClass, showFlag, topBtn, zoom;
+    var $allCount, $box, $height, $htmlCount, $jadeCount, $jqueryCount, $list, $width, selectedClass, showFlag, topBtn, zoom;
     $box = $('.box');
     $list = $('li');
     $height = $box.height();
@@ -27,8 +27,6 @@
     $list.eq(1).append('(' + $htmlCount + ')');
     $list.eq(2).append('(' + $jadeCount + ')');
     $list.eq(3).append('(' + $jqueryCount + ')');
-    $boxSize = $('.box a').width();
-    $('.overlay').width($boxSize);
     showFlag = false;
     topBtn = $('#page-top');
     topBtn.css('bottom', '-100px');

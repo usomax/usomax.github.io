@@ -31,11 +31,6 @@
     $list.eq(1).append('(' + $htmlCount + ')');
     $list.eq(2).append('(' + $jadeCount + ')');
     $list.eq(3).append('(' + $jqueryCount + ')');
-    $(window).on('load resize', function() {
-      $('.box .overlay').css({
-        width: $('.box').width()
-      });
-    });
     showFlag = false;
     topBtn = $('#page-top');
     topBtn.css('bottom', '-100px');
