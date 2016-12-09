@@ -31,7 +31,6 @@
     $list.eq(1).append('(' + $htmlCount + ')');
     $list.eq(2).append('(' + $jadeCount + ')');
     $list.eq(3).append('(' + $jqueryCount + ')');
-    console.log($('.box').width());
     $(window).on('load resize', function() {
       $('.box .overlay').css({
         width: $('#section-contents').width()

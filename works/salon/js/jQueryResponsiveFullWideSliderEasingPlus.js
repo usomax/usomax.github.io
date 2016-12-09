@@ -3,10 +3,10 @@ $(function() {
   baseWidth = 950;
   baseHeight = 325;
   minWidth = 320;
-  slideSpeed = 500;
+  slideSpeed = 600;
   delayTime = 5000;
-  easing = 'linear';
-  autoPlay = '1'; // notAutoPlay = '0'
+  easing = 'swing';
+  autoPlay = '0'; // notAutoPlay = '0'
   flickMove = '1'; // notFlick = '0'
   btnOpacity = 0.5;
   pnOpacity = 0.5;
