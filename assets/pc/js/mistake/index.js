@@ -74,7 +74,9 @@
           if ($(this).children('img').attr('src') === seikai) {
             $(this).children('img').css('border-color', '#0f0');
             $('.js-score').text('正解！');
-            $('.sideBar-right').find('img').eq(level).attr("src", PC_IMG_DIR + 'mistake/dog.jpg');
+            $('.sideBar-right').find('img').eq(level).css({
+              opacity: '1'
+            });
             level++;
             dim += DIM_DELTA;
             if (level > MAX_LEVEL) {
@@ -101,7 +103,9 @@
       }
     };
     gameReset = function() {
-      $('.sideBar-right').find('img').attr("src", PC_IMG_DIR + 'mistake/img_emptyDog.jpg');
+      $('.sideBar-right').find('img').css({
+        opacity: 0.5
+      });
       $('.js-count').text('残り3匹！');
       $('.js-score').text('クリアタイム');
       if (level >= 1) {

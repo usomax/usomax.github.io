@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-11-21 20:05:03 +0900
+ Update:    2016-12-12 01:19:20 +0900
  Info:      間違い探し
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1672,6 +1672,7 @@ textarea:focus {
 #section-contents .sideBar-right .sideBar-content .inner span img {
   width: 90%;
   border-radius: 10px;
+  opacity: .5;
 }
 #section-contents .sideBar-right .button-green {
   display: none;
