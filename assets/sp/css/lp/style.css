@@ -2,7 +2,7 @@
 /* ------------------------------------------- SASS Information
  Name:      style.scss
  Author:    Y.takaoka
- Update:    2016-12-08 17:23:26 +0900
+ Update:    2016-12-12 13:09:53 +0900
  Info:      成果物を掲載したランディングページ
 ----------------------------------------------------------- */
 /* -----------------------------------------------------------
@@ -1720,10 +1720,6 @@ textarea:focus {
   -webkit-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
   display: table;
-}
-.index #section-contents .box:hover {
-  box-shadow: 0px 0px 10px 2px #000;
-  transition: box-shadow 0.3s;
 }
 .index #section-contents .box:first-child {
   margin-top: 0;
