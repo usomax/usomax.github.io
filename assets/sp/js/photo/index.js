@@ -117,11 +117,12 @@
             }
           }
         });
-        $('.circle').find('img').on('click', function() {
+        $('.circle').find('img').on('click', function(e) {
           var imgSrc;
+          e.preventDefault();
           imgSrc = $(this).attr('src');
           $('#box').fadeIn();
-          $('#modal').find('img[src="' + imgSrc + '"]').removeClass("unactive").addClass("active");
+          $('#modal').find('img[src="' + imgSrc + '"]').removeClass('unactive').addClass('active');
         });
         $('.rightarrow').on('click', function() {
           modalRight();
